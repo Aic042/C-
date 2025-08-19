@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
 {
 	// char *str;
 	char c;
-	char mayuscula;
+	char mayuscula = c;
 	int i = 1;
 	int j = 0;
 	while (i != argc)
