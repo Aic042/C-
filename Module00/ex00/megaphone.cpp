@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
 {
 	// char *str;
 	char c;
-	char mayuscula;
+	// char mayuscula;
 	int i = 1;
 	int j = 0;
 
@@ -13,14 +13,13 @@ int main(int argc, char *argv[])
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
 	}
-	
 	while (i != argc)
 	{
 		j = 0;
 		while (argv[i][j])
 		{
 			c = argv[i][j];
-			std::cout << mayuscula << (char)toupper(c);
+			std::cout << (char)toupper(c) ;
 			j++;
 		}
 		if ((i + 1) != argc)
@@ -29,6 +28,7 @@ int main(int argc, char *argv[])
 			std::cout << "\n";
 		i++;
 	}
+}
 	
 	// printf("i is: %d and argc is %d\n", i, argc);
 	// std::cout << "Uppercaser work please\n";
@@ -36,4 +36,3 @@ int main(int argc, char *argv[])
 	// std::cout << "\n";
 	// std::cout << toupper(c);
 	// std::cout << "\n";
-}
