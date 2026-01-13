@@ -1,21 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   tools.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 10:22:38 by aingunza          #+#    #+#             */
-/*   Updated: 2026/01/13 10:22:49 by aingunza         ###   ########.fr       */
+/*   Created: 2026/01/13 10:46:03 by aingunza          #+#    #+#             */
+/*   Updated: 2026/01/13 10:46:03 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
-
-# include <stdio.h>
-# include <iostream> // To use cout
-# include <cctype>	// To use toupper()
-# include <stdio.h>
-
-#endif

@@ -6,7 +6,7 @@ void pick_mode(std::string mode)
 	std::cin >> mode;
 }
 
-void add_mode(std::string)
+void search_display(std::string)
 {
 	
 }
@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	int num_of_contacts = 0;
 	std::string name;
 	std::string mode;
+	char **name_list = NULL;
 	while (1)
 	{
 		std::cout << "What mode will you use?\n";
@@ -28,12 +29,14 @@ int main(int argc, char **argv)
 			std::cout << "Add the info about this contact\n";
 			std::cin >> name;
 			std::cout << "New contact's name is " << name << "\n";
+			name = name_list[num_of_contacts];
 			if (num_of_contacts >= 8)
 			{
 				std::cout << "Too many contacts, exiting now\n";
 				break;
 			}
 			num_of_contacts++;
+			printf("last name added is %s\n",name_list[num_of_contacts]);
 			std::cout << "Num of contacts: " << num_of_contacts << "\n";
 		}
 		else if (mode == "search")
