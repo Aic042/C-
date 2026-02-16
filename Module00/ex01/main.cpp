@@ -1,32 +1,42 @@
-#include "lib.h"
+#include "lib.hpp"
 
 void pick_mode(std::string mode)
 {
 	std::cout << "What mode will you use?\n";
 	std::cin >> mode;
 }
+void starting_text()
+{
+	std::cout << BOLD_ON << "What mode will you use?\n" << BOLD_OFF;
+	std::cout << BOLD_ON << "Options are: Add, Exit and Search\n" << BOLD_OFF;
+}
 
-void add_mode(std::string)
+void Phonebook::addContact()
 {
 	
 }
 
 int main(int argc, char **argv)
 {
-	(void)argc;
 	(void)argv;
+	if (argc != 1)
+	{
+		std::cout << "Use ./phonebook";	
+		return (-1);
+	}
 	int num_of_contacts = 0;
 	std::string name;
 	std::string mode;
+
+	starting_text();
 	while (1)
 	{
-		std::cout << "What mode will you use?\n";
 		std::cin >> mode;
-		// pick_mode(mode); // Falla 
-		if (mode == "add")
+		if (mode == "ADD")
 		{
 			std::cout << "Add the info about this contact\n";
-			std::cin >> name;
+			std::cin;
+			std::getline(std::cin, name);
 			std::cout << "New contact's name is " << name << "\n";
 			if (num_of_contacts >= 8)
 			{
@@ -36,14 +46,14 @@ int main(int argc, char **argv)
 			num_of_contacts++;
 			std::cout << "Num of contacts: " << num_of_contacts << "\n";
 		}
-		else if (mode == "search")
+		else if (mode == "SEARCH")
 		{
 			std::cout << "Mode incomplete, please wait till we fix this issue\n";
 		}
-		else if (mode == "exit")
+		else if (mode == "EXIT")
 		{
 			std::cout << "Program is quiting, contacts will be lost forever\n";
-			return 0;		
+			return 0;	
 		}
 		else
 		{
