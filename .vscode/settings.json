@@ -46,5 +46,6 @@
 		"streambuf": "cpp",
 		"typeinfo": "cpp",
 		"span": "cpp"
-	}
+	},
+	"C_Cpp.default.compilerPath": "/usr/bin/clang++-12"
 }
