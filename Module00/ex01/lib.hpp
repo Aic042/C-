@@ -25,4 +25,15 @@ public:
 	void display_long();
 };
 
+class Phonebook
+{
+	private:
+	Contact contacts[8];
+	int		index;
+	public:
+	void	add(void);
+	void	search(void);
+	void	print(Contact contact);
+};
+
 #endif

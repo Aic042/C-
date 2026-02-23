@@ -11,7 +11,7 @@ void starting_text()
 	std::cout << BOLD_ON << "Options are: Add, Exit and Search\n" << BOLD_OFF;
 }
 
-void Phonebook::addContact()
+void search_display(std::string)
 {
 	
 }
@@ -38,12 +38,14 @@ int main(int argc, char **argv)
 			std::cin;
 			std::getline(std::cin, name);
 			std::cout << "New contact's name is " << name << "\n";
+			name = name_list[num_of_contacts];
 			if (num_of_contacts >= 8)
 			{
 				std::cout << "Too many contacts, exiting now\n";
 				break;
 			}
 			num_of_contacts++;
+			printf("last name added is %s\n",name_list[num_of_contacts]);
 			std::cout << "Num of contacts: " << num_of_contacts << "\n";
 		}
 		else if (mode == "SEARCH")
