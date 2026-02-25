@@ -7,6 +7,7 @@
 # include <iostream>
 # include <sstream>
 # include <cstdlib> // To use exit()
+# include <cstdio>
 
 # define BOLD_ON "\033[1m"
 # define BOLD_OFF "\033[0m"
