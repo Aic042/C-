@@ -1,29 +1,16 @@
-#include "lib.hpp"
+#include "phonebook.hpp"
+#include "Contact.hpp"
 
 void pick_mode(std::string mode)
 {
 	std::cout << "What mode will you use?\n";
 	std::cin >> mode;
 }
-void starting_text()
-{
-	std::cout << BOLD_ON << "What mode will you use?\n" << BOLD_OFF;
-	std::cout << BOLD_ON << "Options are: Add, Exit and Search\n" << BOLD_OFF;
-}
-void exit_function()
-{
-	std::cout << "Program is quiting, contacts will be lost forever\n";
-}
-
-void search_function()
-{
-	Phonebook pbook;
-	if()
-}
 
 int main(int argc, char **argv)
 {
 	(void)argv;
+	Phonebook pbook;
 	if (argc != 1)
 	{
 		std::cout << "Use ./phonebook";	
@@ -42,7 +29,7 @@ int main(int argc, char **argv)
 			// std::cin;
 			std::getline(std::cin, name);
 			std::cout << "New contact's name is " << name << "\n";
-			if (num_of_contacts >= 8)
+			if ( pbook.contact_counter() >= 8)
 			{
 				std::cout << "Too many contacts, exiting now\n";
 				break;
@@ -51,14 +38,10 @@ int main(int argc, char **argv)
 			std::cout << "Num of contacts: " << num_of_contacts << "\n";
 		}
 		else if (mode == "SEARCH")
-		{
-			std::cout << "Mode incomplete, please wait till we fix this issue\n";
-		}
+			search_function();
 		else if (mode == "EXIT")
 			return(exit_function(), 0);
 		else
-		{
 			std::cerr << "Mode selected was not valid, please select a valid mode\n";
-		}
 	}
 }

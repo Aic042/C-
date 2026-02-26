@@ -1,0 +1,44 @@
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
+
+#include <iostream> // To use cout
+#include <cctype>	// To use toupper()
+# include <string>
+# include <iostream>
+# include <sstream>
+# include <cstdlib> // To use exit()
+# include <cstdio>
+# include "Contact.hpp"
+
+# define BOLD_ON "\033[1m"
+# define BOLD_OFF "\033[0m"
+
+
+class Phonebook
+{
+	private:
+		Contact contacts[8];
+		int		index;
+		int		number_of_contacts;
+	public:
+		void	add(void);
+		void	search(void);
+		void	print(Contact contact);
+		int	contact_counter() const
+		{
+			return(number_of_contacts);
+		}
+	Phonebook()
+	{
+		std::cout << "Constructor Called" << std::endl;
+	}
+	~Phonebook() {
+		std::cout << "Phonebook's Destructor Called" << std::endl;
+	}
+};
+
+void starting_text();
+void exit_function();
+void search_function();
+
+#endif

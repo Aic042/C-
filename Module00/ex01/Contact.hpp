@@ -1,16 +1,12 @@
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef CONTACT_H
+# define CONTACT_H
 
 #include <iostream> // To use cout
 #include <cctype>	// To use toupper()
 # include <string>
-# include <iostream>
 # include <sstream>
 # include <cstdlib> // To use exit()
 # include <cstdio>
-
-# define BOLD_ON "\033[1m"
-# define BOLD_OFF "\033[0m"
 
 class Contact {
 	private:
@@ -26,17 +22,4 @@ class Contact {
 		void display();
 		void display_long();
 };
-
-class Phonebook
-{
-	private:
-		Contact contacts[8];
-		int		index;
-		int		number_of_contacts;
-	public:
-		void	add(void);
-		void	search(void);
-		void	print(Contact contact);
-};
-
 #endif
