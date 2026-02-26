@@ -13,28 +13,30 @@
 # define BOLD_OFF "\033[0m"
 
 class Contact {
-private:
-	std::string	index;
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string secret;
-	
-public:
-	void setContact();
-	void display();
-	void display_long();
+	private:
+		std::string	index;
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
+		std::string	phone_number;
+		std::string secret;
+		
+	public:
+		void setContact();
+		void display();
+		void display_long();
 };
 
 class Phonebook
 {
 	private:
-	Contact contacts[8];
-	int		index;
+		Contact contacts[8];
+		int		index;
+		int		number_of_contacts;
 	public:
-	void	add(void);
-	void	search(void);
-	void	print(Contact contact);
+		void	add(void);
+		void	search(void);
+		void	print(Contact contact);
 };
 
 #endif
