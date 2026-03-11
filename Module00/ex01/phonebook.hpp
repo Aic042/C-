@@ -30,7 +30,8 @@ class Phonebook
 		}
 	Phonebook()
 	{
-		std::cout << "Constructor Called" << std::endl;
+		index = 0;
+		number_of_contacts = 0;
 	}
 	~Phonebook() {
 		std::cout << "Phonebook's Destructor Called" << std::endl;

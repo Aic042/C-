@@ -1,6 +1,19 @@
 #include "phonebook.hpp"
 #include "Contact.hpp"
 
+void Phonebook::add()
+{
+	contacts[index].setContact();
+
+	index++;
+	number_of_contacts++;
+
+	if (index == 8)
+		index = 0;
+	if (number_of_contacts > 8)
+		number_of_contacts = 8;
+}
+
 void starting_text()
 {
 	std::cout << BOLD_ON << "What mode will you use?\n" << BOLD_OFF;
