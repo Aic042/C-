@@ -4,10 +4,10 @@
 #include <iostream> // To use cout
 #include <cctype>	// To use toupper()
 # include <string>
-# include <iostream>
 # include <sstream>
 # include <cstdlib> // To use exit()
 # include <cstdio>
+# include <iomanip>
 # include "Contact.hpp"
 
 # define BOLD_ON "\033[1m"
