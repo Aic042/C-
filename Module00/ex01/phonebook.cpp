@@ -29,5 +29,12 @@ void search_function()
 	Phonebook pbook;
 	// if() Number of contacts = 0, retornamos -1
 	//	printf("No contacts added yet");
+	
 	std::cout << "Mode incomplete, please wait till we fix this issue\n";
+}
+
+
+void display_contact(Contact cont)
+{
+	std::cout << cont.
 }
