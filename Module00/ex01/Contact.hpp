@@ -20,10 +20,10 @@ class Contact {
 		void setContact();
 		void display();
 		void display_long();
-		std::string first_name_getter(std::string string);
-		std::string last_name_getter(std::string string);
-		std::string nickname_name_getter(std::string string);
-		std::string phone_getter(std::string string);
-		std::string secret_getter(std::string string);
+		std::string first_name_getter() const;
+		std::string last_name_getter() const;
+		std::string nickname_name_getter() const;
+		std::string phone_getter() const;
+		std::string secret_getter() const;
 };
 #endif

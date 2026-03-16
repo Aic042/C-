@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		if (mode == "ADD")
 			pbook.add();
 		else if (mode == "SEARCH")
-			search_function();
+			pbook.search();
 		else if (mode == "EXIT")
 			return (exit_function(), 0);
 		else

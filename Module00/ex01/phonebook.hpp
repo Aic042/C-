@@ -23,7 +23,7 @@ class Phonebook
 	public:
 		void	add(void);
 		void	search(void);
-		void	print(Contact contact);
+		void	print();
 		int	contact_counter() const
 		{
 			return(number_of_contacts);
