@@ -24,17 +24,30 @@ void exit_function()
 	std::cout << "Program is quiting, contacts will be lost forever\n";
 }
 
-void search_function()
+void search_function(Phonebook phonebook, Contact contact)
 {
-	Phonebook pbook;
 	// if() Number of contacts = 0, retornamos -1
 	//	printf("No contacts added yet");
-	
+	phonebook.print(contact);
 	std::cout << "Mode incomplete, please wait till we fix this issue\n";
 }
 
 
-void display_contact(Contact cont)
+void Contact::display()
 {
-	std::cout << cont.
+	std::cout << first_name << " " << last_name << '\n';
+	std::cout << "Nickname is " << nickname << '\n';
+	std::cout << "Phone Number is " << phone_number << '\n';
+	std::cout << "And their darkest secret is " << phone_number << '\n';
+}
+
+void Phonebook::print(Contact contact)
+{
+	int i = 0;
+	while (i != 8)
+	{
+		contact[i].display();
+		i++;
+	}
+	
 }

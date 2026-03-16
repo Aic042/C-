@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Files
 NAME = phonebook
-SRC = contact.cpp phonebook.cpp main.cpp
+SRC = contact.cpp phonebook.cpp main.cpp getters.cpp setters.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Default rule
