@@ -41,5 +41,6 @@ class Phonebook
 void starting_text();
 void exit_function();
 void search_function();
+size_t str_len(const std::string &str);
 
 #endif

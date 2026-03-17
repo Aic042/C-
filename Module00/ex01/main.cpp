@@ -1,11 +1,7 @@
 #include "phonebook.hpp"
 #include "Contact.hpp"
 
-void pick_mode(std::string mode)
-{
-	std::cout << "What mode will you use?\n";
-	std::cin >> mode;
-}
+
 
 int main(int argc, char **argv)
 {

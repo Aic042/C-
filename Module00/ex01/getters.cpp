@@ -1,6 +1,10 @@
 #include "phonebook.hpp"
 #include "Contact.hpp"
 
+size_t str_len(const std::string &str)
+{
+	return str.size();
+}
 
 std::string Contact::first_name_getter() const 
 {

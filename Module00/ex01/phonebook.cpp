@@ -26,12 +26,16 @@ void exit_function()
 
 void Phonebook::search()
 {
-        if (number_of_contacts == 0)
-        {
-                std::cout << "No contacts saved\n";
-                return;
-        }
-        print();
+	int contact_index;
+	if (number_of_contacts == 0)
+	{
+			std::cout << "No contacts saved\n";
+			return;
+	}
+	print();
+	std::cout << "Choose contact to display info";
+	std::getline(std::cin, contact_index);
+	contacts[contact_index].display();
 }
 
 
@@ -40,20 +44,29 @@ void Contact::display()
 	std::cout << first_name << " " << last_name << '\n';
 	std::cout << "Nickname is " << nickname << '\n';
 	std::cout << "Phone Number is " << phone_number << '\n';
-	std::cout << "And their darkest secret is " << phone_number << '\n';
+	std::cout << "And their darkest secret is " << secret << '\n';
+}
+std::string string_truncater(const std::string str)
+{
+	std::string new_string;
+	if(str_len(str) >= 10)
+	{
+		new_string = str.substr(0, 9) + ".";
+	}
+	else
+		new_string = str;
+	return(new_string);
 }
 
 void Phonebook::print()
 {
-	int i = 0;
-	while (i != number_of_contacts)
+	int i = 1;
+	while (i != number_of_contacts + 1)
 	{
 		std::cout << std::setw(10) << i << "|";
-		std::cout << std::setw(10) << contacts[i].phone_getter() << "|";
-		std::cout << std::setw(10) << contacts[i].first_name_getter() << "|";
-		std::cout << std::setw(10) << contacts[i].last_name_getter() << "|";
-		std::cout << std::setw(10) << contacts[i].nickname_name_getter() << std::endl;
+		std::cout << std::setw(10) << string_truncater(contacts[i - 1].first_name_getter()) << "|";
+		std::cout << std::setw(10) << string_truncater(contacts[i - 1].last_name_getter()) << "|";
+		std::cout << std::setw(10) << string_truncater(contacts[i - 1].nickname_name_getter()) << "|" << std::endl;
 		i++;
 	}
-	
 }

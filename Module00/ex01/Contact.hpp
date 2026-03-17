@@ -7,6 +7,7 @@
 # include <sstream>
 # include <cstdlib> // To use exit()
 # include <cstdio>
+#include <cstring> 
 
 class Contact {
 	private:
