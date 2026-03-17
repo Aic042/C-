@@ -17,25 +17,52 @@ void Phonebook::add()
 void starting_text()
 {
 	std::cout << BOLD_ON << "What mode will you use?\n" << BOLD_OFF;
-	std::cout << BOLD_ON << "Options are: Add, Exit and Search\n" << BOLD_OFF;
+	std::cout << BOLD_ON << "Options are: ADD, EXIT and SEARCH\n" << BOLD_OFF;
 }
 void exit_function()
 {
 	std::cout << "Program is quiting, contacts will be lost forever\n";
 }
 
+int is_number(const std::string &str)
+{
+        int i = 0;
+
+        if (str.empty())
+                return (0);
+
+        while (str[i])
+        {
+                if (!std::isdigit(str[i]))
+                        return (0);
+                i++;
+        }
+        return (1);
+}
+
 void Phonebook::search()
 {
-	int contact_index;
 	if (number_of_contacts == 0)
 	{
-			std::cout << "No contacts saved\n";
-			return;
+		std::cout << "No contacts saved\n";
+		return;
 	}
 	print();
-	std::cout << "Choose contact to display info";
-	std::getline(std::cin, contact_index);
-	contacts[contact_index].display();
+	std::cout << "Choose contact to display info" << std::endl;
+	
+	std::string input;
+	std::getline(std::cin, input);
+	if (!is_number(input))
+	{
+			std::cout << "Invalid index\n";
+			return;
+	}
+	int index = std::atoi(input.c_str());
+	if (index < 1 || index > number_of_contacts)
+	{
+			std::cout << "Invalid index\n";
+			return;
+	}
 }
 
 
