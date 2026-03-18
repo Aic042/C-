@@ -63,6 +63,7 @@ void Phonebook::search()
 			std::cout << "Invalid index\n";
 			return;
 	}
+	contacts[index].display();
 }
 
 
