@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		while (argv[i][j])
 		{
 			c = argv[i][j];
-			std::cout << (char)toupper(c) ;
+			std::cout << (char)toupper(c);
 			j++;
 		}
 		if ((i + 1) != argc)
