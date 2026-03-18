@@ -14,3 +14,8 @@ void Contact::setContact()
 	std::cout << "Darkest Secret: ";
 	std::getline(std::cin, secret);
 }
+
+void Phonebook::Contacts_tester()
+{
+
+}

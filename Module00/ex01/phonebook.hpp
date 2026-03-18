@@ -28,14 +28,16 @@ class Phonebook
 		{
 			return(number_of_contacts);
 		}
-	Phonebook()
-	{
-		index = 0;
-		number_of_contacts = 0;
-	}
-	~Phonebook() {
-		std::cout << "Phonebook's Destructor Called" << std::endl;
-	}
+		void Contacts_tester();
+		
+		Phonebook()
+		{
+			index = 0;
+			number_of_contacts = 0;
+		}
+		~Phonebook() {
+			std::cout << "Phonebook's Destructor Called" << std::endl;
+		}
 };
 
 void starting_text();
