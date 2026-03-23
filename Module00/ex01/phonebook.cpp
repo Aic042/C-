@@ -63,17 +63,17 @@ void Phonebook::search()
 			std::cout << "Invalid index\n";
 			return;
 	}
-	contacts[index].display();
+	contacts[index - 1].display();
 }
-
 
 void Contact::display()
 {
-	std::cout << first_name << " " << last_name << '\n';
-	std::cout << "Nickname is " << nickname << '\n';
-	std::cout << "Phone Number is " << phone_number << '\n';
-	std::cout << "And their darkest secret is " << secret << '\n';
+        std::cout << first_name << " " << last_name << '\n';
+        std::cout << "Nickname is " << nickname << '\n';
+        std::cout << "Phone Number is " << phone_number << '\n';
+        std::cout << "And their darkest secret is " << secret << '\n';
 }
+
 std::string string_truncater(const std::string str)
 {
 	std::string new_string;
