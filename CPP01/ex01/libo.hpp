@@ -7,7 +7,7 @@
 # include <cctype>	// To use toupper()
 # include <stdio.h>
 
-struct lib
+class Zombie
 {
 	private:
 		std::string name;
