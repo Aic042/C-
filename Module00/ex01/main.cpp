@@ -1,6 +1,12 @@
 #include "phonebook.hpp"
 #include "Contact.hpp"
 
+
+// int is_number(std::string &str)
+// {
+// 	if(str.empty())
+// }
+
 int main(int argc, char **argv)
 {
 	(void)argv;
@@ -16,8 +22,7 @@ int main(int argc, char **argv)
 	while (1)
 	{
 		std::cout << "> ";
-		std::getline(std::cin, mode);
-
+		mode = get_non_empty_input("Mode: ");
 		if (mode == "ADD")
 			pbook.add();
 		else if (mode == "SEARCH")

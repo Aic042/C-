@@ -40,7 +40,8 @@ class Phonebook
 			std::cout << "Phonebook's Destructor Called" << std::endl;
 		}
 };
-
+std::string get_non_empty_input(const std::string &prompt);
+int is_number(const std::string &str);
 void starting_text();
 void exit_function();
 void search_function();
