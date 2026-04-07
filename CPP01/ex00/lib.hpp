@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   lib.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 10:22:38 by aingunza          #+#    #+#             */
-/*   Updated: 2026/02/16 13:37:07 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/04/05 10:32:07 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ class Zombie{
 	public:
 		std::string zombie_name;
 
+		void ZombieDestroyer(Zombie);
+		void randoChump();
+	};
 	Zombie* newZombie( std::string name );
 	void randomChump( std::string name );
-	void ZombieDestroyer(Zombie);
-	void randoChump();
 	
-};
-
 #endif
