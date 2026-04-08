@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Files
 NAME = Brainzz
-SRC = main.cpp
+SRC = main.cpp  newZombie.cpp  randomChump.cpp  Zombie.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Default rule

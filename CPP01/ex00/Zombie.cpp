@@ -1,6 +1,7 @@
-#include "lib.h"
+#include "lib.hpp"
 
-Zombie* newZombie(std :: string name)
+void Zombie::announce()
 {
-	
+    std::cout << this->zombie_name << ": BraiiiiiiinnnzzzZ";
 }
+

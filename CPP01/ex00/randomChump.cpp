@@ -1,9 +1,8 @@
-#include "lib.h"
+#include "lib.hpp"
 
-void randoChump()
+void randomChump()
 {
-	Zombie* randomChump;
-	std::string ZombieName;
-	ZombieName = "RandomChump";
-	std::cout << ZombieName << rand() << ": BraiiiiiiinnnzzzZ...\n";
+	Zombie* randomChump = NULL;
+	randomChump->zombie_name = "RandomChump";
+	std::cout << randomChump->zombie_name << ": BraiiiiiiinnnzzzZ...\n";
 }
