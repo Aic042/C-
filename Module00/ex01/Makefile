@@ -15,7 +15,7 @@ $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 # How to build object files
-%.o: %.cpp lib.h
+%.o: %.cpp 
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Clean up object files

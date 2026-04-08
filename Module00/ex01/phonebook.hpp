@@ -9,6 +9,7 @@
 # include <cstdio>
 # include <iomanip>
 # include "Contact.hpp"
+#include <cstdlib>
 
 # define BOLD_ON "\033[1m"
 # define BOLD_OFF "\033[0m"
