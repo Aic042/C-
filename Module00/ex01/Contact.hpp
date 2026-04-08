@@ -20,7 +20,6 @@ class Contact {
 	public:
 		void setContact();
 		void display();
-		void display_long();
 		std::string first_name_getter() const;
 		std::string last_name_getter() const;
 		std::string nickname_name_getter() const;

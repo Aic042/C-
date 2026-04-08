@@ -25,7 +25,6 @@ class Phonebook
 		void	add(void);
 		void	search(void);
 		void	print();
-		void	display(int index);
 		int	contact_counter() const
 		{
 			return(number_of_contacts);

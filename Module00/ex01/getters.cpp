@@ -27,4 +27,3 @@ std::string Contact::secret_getter() const
 {
 	return(secret);
 }
-//a getter is a function used to extract private info from a contact

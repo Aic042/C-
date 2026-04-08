@@ -10,7 +10,7 @@ std::string get_non_empty_input(const std::string &prompt)
 		std::cout << prompt;
 		if (!std::getline(std::cin, input))
 		{
-			std::cout << "Exiting, ctrl + D";
+			std::cout << "\n Exiting, ctrl + D";
 			exit(0); //para controlar el ctrl+D
 		}
 			if (!input.empty())
