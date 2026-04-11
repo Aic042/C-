@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 10:22:38 by aingunza          #+#    #+#             */
-/*   Updated: 2026/04/05 10:32:07 by root             ###   ########.fr       */
+/*   Updated: 2026/04/10 13:33:35 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@
 # include <stdio.h>
 
 class Zombie{
-	public:
+	private:
 		std::string zombie_name;
-
-		void ZombieDestroyer(Zombie);
+	public:
+		Zombie(std::string name){
+			zombie_name = name;
+		}
 		void announce();
 	};
 	void randoChump();

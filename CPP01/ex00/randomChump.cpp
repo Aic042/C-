@@ -1,8 +1,7 @@
 #include "lib.hpp"
 
-void randomChump()
+void randomChump(std::string name)
 {
-	Zombie* randomChump = NULL;
-	randomChump->zombie_name = "RandomChump";
+	Zombie randomChump(name);
 	std::cout << randomChump->zombie_name << ": BraiiiiiiinnnzzzZ...\n";
 }
