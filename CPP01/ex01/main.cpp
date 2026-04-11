@@ -30,9 +30,7 @@ int main(int argc, char **argv)
 	horde_num = arg_numcheck(argv[0]);
 	while (i < horde_num)
 	{
-		Zombie* Randomhorder = new Zombie; 
-		Randomhorder->zombie_name = "zombie" + std::to_string(i);;
-		Randomhorder->announce();
+
 
 	}
 	
