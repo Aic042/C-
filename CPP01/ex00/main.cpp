@@ -4,11 +4,14 @@ int main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
-	std::string ZombieName;
-	ZombieName = "asdasdasd";
-	std::cout << "Now Random Chump:";
-	randomChump(); 
-	return 0;
+
+	Zombie *Zombie1;
+
+	Zombie1 = newZombie("New zombie");
+	Zombie1->announce();
+	randomChump("Random");
+	delete Zombie1;
+	return (0);
 }
 
 

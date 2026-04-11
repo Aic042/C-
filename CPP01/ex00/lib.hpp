@@ -22,13 +22,16 @@ class Zombie{
 	private:
 		std::string zombie_name;
 	public:
-		Zombie(std::string name){
+		Zombie(std::string name){  //Constructor
 			zombie_name = name;
+			std::cout << zombie_name << " Ha sido creado\n";
+		}
+		~Zombie(){  //Desstructor
+			std::cout << zombie_name << " ha sido destruido\n";
 		}
 		void announce();
 	};
-	void randoChump();
-	Zombie* newZombie( std::string name );
-	void randomChump();
+Zombie* newZombie( std::string name );
+void randomChump(std::string name);
 	
 #endif
