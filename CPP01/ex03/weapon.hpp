@@ -1,4 +1,3 @@
-
 #ifndef VIOLENCE
 # define VIOLENCE
 
@@ -20,20 +19,6 @@ class Weapon
 	{
 		this->objtype = type;
 	}
-};
-
-class HumanA
-{
-	public:
-		Weapon Human_A_Weapon;
-
-};
-
-class HumanB
-{
-	public:
-		Weapon Human_B_Weapon;
-
 };
 
 #endif 
