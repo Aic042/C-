@@ -7,13 +7,12 @@
 #include <stdio.h>   
 #include <stdlib.h>     
 
-class Human
+class Weapon
 {
+	std::string objtype;
 	private:
-		std::string objtype;
-	public:
-
-	std::string getType(std::string type){
+	std::string getType(std::string type)
+	{
 		this->objtype = type;
 	}
 
@@ -21,8 +20,20 @@ class Human
 	{
 		this->objtype = type;
 	}
+};
+
+class HumanA
+{
+	public:
+		Weapon Human_A_Weapon;
 
 };
 
+class HumanB
+{
+	public:
+		Weapon Human_B_Weapon;
+
+};
 
 #endif 
