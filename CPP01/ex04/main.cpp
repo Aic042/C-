@@ -25,6 +25,8 @@ int main(int argc, char **argv)
 	std::string file_content;
 	extension = ".replace";
 	(void)argc;
+	if (argc != 4)
+		return(std::cout << "Error in initial checker\n" ,-1);
 	// if(initial_checker(argc, argv, file_name, replacable, replaced))
 	// 	return (-1);
 	file_name = argv[1];
@@ -52,7 +54,14 @@ int main(int argc, char **argv)
 		if(!infile.eof())
 			file_content += "\n";
 	}
-	
+
+	size_t pos = file_content.find(replacable);
+	while (pos != std::string::npos)
+	{
+		file_content.replace(pos, replaced.size(), replacable);
+		pos = file_content.find(replaced, pos + replacable.size());
+	}
+	outfile << file_content << std::endl;
 	infile.close();
 	outfile.close();
 }
