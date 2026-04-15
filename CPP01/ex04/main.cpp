@@ -3,15 +3,15 @@
 #include <cctype>
 #include <iostream> // To use cout
 
-int initial_checker(int argc, char **argv, std::string file_name, std::string replacable, std::string replaced)
-{
-	if (argc != 4)
-		return(std::cout << "Error in initial checker" ,-1);
-	if(!argv[1] || !argv[2] || !argv[3])
-		return(std::cout << "Error in initial checker" ,-1);
+// int initial_checker(int argc, char **argv, std::string file_name, std::string replacable, std::string replaced)
+// {
+// 	if (argc != 4)
+// 		return(std::cout << "Error in initial checker" ,-1);
+// 	if(!argv[1] || !argv[2] || !argv[3])
+// 		return(std::cout << "Error in initial checker" ,-1);
 
-	return (0);
-}
+// 	return (0);
+// }
 
 int main(int argc, char **argv)
 {
