@@ -24,9 +24,9 @@ int main(int argc, char **argv)
 	std::string line;
 	std::string file_content;
 	extension = ".replace";
-
-	if(initial_checker(argc, argv, file_name, replacable, replaced))
-		return (-1);
+	(void)argc;
+	// if(initial_checker(argc, argv, file_name, replacable, replaced))
+	// 	return (-1);
 	file_name = argv[1];
 	replacable = argv[2];
 	replaced = argv[3];
