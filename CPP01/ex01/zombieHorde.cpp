@@ -7,7 +7,7 @@ Zombie* zombieHorde( int N, std::string name )
     {
         Zombie* horde = new Zombie[i];
         horde[i].announce();
+        delete[] horde;
     }
     
-    delete[] horde;    
 }
