@@ -23,6 +23,8 @@ int main(int argc, char **argv)
 	std::string extension;
 	std::string line;
 	std::string file_content;
+	std::string result;
+
 	extension = ".replace";
 	(void)argc;
 	if (argc != 4)
@@ -32,7 +34,7 @@ int main(int argc, char **argv)
 	file_name = argv[1];
 	replacable = argv[2];
 	replaced = argv[3];
-	if(file_name.empty() || replacable.empty() || replaced.empty())
+	if(file_name.empty() || replacable.empty())
 		return(std::cout << "Error in initial checker: args cannot be empty" ,-1);
 	infile.open(argv[1]);
 	if (!infile.is_open())
@@ -56,12 +58,15 @@ int main(int argc, char **argv)
 	}
 
 	size_t pos = file_content.find(replacable);
-	while (pos != std::string::npos)
+	size_t found = 0;
+	while ((found = file_content.find(replacable, pos)) != std::string::npos)
 	{
-		file_content.replace(pos, replaced.size(), replacable);
-		pos = file_content.find(replaced, pos + replacable.size());
+		result += file_content.substr(pos, (found - pos));
+		result += replaced;
+		pos = found + replacable.length();
 	}
-	outfile << file_content << std::endl;
+	result += file_content.substr(pos);
+	outfile << result << std::endl;
 	infile.close();
 	outfile.close();
 }

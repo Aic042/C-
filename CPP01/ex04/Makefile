@@ -1,10 +1,10 @@
 # Compiler and flags
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fPIE
 
 # Files
 NAME = Violence
-SRC = main.cpp
+SRC = main.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 # Default rule
