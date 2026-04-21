@@ -3,11 +3,11 @@
 Zombie* zombieHorde( int N, std::string name )
 {
     int i = 0;
+    Zombie* horde = new Zombie[i];
     while (i < N)
     {
-        Zombie* horde = new Zombie[i];
+        horde[i].zombie_name = name;
         horde[i].announce();
-        delete[] horde;
     }
-    
+    delete[] horde;
 }
