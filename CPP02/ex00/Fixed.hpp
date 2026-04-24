@@ -5,12 +5,12 @@
 class Fixed
 {
 	private:
-		int num_value;
+		int fixed_point_num_value;
 		static const int frational_bits;
 	public:
 		Fixed (){
 			std::cout << "Constructor has been called" << std::endl;
-			this->num_value = 0;
+			this->fixed_point_num_value = 0;
 		}
 		~Fixed(){
 			std::cout << "This object is being destroyed" << std::endl;

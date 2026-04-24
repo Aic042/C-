@@ -1,12 +1,12 @@
 #include "Fixed.hpp"
 
-int getRawBits( void ) const
+int Fixed::getRawBits( void ) const
 {
 
 }
 
 
-void setRawBits( int const raw )
+void Fixed::setRawBits( int const raw )
 {
     
 }

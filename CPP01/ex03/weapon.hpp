@@ -8,17 +8,13 @@
 
 class Weapon
 {
-	std::string objtype;
 	private:
-	std::string getType(std::string type)
-	{
-		this->objtype = type;
-	}
-
-	void setType(std::string type)
-	{
-		this->objtype = type;
-	}
+		std::string objtype;
+	public:
+		const std::string& getType() const;
+		void setType(std::string type);
+		Weapon(std::string type);
+		~Weapon();
 };
 
 #endif 

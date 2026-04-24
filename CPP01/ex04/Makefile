@@ -3,7 +3,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fPIE
 
 # Files
-NAME = Violence
+NAME = SED
 SRC = main.cpp 
 OBJ = $(SRC:.cpp=.o)
 

@@ -24,18 +24,21 @@ int main(int argc, char **argv)
 	std::string line;
 	std::string file_content;
 	std::string result;
-
 	extension = ".replace";
-	(void)argc;
 	if (argc != 4)
-		return(std::cout << "Error in initial checker\n" ,-1);
-	// if(initial_checker(argc, argv, file_name, replacable, replaced))
+	{
+		std::cout << "Error in initial checker" << std::endl;
+		return(-1);
+	}// if(initial_checker(argc, argv, file_name, replacable, replaced))
 	// 	return (-1);
 	file_name = argv[1];
 	replacable = argv[2];
 	replaced = argv[3];
 	if(file_name.empty() || replacable.empty())
-		return(std::cout << "Error in initial checker: args cannot be empty" ,-1);
+	{
+		std::cout << "Error in initial checker: args cannot be empty" << std::endl;
+		return(-1);
+	}
 	infile.open(argv[1]);
 	if (!infile.is_open())
 	{
@@ -56,17 +59,17 @@ int main(int argc, char **argv)
 		if(!infile.eof())
 			file_content += "\n";
 	}
+	size_t pos = 0;
+	size_t found;
 
-	size_t pos = file_content.find(replacable);
-	size_t found = 0;
 	while ((found = file_content.find(replacable, pos)) != std::string::npos)
 	{
-		result += file_content.substr(pos, (found - pos));
+		result += file_content.substr(pos, found - pos);
 		result += replaced;
 		pos = found + replacable.length();
 	}
 	result += file_content.substr(pos);
-	outfile << result << std::endl;
+	outfile << result;
 	infile.close();
 	outfile.close();
 }

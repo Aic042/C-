@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Files
 NAME = Violence
-SRC = main.cpp
+SRC = main.cpp weapon.cpp Humanss.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Default rule
