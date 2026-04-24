@@ -1,4 +1,4 @@
-#include "Fixed.hpp"_fp_value
+#include "Fixed.hpp"
 
 int main( void )
 {

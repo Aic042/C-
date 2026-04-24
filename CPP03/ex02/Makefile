@@ -4,8 +4,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Files
 NAME = SCAVTRAP
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
-OBJ = $(SRC:.cpp=.o)
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+OB J = $(SRC:.cpp=.o)
 
 # Default rule
 all: $(NAME)

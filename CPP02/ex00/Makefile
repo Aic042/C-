@@ -3,8 +3,8 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Files
-NAME = SCAVTRAP
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME = FIXED
+SRC = main.cpp RawBits.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Default rule

@@ -1,6 +1,5 @@
 #include "ClapTrap.hpp"
 
-
 int main()
 {
     ClapTrap Clanker("Clankah");

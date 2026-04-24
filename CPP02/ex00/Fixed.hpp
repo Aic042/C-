@@ -9,14 +9,19 @@ class Fixed
 		static const int frational_bits;
 	public:
 		Fixed (){
-			std::cout << "Constructor has been called" << std::endl;
+			std::cout << "Default constructor has been called" << std::endl;
 			this->fixed_point_num_value = 0;
 		}
 		~Fixed(){
-			std::cout << "This object is being destroyed" << std::endl;
+			std::cout << "Destructor called" << std::endl;
 		}
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
+		Fixed(Fixed &obj){
+			std::cout << "Copy constructor has been called" << std::endl;
+			obj.fixed_point_num_value = 0;
+		}
+	
 };
 
 #endif

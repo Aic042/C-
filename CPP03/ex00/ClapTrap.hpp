@@ -9,8 +9,8 @@ class ClapTrap
 {
 	private:
 		std::string Bot_Name;
-		int Hit_points;
-		int Energy_points;
+		int Hit_Points;
+		int Energy_Points;
 		int Attack_Damage;
 	public:
 	void attack(const std::string& target);

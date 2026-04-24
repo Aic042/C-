@@ -1,10 +1,10 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name)
 {
 	this->Bot_Name = name;
 	std::cout << "ClapTrap " << this->Bot_Name << " has been constructed" << std::endl;
-	set_stats(50, 15, 5);
+	set_stats(100, 100, 30);
 }
 
 void ClapTrap::set_stats(int Hit_Points, int eng_points, int attack_dmg)
