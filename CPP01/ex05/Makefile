@@ -16,7 +16,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fPIE
 
 # Los files
 NAME= Harl2.0
-SRC = main.cpp harl.cpp 
+SRC = main.cpp Harl.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
