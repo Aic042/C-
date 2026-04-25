@@ -1,6 +1,18 @@
-#include "weapon.hpp"
-#include "humanA.hpp"
-#include "humanB.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Humanss.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/25 13:21:35 by aingunza          #+#    #+#             */
+/*   Updated: 2026/04/25 15:58:05 by aingunza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 HumanB::HumanB(std::string name)
     : name(name), weapon_type(NULL)

@@ -1,4 +1,16 @@
-#include "libo.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/25 12:37:54 by aingunza          #+#    #+#             */
+/*   Updated: 2026/04/25 12:37:55 by aingunza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Horde.hpp"
 
 Zombie::Zombie(){  //Constructor
     std::cout << " Un zombie mas Ha sido creado\n";

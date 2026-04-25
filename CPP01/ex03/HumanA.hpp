@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/25 13:22:01 by aingunza          #+#    #+#             */
+/*   Created: 2026/04/25 13:21:29 by aingunza          #+#    #+#             */
 /*   Updated: 2026/04/25 15:58:05 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
 
-Weapon::Weapon(std::string type)
+class HumanA
 {
-	this->objtype = type;
-}
+    private: 
+        std::string name;
+        Weapon &weapon_type;
+    public:
+        HumanA(std::string name, Weapon &weapon_type);
+        void attack();
+        ~HumanA();
 
-Weapon::~Weapon()
-{
-	std::cout << "Weapon has been destroyed" << std::endl;
-}
-
-const std::string& Weapon::getType() const{
-	return this->objtype;
-}
-
-void Weapon::setType(std::string type)
-{
-	this->objtype = type;
-}
+};

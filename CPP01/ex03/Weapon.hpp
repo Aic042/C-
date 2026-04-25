@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   weapon.cpp                                         :+:      :+:    :+:   */
+/*   weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/25 13:22:01 by aingunza          #+#    #+#             */
+/*   Created: 2026/04/25 13:21:15 by aingunza          #+#    #+#             */
 /*   Updated: 2026/04/25 15:58:05 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#ifndef VIOLENCE
+# define VIOLENCE
 
-Weapon::Weapon(std::string type)
+# include <iostream> // To use cout
+# include <cctype>	// To use toupper()
+#include <stdio.h>   
+#include <stdlib.h>     
+
+class Weapon
 {
-	this->objtype = type;
-}
+	private:
+		std::string objtype;
+	public:
+		const std::string& getType() const;
+		void setType(std::string type);
+		Weapon(std::string type);
+		~Weapon();
+};
 
-Weapon::~Weapon()
-{
-	std::cout << "Weapon has been destroyed" << std::endl;
-}
-
-const std::string& Weapon::getType() const{
-	return this->objtype;
-}
-
-void Weapon::setType(std::string type)
-{
-	this->objtype = type;
-}
+#endif 

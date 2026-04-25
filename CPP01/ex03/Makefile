@@ -1,31 +1,37 @@
-# Compiler and flags
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/04/25 13:21:55 by aingunza          #+#    #+#              #
+#    Updated: 2026/04/25 13:24:08 by aingunza         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# Compilamos
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-# Files
-NAME = Violence
+# Los files
+NAME= Violence
 SRC = main.cpp weapon.cpp Humanss.cpp
 OBJ = $(SRC:.cpp=.o)
 
-# Default rule
 all: $(NAME)
 
-# How to build the executable
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-# How to build object files
 %.o: %.cpp 
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Clean up object files
 clean:
 	rm -f $(OBJ)
 
-# Clean up everything
 fclean: clean
 	rm -f $(NAME)
 
-# Rebuild from scratch
 re: fclean all
 .PHONY: all clean fclean re

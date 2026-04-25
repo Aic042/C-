@@ -1,17 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/25 13:22:06 by aingunza          #+#    #+#             */
+/*   Updated: 2026/04/25 16:04:43 by aingunza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <deque>
 #include <fstream>
 #include <cctype>
 #include <iostream> // To use cout
-
-// int initial_checker(int argc, char **argv, std::string file_name, std::string replacable, std::string replaced)
-// {
-// 	if (argc != 4)
-// 		return(std::cout << "Error in initial checker" ,-1);
-// 	if(!argv[1] || !argv[2] || !argv[3])
-// 		return(std::cout << "Error in initial checker" ,-1);
-
-// 	return (0);
-// }
 
 int main(int argc, char **argv)
 {
@@ -61,7 +63,12 @@ int main(int argc, char **argv)
 	}
 	size_t pos = 0;
 	size_t found;
-
+	if(replacable.empty()){
+		std::cout << "replacable is empty" << std::endl;
+		infile.close();
+		outfile.close();
+		return (-1);
+	}
 	while ((found = file_content.find(replacable, pos)) != std::string::npos)
 	{
 		result += file_content.substr(pos, found - pos);
@@ -72,4 +79,5 @@ int main(int argc, char **argv)
 	outfile << result;
 	infile.close();
 	outfile.close();
+	return (0);
 }
