@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 13:22:06 by aingunza          #+#    #+#             */
-/*   Updated: 2026/04/25 16:04:43 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/04/25 16:23:42 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int main(int argc, char **argv)
 	{
 		std::cout << "Error in initial checker" << std::endl;
 		return(-1);
-	}// if(initial_checker(argc, argv, file_name, replacable, replaced))
-	// 	return (-1);
+	}
 	file_name = argv[1];
 	replacable = argv[2];
 	replaced = argv[3];
