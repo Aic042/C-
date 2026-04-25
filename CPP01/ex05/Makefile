@@ -6,7 +6,7 @@
 #    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/25 13:22:34 by aingunza          #+#    #+#              #
-#    Updated: 2026/04/25 13:24:08 by aingunza         ###   ########.fr        #
+#    Updated: 2026/04/25 18:05:07 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fPIE
 
 # Los files
 NAME= Harl2.0
-SRC = main.cpp harl.cpp 
+SRC = main.cpp Harl.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
