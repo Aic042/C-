@@ -15,7 +15,11 @@ class Fixed
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 		Fixed& operator=(const Fixed& other);
-
+		Fixed(int const raw); //el int
+		Fixed(float const raw); //el float
+		float toFloat( void ) const;
+		int toInt( void ) const;
 };
+std::ostream& operator<<(std::ostream& o, const Fixed& fxam);
 
 #endif
