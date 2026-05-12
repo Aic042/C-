@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 18:55:19 by aingunza          #+#    #+#             */
-/*   Updated: 2026/05/12 19:09:23 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/05/12 20:10:55 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Animal
         std::string type;
         std::string getType();
         void setType(std::string type);
+    Animal();
+    ~Animal();
 };
 
 class Dog : public Animal
