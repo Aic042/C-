@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 13:11:45 by root              #+#    #+#             */
-/*   Updated: 2026/05/05 18:05:25 by root             ###   ########.fr       */
+/*   Updated: 2026/05/05 18:05:56 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP
-# define SCAVTRAP
+#ifndef CLAPTRAP
+# define CLAPTRAP
 
 # include <stdio.h>
 # include <iostream> // To use cout
 # include <cctype>
-# include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ClapTrap
 {
-	private:
+	protected:
+		std::string Bot_Name;
+		int Hit_Points;
+		int Energy_Points;
+		int Attack_Damage;
 	public:
-		ScavTrap(std::string name);
-		~ScavTrap();
-		void guardGate();
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+		void set_stats(int Hit_Points, int eng_points, int attack_dmg);
+		ClapTrap(std::string name);
+		~ClapTrap();
 };
 
 #endif

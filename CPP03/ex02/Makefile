@@ -3,9 +3,9 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= SCAVTRAP
+NAME= FRAGTRAP
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
-OB J = $(SRC:.cpp=.o)
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 

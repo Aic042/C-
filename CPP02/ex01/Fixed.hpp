@@ -1,13 +1,25 @@
-#ifndef FIXED  
-# define FIXED
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/10 23:19:12 by root              #+#    #+#             */
+/*   Updated: 2026/05/11 11:57:30 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FIXED_HPP  
+# define FIXED_HPP
 #include  <iostream>
-#include <math.h>
+#include <cmath>
 
 class Fixed
 {
 	private:
 		int fixed_point_num_value;
-		static const int frational_bits = 8;
+		static const int fractional_bits = 8;
 	public:
 		Fixed ();
 		~Fixed();

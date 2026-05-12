@@ -1,63 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/10 23:19:27 by root              #+#    #+#             */
+/*   Updated: 2026/05/11 12:59:24 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
-std::ostream& operator<<(std::ostream& o, const Fixed& fxam)
-{
-    o << fxam.toFloat();
-    return o;
-}
 
-Fixed Fixed::operator+(const Fixed& obj)
-{
-    Fixed result;
-    result = this->toFloat() + obj.toFloat();
-    return result;
-}
-
-Fixed Fixed::operator-(const Fixed& obj)
-{
-    Fixed result;
-    result = this->toFloat() - obj.toFloat();
-    return result;
-}
-Fixed Fixed::operator*(const Fixed& obj)
-{
-    Fixed result;
-    result = this->toFloat() * obj.toFloat();
-    return result;
-}
-
-Fixed Fixed::operator/(const Fixed& obj)
-{
-    Fixed result;
-    result = this->toFloat() / obj.toFloat();
-    return result;
-}
-
-Fixed &Fixed::operator++( void ){
-    Fixed result;
-    result = this->fixed_point_num_value++;
-    return result;
-}
-Fixed &Fixed::operator--( void ){
-    Fixed result;
-    result = this->fixed_point_num_value--;
-    return result;
-}
-Fixed Fixed::operator++( int ){
-    Fixed result;
-    result = this->fixed_point_num_value++;
-    return result;
-}
-Fixed Fixed::operator--( int ){
-    Fixed result;
-    result = this->fixed_point_num_value--;
-    return result;
-}
-
-bool Fixed::operator>(const Fixed& obj)
-{
-    
-}
 
 int main( void ) {
     Fixed a;

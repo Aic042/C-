@@ -1,11 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/10 23:19:15 by root              #+#    #+#             */
+/*   Updated: 2026/05/11 11:41:08 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <iostream>
-
-std::ostream& operator<<(std::ostream& o, const Fixed& fxam)
-{
-    o << fxam.toFloat();
-    return o;
-}
 
 int main( void ) {
     Fixed a;

@@ -14,6 +14,11 @@ void ClapTrap::set_stats(int Hit_Points, int eng_points, int attack_dmg)
 	this->Attack_Damage = attack_dmg;
 }
 
+void ClapTrap::print_stats()
+{
+	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Hit_Points << " Hit points, " << this->Energy_Points << " Energy points and " << this->Attack_Damage << " Attack damage!" << std::endl;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap " << this->Bot_Name << " has been deconstructed" << std::endl;

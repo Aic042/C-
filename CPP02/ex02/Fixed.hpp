@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/10 23:19:25 by root              #+#    #+#             */
+/*   Updated: 2026/05/11 14:01:20 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED  
 # define FIXED
 #include  <iostream>
@@ -7,7 +19,7 @@ class Fixed
 {
 	private:
 		int fixed_point_num_value;
-		static const int frational_bits = 8;
+		static const int fractional_bits = 8;
 	public:
 		Fixed ();
 		~Fixed();
@@ -21,17 +33,17 @@ class Fixed
 		int toInt( void ) const;
 
 	//....................operaciones..................
-		Fixed operator+(const Fixed& obj);
-		Fixed operator-(const Fixed& obj);
-		Fixed operator*(const Fixed& obj);
-		Fixed operator/(const Fixed& obj);
-	//-------------------Comparators-------------------
-		bool operator>(const Fixed& obj);
-		bool operator<(const Fixed& obj);
-		bool operator>=(const Fixed& obj);
-		bool operator<=(const Fixed& obj);
-		bool operator==(const Fixed& obj);
-		bool operator!=(const Fixed& obj);
+		Fixed operator+(const Fixed& obj) const;
+		Fixed operator-(const Fixed& obj) const;
+		Fixed operator*(const Fixed& obj) const;
+		Fixed operator/(const Fixed& obj) const;
+
+		bool operator>(const Fixed& obj) const;
+		bool operator<(const Fixed& obj) const;
+		bool operator>=(const Fixed& obj) const;
+		bool operator<=(const Fixed& obj) const;
+		bool operator==(const Fixed& obj) const;
+		bool operator!=(const Fixed& obj) const;
 	//-------------------Incre/Decre-------------------
 		Fixed &operator++( void );
 		Fixed &operator--( void );

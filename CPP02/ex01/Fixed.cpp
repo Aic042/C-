@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/10 23:19:10 by root              #+#    #+#             */
+/*   Updated: 2026/05/11 12:06:19 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed (){
-std::cout << "Default constructor has been called" << std::endl;
+std::cout << "Default constructor called" << std::endl;
 this->fixed_point_num_value = 0;
 }
 Fixed::~Fixed()
@@ -19,13 +31,13 @@ Fixed& Fixed::operator=(const Fixed& other)
 
 Fixed::Fixed(const  Fixed &copied)
 {
-    std::cout << "Copy constructor has been called" << std::endl;
-    this->fixed_point_num_value = copied.fixed_point_num_value;
+    std::cout << "Copy constructor called" << std::endl;
+    *this = copied;
 }
 
 int Fixed::getRawBits( void ) const
 {
-    std::cout << "getRawBits member fucntion called" << std::endl;
+    std::cout << "getRawBits member function called" << std::endl;
     return (this->fixed_point_num_value);
 }
 
@@ -36,7 +48,7 @@ void Fixed::setRawBits( int const raw )
 Fixed::Fixed(int const raw)
 {
     std::cout << "Int constructor called" << std::endl;
-    this->fixed_point_num_value = raw << frational_bits;
+    this->fixed_point_num_value = raw << fractional_bits;
 }
 
 Fixed::Fixed(float const raw)
@@ -50,5 +62,11 @@ float Fixed::toFloat( void ) const
 }
 int Fixed::toInt( void ) const
 {
-    return (this->fixed_point_num_value >> frational_bits); 
+    return (this->fixed_point_num_value >> fractional_bits); 
+}
+
+std::ostream& operator<<(std::ostream& o, const Fixed& fxam)
+{
+    o << fxam.toFloat();
+    return o;
 }

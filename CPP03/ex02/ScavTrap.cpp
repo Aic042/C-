@@ -1,8 +1,8 @@
 #include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap("Scavtrap")
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    this->Scav_Name = name;
+    this->Bot_Name = name;
     std::cout << "ScavTrap ha sido Scav-creado!!" << std::endl;
     this->set_stats(100, 50, 20);
 }
@@ -11,6 +11,6 @@ ScavTrap::~ScavTrap(){
 }
 void ScavTrap::guardGate()
 {
-    std::cout << this->Scav_Name << " is Gate Keeper mode!" << std::endl;
+    std::cout << this->Bot_Name << " is Gate Keeper mode!" << std::endl;
 }
 
