@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:22 by root              #+#    #+#             */
-/*   Updated: 2026/05/11 14:02:13 by root             ###   ########.fr       */
+/*   Updated: 2026/05/12 17:09:15 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed (){
-std::cout << "Default constructor has been called" << std::endl;
-this->fixed_point_num_value = 0;
+    std::cout << "Default constructor has been called" << std::endl;
+    this->fixed_point_num_value = 0;
 }
 Fixed::~Fixed()
 {
@@ -32,7 +32,7 @@ Fixed& Fixed::operator=(const Fixed& obj)
 Fixed::Fixed(const  Fixed &copied)
 {
     std::cout << "Copy constructor has been called" << std::endl;
-    this->fixed_point_num_value = copied.fixed_point_num_value;
+    *this = copied;
 }
 
 int Fixed::getRawBits( void ) const
