@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
+#    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/10 23:19:30 by root              #+#    #+#              #
-#    Updated: 2026/05/10 23:19:30 by root             ###   ########.fr        #
+#    Updated: 2026/05/14 11:28:52 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= FIXED
+NAME= fixed02
 SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
 
