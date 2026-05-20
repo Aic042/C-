@@ -6,7 +6,7 @@
 #    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/10 23:19:06 by root              #+#    #+#              #
-#    Updated: 2026/05/10 23:19:06 by root             ###   ########.fr        #
+#    Updated: 2026/05/18 17:33:43 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= FIXED
+NAME= fixed_00
 SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
 

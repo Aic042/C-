@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:15 by root              #+#    #+#             */
-/*   Updated: 2026/05/11 11:41:08 by root             ###   ########.fr       */
+/*   Updated: 2026/05/20 07:51:02 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 int main( void ) {
     Fixed a;
     Fixed const b( 10 );
-    Fixed const c( 42.42f );
+    Fixed const c( 1 );
     Fixed const d( b );
-    a = Fixed( 1234.4321f );
+    a = ( 1234.4321f );
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;
@@ -48,7 +48,6 @@ int main( void ) {
 //     Fixed b(a);
 //     Fixed c;
     
-//     // CAMBIAMOS el valor de 'a' usando setRawBits
 //     a.setRawBits(42);
     
 //     c = b;
