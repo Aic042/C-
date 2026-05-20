@@ -13,7 +13,7 @@ FragTrap::FragTrap(std::string name)
     std::cout << "FragTrap " << this->Bot_Name << " constructed" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &other)
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 {
     this->Bot_Name      = other.Bot_Name;
     this->Hit_Points    = other.Hit_Points;

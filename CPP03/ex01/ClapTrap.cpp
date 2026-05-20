@@ -35,7 +35,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 	}
 	return (*this);
 }
-
+ClapTrap::~ClapTrap()
+{
+	std::cout << "ClapTrap destructor called for " << Bot_Name << std::endl;
+}
 void ClapTrap::set_stats(int Hit_Points, int eng_points, int attack_dmg)
 {
     this->Hit_Points    = Hit_Points;

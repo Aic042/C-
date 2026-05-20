@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(std::string name)
     std::cout << "ScavTrap " << this->Bot_Name << " constructed" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
     // Copiamos todo a mano con this-> igual que en ClapTrap
     this->Bot_Name      = other.Bot_Name;

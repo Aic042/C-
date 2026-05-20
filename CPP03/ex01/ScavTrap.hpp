@@ -6,29 +6,26 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 13:11:45 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 00:36:18 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 00:42:40 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP
-# define SCAVTRAP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-# include <stdio.h>
-# include <iostream> // To use cout
-# include <cctype>
 # include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
-	public:
-		ScavTrap(std::string name);
-		~ScavTrap();
-		ScavTrap();
+    public:
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap &other);
         ScavTrap &operator=(const ScavTrap &other);
-		ScavTrap(const ScavTrap &other);
-		
-		void guardGate();
-		void attack(const std::string &target);
+        ~ScavTrap();
+
+        void attack(const std::string &target);
+        void guardGate();
 };
 
 #endif

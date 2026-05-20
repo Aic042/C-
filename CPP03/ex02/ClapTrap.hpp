@@ -6,33 +6,35 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 00:07:00 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 00:30:16 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 00:41:16 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
-# define CLAPTRAP
+# define CLAPTRAP_HPP
 
-# include <stdio.h>
-# include <iostream> // To use cout
-# include <cctype>
+# include <iostream>
 
 class ClapTrap
 {
-	protected:
-		std::string Bot_Name;
-		int Hit_Points;
-		int Energy_Points;
-		int Attack_Damage;
-	public:
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		void set_stats(int Hit_Points, int eng_points, int attack_dmg);
+    protected:
+        std::string Bot_Name;
+        int         Hit_Points;
+        int         Energy_Points;
+        int         Attack_Damage;
+
+    public:
+        ClapTrap();
+        ClapTrap(std::string name);
+        ClapTrap(const ClapTrap &other);
+        ClapTrap &operator=(const ClapTrap &other);
+        ~ClapTrap();
+		
 		void print_stats();
-		ClapTrap(std::string name);
-		ClapTrap();	
-		~ClapTrap();
+        void set_stats(int Hit_Points, int eng_points, int attack_dmg);
+        void attack(const std::string &target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
 };
 
 #endif

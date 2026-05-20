@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 00:23:26 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 00:32:53 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 00:50:49 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(std::string name)
     std::cout << "ScavTrap " << this->Bot_Name << " constructed" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
     // Copiamos todo a mano con this-> igual que en ClapTrap
     this->Bot_Name      = other.Bot_Name;

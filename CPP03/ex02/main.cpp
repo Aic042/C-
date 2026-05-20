@@ -1,3 +1,4 @@
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 
