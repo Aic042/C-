@@ -1,11 +1,42 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap()
 {
-    this->Bot_Name = name;
-    std::cout << "ScavTrap ha sido Scav-creado!!" << std::endl;
+    // El constructor de ClapTrap ya se ejecuto antes de entrar aqui.
+    // Solo sobreescribimos los stats con los de ScavTrap.
     this->set_stats(100, 50, 20);
+    std::cout << "ScavTrap default constructor called" << std::endl;
 }
+
+ScavTrap::ScavTrap(std::string name)
+{
+    // ClapTrap(name) ya puso Bot_Name. Solo cambiamos los stats.
+    this->Bot_Name = name;
+    this->set_stats(100, 50, 20);
+    std::cout << "ScavTrap " << this->Bot_Name << " constructed" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &other)
+{
+    // Copiamos todo a mano con this-> igual que en ClapTrap
+    this->Bot_Name      = other.Bot_Name;
+    this->Hit_Points    = other.Hit_Points;
+    this->Energy_Points = other.Energy_Points;
+    this->Attack_Damage = other.Attack_Damage;
+    std::cout << "ScavTrap copy constructor called for " << this->Bot_Name << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+{
+    if (this != &other)
+    {
+        // Llamamos al operator= del padre para copiar sus atributos
+        ClapTrap::operator=(other);
+        std::cout << "ScavTrap operator= called for " << this->Bot_Name << std::endl;
+    }
+    return (*this);
+}
+
 ScavTrap::~ScavTrap(){
     std::cout << "ScavTrap ha sido Scav-eliminado" << std::endl;
 }

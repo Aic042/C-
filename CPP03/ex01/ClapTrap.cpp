@@ -1,22 +1,46 @@
 #include "ScavTrap.hpp"
 
+//el por defecto sin nombre
+ClapTrap::ClapTrap()
+{
+    this->Bot_Name = "default";
+    this->set_stats(10, 10, 0);
+    std::cout << "ClapTrap default constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
-	this->Bot_Name = name;
-	std::cout << "ClapTrap " << this->Bot_Name << " has been constructed" << std::endl;
-	set_stats(10, 10, 0);
+    this->Bot_Name = name;
+    this->set_stats(10, 10, 0);
+    std::cout << "ClapTrap " << this->Bot_Name << " constructed" << std::endl;
+}
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+    Bot_Name      = other.Bot_Name;
+    Hit_Points    = other.Hit_Points;
+    Energy_Points = other.Energy_Points;
+    Attack_Damage = other.Attack_Damage;
+    std::cout << "ClapTrap copy constructor called for " << Bot_Name << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+	if (this != &other)
+	{
+		Bot_Name      = other.Bot_Name;
+		Hit_Points    = other.Hit_Points;
+		Energy_Points = other.Energy_Points;
+		Attack_Damage = other.Attack_Damage;
+		std::cout << "ClapTrap operator= called for " << Bot_Name << std::endl;
+	}
+	return (*this);
 }
 
 void ClapTrap::set_stats(int Hit_Points, int eng_points, int attack_dmg)
 {
-	this->Hit_Points = Hit_Points;
-	this->Energy_Points = eng_points;
-	this->Attack_Damage = attack_dmg;
-}
-
-ClapTrap::~ClapTrap()
-{
-	std::cout << "ClapTrap " << this->Bot_Name << " has been deconstructed" << std::endl;
+    this->Hit_Points    = Hit_Points;
+    this->Energy_Points = eng_points;
+    this->Attack_Damage = attack_dmg;
 }
 
 void ClapTrap::attack(const std::string& target)

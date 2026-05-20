@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 13:11:45 by root              #+#    #+#             */
-/*   Updated: 2026/05/20 22:47:19 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 00:28:40 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class ClapTrap
 		void set_stats(int Hit_Points, int eng_points, int attack_dmg);
 		ClapTrap(std::string name);
 		~ClapTrap();
+		ClapTrap();
 };
 
 #endif

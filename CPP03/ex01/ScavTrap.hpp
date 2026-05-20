@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 13:11:45 by root              #+#    #+#             */
-/*   Updated: 2026/05/05 18:05:25 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 00:36:18 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,15 @@
 
 class ScavTrap : public ClapTrap
 {
-	private:
 	public:
 		ScavTrap(std::string name);
 		~ScavTrap();
+		ScavTrap();
+        ScavTrap &operator=(const ScavTrap &other);
+		ScavTrap(const ScavTrap &other);
+		
 		void guardGate();
+		void attack(const std::string &target);
 };
 
 #endif

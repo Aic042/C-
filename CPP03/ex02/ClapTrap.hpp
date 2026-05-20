@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/21 00:07:00 by root              #+#    #+#             */
+/*   Updated: 2026/05/21 00:30:16 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP
 
@@ -19,6 +31,7 @@ class ClapTrap
 		void set_stats(int Hit_Points, int eng_points, int attack_dmg);
 		void print_stats();
 		ClapTrap(std::string name);
+		ClapTrap();	
 		~ClapTrap();
 };
 
