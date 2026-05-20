@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 00:05:57 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 00:41:49 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 01:03:15 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-    protected:
+    private:
         std::string Bot_Name;
         int         Hit_Points;
         int         Energy_Points;
