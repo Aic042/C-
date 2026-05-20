@@ -1,4 +1,4 @@
-#ifndef CLAPTRAP
+#ifndef CLAPTRAP_HPP
 # define CLAPTRAP
 
 # include <stdio.h>

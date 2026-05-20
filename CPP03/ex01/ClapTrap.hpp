@@ -6,11 +6,11 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 13:11:45 by root              #+#    #+#             */
-/*   Updated: 2026/05/05 18:05:56 by root             ###   ########.fr       */
+/*   Updated: 2026/05/20 22:47:19 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP
+#ifndef CLAPTRAP_HPP
 # define CLAPTRAP
 
 # include <stdio.h>

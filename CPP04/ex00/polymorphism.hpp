@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   polymorphism.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 18:55:19 by aingunza          #+#    #+#             */
-/*   Updated: 2026/05/12 20:10:55 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/05/15 13:34:13 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@ class Animal
         std::string type;
         std::string getType();
         void setType(std::string type);
-    Animal();
-    ~Animal();
+    public:
+        void makeSound();
+        Animal();
+        ~Animal();
 };
 
 class Dog : public Animal
 {
-    public:
-        void makeSound();
+
 };
 
 
