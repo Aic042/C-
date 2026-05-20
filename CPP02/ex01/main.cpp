@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:15 by root              #+#    #+#             */
-/*   Updated: 2026/05/20 07:51:02 by root             ###   ########.fr       */
+/*   Updated: 2026/05/20 13:33:40 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main( void ) {
     Fixed a;
     Fixed const b( 10 );
-    Fixed const c( 1 );
+    Fixed const c( 42.42f );
     Fixed const d( b );
     a = ( 1234.4321f );
     std::cout << "a is " << a << std::endl;

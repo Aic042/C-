@@ -6,24 +6,24 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:22 by root              #+#    #+#             */
-/*   Updated: 2026/05/12 17:09:15 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/05/20 13:26:02 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed (){
-    std::cout << "Default constructor has been called" << std::endl;
+    // std::cout << "Default constructor has been called" << std::endl;
     this->fixed_point_num_value = 0;
 }
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed& obj)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    // std::cout << "Copy assignment operator called" << std::endl;
     if (this != &obj)
         this->fixed_point_num_value = obj.fixed_point_num_value;
     return (*this);
@@ -31,13 +31,13 @@ Fixed& Fixed::operator=(const Fixed& obj)
 
 Fixed::Fixed(const  Fixed &copied)
 {
-    std::cout << "Copy constructor has been called" << std::endl;
+    // std::cout << "Copy constructor has been called" << std::endl;
     *this = copied;
 }
 
 int Fixed::getRawBits( void ) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return (this->fixed_point_num_value);
 }
 
@@ -47,13 +47,13 @@ void Fixed::setRawBits( int const raw )
 }
 Fixed::Fixed(int const raw)
 {
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
     this->fixed_point_num_value = raw << fractional_bits;
 }
 
 Fixed::Fixed(float const raw)
 {
-    std::cout << "Float constructor called" << std::endl;
+    // std::cout << "Float constructor called" << std::endl;
     this->fixed_point_num_value = roundf(raw * 256);
 }
 float Fixed::toFloat( void ) const
@@ -109,7 +109,6 @@ Fixed &Fixed::operator--( void )
     this->fixed_point_num_value--;
     return (*this);
 }
-
 
 Fixed Fixed::operator++( int )
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:10 by root              #+#    #+#             */
-/*   Updated: 2026/05/11 12:06:19 by root             ###   ########.fr       */
+/*   Updated: 2026/05/20 13:25:48 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,12 @@ Fixed::Fixed(float const raw)
     std::cout << "Float constructor called" << std::endl;
     this->fixed_point_num_value = roundf(raw * 256);
 }
+
 float Fixed::toFloat( void ) const
 {
     return ((float)this->fixed_point_num_value / 256);
 }
+
 int Fixed::toInt( void ) const
 {
     return (this->fixed_point_num_value >> fractional_bits); 
