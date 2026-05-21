@@ -6,7 +6,7 @@
 #    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/21 17:27:47 by aingunza          #+#    #+#              #
-#    Updated: 2026/05/21 17:27:48 by aingunza         ###   ########.fr        #
+#    Updated: 2026/05/21 18:44:51 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= CLANKER
+NAME= ClapTrap
 SRC = main.cpp ClapTrap.cpp 
 OBJ = $(SRC:.cpp=.o)
 

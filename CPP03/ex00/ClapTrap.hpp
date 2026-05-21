@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 00:05:57 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 01:03:15 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 19:39:09 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class ClapTrap
         ClapTrap &operator=(const ClapTrap &other);
         ~ClapTrap();
 
+		void print_stats();
         void set_stats(int Hit_Points, int eng_points, int attack_dmg);
         void attack(const std::string &target);
         void takeDamage(unsigned int amount);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 01:04:38 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 01:04:38 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 20:14:25 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,14 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "ClapTrap " << this->Bot_Name << " is already dead!" << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << this->Bot_Name << " has been attacked " << " causing " << amount << " points of health lost!" << std::endl;
-	this->Hit_Points -= amount;
-	if(this->Hit_Points < 0)
+	if(amount >= (unsigned)this->Hit_Points)
 		this->Hit_Points = 0;
+	else
+		Hit_Points -= amount;
+	std::cout << "ClapTrap " << this->Bot_Name << " has been attacked " << " causing " << amount << " points of health lost!" << std::endl;
 	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Hit_Points << " Hit points left!" << std::endl;
-
 }
+
 
 void ClapTrap::beRepaired(unsigned int amount)
 {

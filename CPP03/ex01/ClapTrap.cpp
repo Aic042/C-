@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 01:04:33 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 01:04:33 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 20:14:31 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,13 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "ClapTrap " << this->Bot_Name << " is already dead!" << std::endl;
 		return;
 	}
+	if(amount >= (unsigned)this->Hit_Points)
+		this->Hit_Points = 0;	else
+		Hit_Points -= amount;
 	std::cout << "ClapTrap " << this->Bot_Name << " has been attacked " << " causing " << amount << " points of health lost!" << std::endl;
-	this->Hit_Points -= amount;
-	if(this->Hit_Points < 0)
-		this->Hit_Points = 0;
 	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Hit_Points << " Hit points left!" << std::endl;
-
 }
+
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
@@ -108,4 +108,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 	this->Hit_Points += amount;
 	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Hit_Points << " Hit points left!" << std::endl;
 	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Energy_Points << " Energy points left!" << std::endl;
+}
+
+void ClapTrap::print_stats()
+{
+	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Hit_Points << " Hit points, " << this->Energy_Points << " Energy points and " << this->Attack_Damage << " Attack damage!" << std::endl;
 }
