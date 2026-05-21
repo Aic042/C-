@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:12 by root              #+#    #+#             */
-/*   Updated: 2026/05/11 11:57:30 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 16:44:46 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ class Fixed
 		float toFloat( void ) const;
 		int toInt( void ) const;
 };
-std::ostream& operator<<(std::ostream& o, const Fixed& fxam);
+std::ostream& operator<<(std::ostream& o, const Fixed& fix_to_print);
 
 #endif

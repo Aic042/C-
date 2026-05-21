@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:10 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 09:42:13 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 16:44:46 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ int Fixed::toInt( void ) const
     return (this->fixed_point_num_value >> fractional_bits); 
 }
 
-std::ostream& operator<<(std::ostream& o, const Fixed& fxam)
+std::ostream& operator<<(std::ostream& o, const Fixed& fix_to_print)
 {
-    o << fxam.toFloat();
+    o << fix_to_print.toFloat();
     return o;
 }
     

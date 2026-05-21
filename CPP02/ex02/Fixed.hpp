@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:25 by root              #+#    #+#             */
-/*   Updated: 2026/05/11 14:01:20 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 16:44:46 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ class Fixed
 		Fixed static const &min( Fixed const &obj1, Fixed const &obj2 );
 		Fixed static const &max( Fixed const &obj1, Fixed const &obj2 );
 };
-std::ostream& operator<<(std::ostream& o, const Fixed& fxam);
+std::ostream& operator<<(std::ostream& o, const Fixed& fix_to_print);
 
 #endif
