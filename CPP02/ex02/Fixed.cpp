@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:22 by root              #+#    #+#             */
-/*   Updated: 2026/05/20 13:26:02 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/05/21 12:32:33 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ Fixed Fixed::operator/(const Fixed& obj) const
     result = this->toFloat() / obj.toFloat();
     return result;
 }
-
 
 Fixed &Fixed::operator++( void )
 {

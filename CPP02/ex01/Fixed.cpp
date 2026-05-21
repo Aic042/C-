@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 23:19:10 by root              #+#    #+#             */
-/*   Updated: 2026/05/20 13:25:48 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/05/21 09:42:13 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed (){
-std::cout << "Default constructor called" << std::endl;
-this->fixed_point_num_value = 0;
+    std::cout << "Default constructor called" << std::endl;
+    this->fixed_point_num_value = 0;
 }
 Fixed::~Fixed()
 {
@@ -72,3 +72,4 @@ std::ostream& operator<<(std::ostream& o, const Fixed& fxam)
     o << fxam.toFloat();
     return o;
 }
+    
