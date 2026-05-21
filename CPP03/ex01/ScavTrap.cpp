@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 00:23:26 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 00:50:49 by root             ###   ########.fr       */
+/*   Updated: 2026/05/21 17:28:25 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 ScavTrap::ScavTrap()
 {
-    // El constructor de ClapTrap ya se ejecuto antes de entrar aqui.
-    // Solo sobreescribimos los stats con los de ScavTrap.
     this->set_stats(100, 50, 20);
     std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
 {
-    // ClapTrap(name) ya puso Bot_Name. Solo cambiamos los stats.
     this->Bot_Name = name;
     this->set_stats(100, 50, 20);
     std::cout << "ScavTrap " << this->Bot_Name << " constructed" << std::endl;
@@ -30,7 +27,7 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
-    // Copiamos todo a mano con this-> igual que en ClapTrap
+    // Copiamos todo a mano con this-> 
     this->Bot_Name      = other.Bot_Name;
     this->Hit_Points    = other.Hit_Points;
     this->Energy_Points = other.Energy_Points;
