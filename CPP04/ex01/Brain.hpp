@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/21 17:28:42 by aingunza          #+#    #+#             */
-/*   Updated: 2026/05/25 19:09:34 by root             ###   ########.fr       */
+/*   Created: 2026/05/23 23:23:22 by root              #+#    #+#             */
+/*   Updated: 2026/05/23 23:24:25 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-int main()
+#include <iostream>
+#include <string>
+
+class Brain
 {
-    FragTrap a("FragTrapBot");
-    FragTrap b("FragTrapBot2");
-    std::cout << std::endl;
+	private:
+		std::string ideas[100];
+	public:
+		Brain();
+		Brain(const Brain &other); //copy constructor
+		Brain &operator=(const Brain &other); //copy assignment operator
+		~Brain();
+		
+		std::string getIdea(int index) const;
+		void setIdea(int index, std::string idea);
+};
 
-    a.attack("wall");
-    a.beRepaired(5);
-    a.takeDamage(100);
-    a.highFivesGuys();
-    a.print_stats();
-    std::cout << std::endl;
-    
-    b.takeDamage(50);
-    b.highFivesGuys();
-    b.print_stats();
-    std::cout << std::endl;
 
-    return 0;
-}
+#endif

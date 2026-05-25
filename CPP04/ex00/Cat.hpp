@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/21 17:28:42 by aingunza          #+#    #+#             */
-/*   Updated: 2026/05/25 19:09:34 by root             ###   ########.fr       */
+/*   Created: 2026/05/23 11:49:03 by root              #+#    #+#             */
+/*   Updated: 2026/05/25 21:54:27 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-    FragTrap a("FragTrapBot");
-    FragTrap b("FragTrapBot2");
-    std::cout << std::endl;
+    private:
+        std::string getType() const;
+        void setType(std::string type);
+    public:
+        void makeSound() const;
+        Cat();
+        virtual ~Cat();
+        Cat(const Cat &other); //copy constructor
+        Cat &operator=(const Cat &other); //copy assignment operator
+};
 
-    a.attack("wall");
-    a.beRepaired(5);
-    a.takeDamage(100);
-    a.highFivesGuys();
-    a.print_stats();
-    std::cout << std::endl;
-    
-    b.takeDamage(50);
-    b.highFivesGuys();
-    b.print_stats();
-    std::cout << std::endl;
-
-    return 0;
-}
+#endif

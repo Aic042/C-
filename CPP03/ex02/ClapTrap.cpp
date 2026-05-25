@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 01:04:38 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 20:14:25 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/05/25 18:35:56 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 	return (*this);
 }
 
-void ClapTrap::set_stats(int Hit_Points, int eng_points, int attack_dmg)
+void ClapTrap::set_stats(unsigned int Hit_Points, unsigned int eng_points, unsigned int attack_dmg)
 {
     this->Hit_Points    = Hit_Points;
     this->Energy_Points = eng_points;
     this->Attack_Damage = attack_dmg;
 }
 
-void ClapTrap::print_stats()
+void ClapTrap::print_stats() const
 {
 	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Hit_Points << " Hit points, " << this->Energy_Points << " Energy points and " << this->Attack_Damage << " Attack damage!" << std::endl;
 }

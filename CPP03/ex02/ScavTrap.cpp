@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 17:29:18 by aingunza          #+#    #+#             */
-/*   Updated: 2026/05/21 19:48:46 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/05/25 19:59:03 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
-    this->Bot_Name      = other.Bot_Name;
-    this->Hit_Points    = other.Hit_Points;
-    this->Energy_Points = other.Energy_Points;
-    this->Attack_Damage = other.Attack_Damage;
+
     std::cout << "ScavTrap copy constructor called for " << this->Bot_Name << std::endl;
 }
 
@@ -43,7 +40,8 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
     return (*this);
 }
 
-ScavTrap::~ScavTrap(){
+ScavTrap::~ScavTrap()
+{
     std::cout << "ScavTrap ha sido Scav-eliminado" << std::endl;
 }
 

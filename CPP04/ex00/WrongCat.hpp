@@ -1,53 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   polymorphism.hpp                                   :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 18:55:19 by aingunza          #+#    #+#             */
-/*   Updated: 2026/05/15 13:34:13 by root             ###   ########.fr       */
+/*   Created: 2026/05/23 11:54:00 by root              #+#    #+#             */
+/*   Updated: 2026/05/25 21:58:46 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream> // To use cout
-# include <cctype>
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#ifndef POLYMORPHISM_HPP
-#define POLYMORPHISM_HPP
+#include "WrongAnimal.hpp"
 
-class Animal
+class WrongCat : public WrongAnimal
 {
-    protected:
-        std::string type;
-        std::string getType();
+    private:
+        std::string getType() const;
         void setType(std::string type);
     public:
-        void makeSound();
-        Animal();
-        ~Animal();
-};
-
-class Dog : public Animal
-{
-
-};
-
-
-class Cat : public Animal
-{
-    void makeSound();
-};
-
-class WrongAnimal
-{
-    protected:
-        std::string type;
-};
-
-class WrongCat : public Animal
-{
-    void makeSound();
+        WrongCat();
+        WrongCat(const WrongCat &other); //copy constructor
+        WrongCat &operator=(const WrongCat &other); //copy assignment operator
+        ~WrongCat();
+    
+        void makeSound() const;
 };
 
 #endif

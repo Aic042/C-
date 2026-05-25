@@ -5,27 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/20 19:51:23 by root              #+#    #+#             */
-/*   Updated: 2026/05/25 19:36:53 by root             ###   ########.fr       */
+/*   Created: 2026/05/12 18:54:41 by aingunza          #+#    #+#             */
+/*   Updated: 2026/05/25 23:55:00 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include <iostream>
 
 int main()
 {
-    std::cout << "--- Creating ScavTrap ---" << std::endl;
-    ScavTrap guard("Guard");
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
     
-    std::cout << "\n--- Testing functions ---" << std::endl;
-    guard.guardGate();
-    guard.attack("Enemy");
-    guard.takeDamage(30);
-    guard.beRepaired(20);
+    std::cout << std::endl;
+    std::cout << j->getType() << ": ";
+    j->makeSound();
 
-    std::cout << "\n--- Testing copy ---" << std::endl;
-    ScavTrap copy(guard);
+    std::cout << i->getType() << ": ";
+    i->makeSound();
+    std::cout << std::endl;
 
-    std::cout << "\n--- End of main, destructors will be called ---" << std::endl;
+    delete j;
+    delete i;
+
     return 0;
 }

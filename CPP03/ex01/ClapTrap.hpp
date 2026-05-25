@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 13:11:45 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 19:39:05 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/05/25 18:56:15 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ class ClapTrap
 {
     protected:
         std::string Bot_Name;
-        int         Hit_Points;
-        int         Energy_Points;
-        int         Attack_Damage;
+        unsigned int         Hit_Points;
+        unsigned int         Energy_Points;
+        unsigned int         Attack_Damage;
 
     public:
         ClapTrap();
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &other);
         ClapTrap &operator=(const ClapTrap &other);
-        ~ClapTrap();
+        virtual ~ClapTrap();
 
-		void print_stats();
-        void set_stats(int Hit_Points, int eng_points, int attack_dmg);
+		void print_stats() const;
+        void set_stats(unsigned int Hit_Points, unsigned int eng_points, unsigned int attack_dmg);
         void attack(const std::string &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

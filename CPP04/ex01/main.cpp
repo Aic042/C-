@@ -5,27 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/20 19:51:23 by root              #+#    #+#             */
-/*   Updated: 2026/05/25 19:36:53 by root             ###   ########.fr       */
+/*   Created: 2026/05/12 18:54:41 by aingunza          #+#    #+#             */
+/*   Updated: 2026/05/25 22:34:29 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include <iostream>
 
 int main()
 {
-    std::cout << "--- Creating ScavTrap ---" << std::endl;
-    ScavTrap guard("Guard");
-    
-    std::cout << "\n--- Testing functions ---" << std::endl;
-    guard.guardGate();
-    guard.attack("Enemy");
-    guard.takeDamage(30);
-    guard.beRepaired(20);
+    const int size = 8;
+    Animal* animals[8];
+    int i = 0;
 
-    std::cout << "\n--- Testing copy ---" << std::endl;
-    ScavTrap copy(guard);
+    while (i < size)
+    {
+        if (i % 2 == 0)
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
+        i++;
+    }
 
-    std::cout << "\n--- End of main, destructors will be called ---" << std::endl;
+    i = 0;
+    while (i < size)
+    {
+        animals[i]->makeSound();
+        i++;
+    }
+
+    i = 0;
+    while (i < size)
+    {
+        delete animals[i];
+        i++;
+    }
+
     return 0;
 }

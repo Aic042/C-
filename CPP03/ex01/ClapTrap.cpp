@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 01:04:33 by root              #+#    #+#             */
-/*   Updated: 2026/05/21 20:14:31 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/05/25 18:32:33 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap destructor called for " << Bot_Name << std::endl;
 }
-void ClapTrap::set_stats(int Hit_Points, int eng_points, int attack_dmg)
+void ClapTrap::set_stats(unsigned int Hit_Points, unsigned int eng_points, unsigned int attack_dmg)
 {
     this->Hit_Points    = Hit_Points;
     this->Energy_Points = eng_points;
@@ -82,9 +82,10 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "ClapTrap " << this->Bot_Name << " is already dead!" << std::endl;
 		return;
 	}
-	if(amount >= (unsigned)this->Hit_Points)
-		this->Hit_Points = 0;	else
-		Hit_Points -= amount;
+	if (amount >= this->Hit_Points)
+		this->Hit_Points = 0;
+	else
+		this->Hit_Points -= amount;
 	std::cout << "ClapTrap " << this->Bot_Name << " has been attacked " << " causing " << amount << " points of health lost!" << std::endl;
 	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Hit_Points << " Hit points left!" << std::endl;
 }
@@ -110,7 +111,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Energy_Points << " Energy points left!" << std::endl;
 }
 
-void ClapTrap::print_stats()
+void ClapTrap::print_stats() const
 {
 	std::cout << "ClapTrap " << this->Bot_Name << " has " << this->Hit_Points << " Hit points, " << this->Energy_Points << " Energy points and " << this->Attack_Damage << " Attack damage!" << std::endl;
 }

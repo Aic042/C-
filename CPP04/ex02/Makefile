@@ -6,7 +6,7 @@
 #    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/12 18:54:27 by aingunza          #+#    #+#              #
-#    Updated: 2026/05/23 20:21:50 by root             ###   ########.fr        #
+#    Updated: 2026/05/24 20:20:07 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= Animals
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+NAME= Abstract	
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
