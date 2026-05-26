@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
+#    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/21 00:07:07 by root              #+#    #+#              #
-#    Updated: 2026/05/21 00:07:07 by root             ###   ########.fr        #
+#    Updated: 2026/05/26 11:57:55 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= FRAGTRAP
+NAME= FragTrap
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
