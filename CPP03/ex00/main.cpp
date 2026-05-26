@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 17:25:39 by aingunza          #+#    #+#             */
-/*   Updated: 2026/05/25 18:19:47 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 11:44:36 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 
 int main()
 {
-    ClapTrap bot("Bender");
+    std::cout << "Outputing constructor" << std::endl;
+    ClapTrap bot("Clapbot");
 
-    std::cout << "\n=== TEST 1: daño normal ===" << std::endl;
+    std::cout << "Testing takeDamage" << std::endl;
     bot.takeDamage(5);
 
-    std::cout << "\n=== TEST 2: daño exacto ===" << std::endl;
+    std::cout << "\nTesting death" << std::endl;
     bot.takeDamage(5);
 
-    std::cout << "\n=== TEST 3: daño estando muerto ===" << std::endl;
+    std::cout << "\nTesting actions while dead" << std::endl;
     bot.takeDamage(1);
 
-    std::cout << "\n=== TEST 4: daño gigante unsigned int ===" << std::endl;
-    bot.takeDamage(std::numeric_limits<unsigned int>::max());
-
+    std::cout << "\nOutputing destructor" << std::endl;
     return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 17:28:42 by aingunza          #+#    #+#             */
-/*   Updated: 2026/05/25 19:09:34 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 11:49:35 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int main()
 {
-    FragTrap a("FragTrapBot");
-    FragTrap b("FragTrapBot2");
+    FragTrap a("FragBot");
+    FragTrap b("FragBot2");
     std::cout << std::endl;
 
     a.attack("wall");
