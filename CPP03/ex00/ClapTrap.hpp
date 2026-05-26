@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 00:05:57 by root              #+#    #+#             */
-/*   Updated: 2026/05/25 18:12:50 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 11:57:01 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ClapTrap
 {
     private:
-        std::string Bot_Name;
+        std::string         Bot_Name;
         unsigned int         Hit_Points;
         unsigned int         Energy_Points;
         unsigned int         Attack_Damage;
