@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 11:48:24 by root              #+#    #+#             */
-/*   Updated: 2026/05/25 22:29:21 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 13:11:52 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ class Dog : public Animal
         Brain *brain;
     public:
         void makeSound() const;
-        Dog(std::string type);
         Dog();
         virtual ~Dog();
     Dog(const Dog &other); //copy constructor
     Dog &operator=(const Dog &other); //copy assignment operator
+    Brain* getBrain() const;
+
 };
 
 #endif

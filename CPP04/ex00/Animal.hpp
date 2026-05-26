@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef Animal_HPP
+#define Animal_HPP
+
 # include <iostream> // To use cout
 # include <cctype>
 
-#ifndef Animal_HPP
-#define Animal_HPP
 
 class Animal
 {

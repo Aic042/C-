@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 19:31:10 by root              #+#    #+#             */
-/*   Updated: 2026/05/24 12:38:03 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 13:11:45 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
-
-Dog::Dog(std::string type) : Animal(type)
-{
-	this->type = type;
-	brain = new Brain();
-	std::cout << "Dog constructor called" << std::endl;
-}
 
 Dog::Dog() : Animal("Dog")
 {
@@ -54,4 +47,9 @@ Dog &Dog::operator=(const Dog &other)
 void Dog::makeSound() const
 {
     std::cout << "Woof woof" << std::endl;
+}
+
+Brain* Dog::getBrain() const
+{
+	return this->brain;
 }

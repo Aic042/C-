@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
+#    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/12 18:54:27 by aingunza          #+#    #+#              #
-#    Updated: 2026/05/24 11:56:53 by root             ###   ########.fr        #
+#    Updated: 2026/05/26 13:12:24 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= Animals
+NAME= Brain
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 

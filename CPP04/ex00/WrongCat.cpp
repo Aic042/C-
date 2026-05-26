@@ -12,17 +12,6 @@
 
 #include "WrongCat.hpp"
 
-// std::string WrongCat::getType() const
-// {
-// 	return (this->type);
-// }
-
-// void WrongCat::setType(std::string type)
-// {
-//     this->type = type;
-// }
-
-
 WrongCat::WrongCat() : WrongAnimal()
 {
 	this->type = "WrongCat";

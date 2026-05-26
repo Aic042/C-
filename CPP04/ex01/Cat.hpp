@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 11:49:03 by root              #+#    #+#             */
-/*   Updated: 2026/05/25 22:29:57 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 17:56:46 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class Cat : public Animal
         Brain *brain;
     public:
         void makeSound() const;
-        Cat(std::string type);
         Cat();
         virtual ~Cat();
     Cat(const Cat &other); //copy constructor
     Cat &operator=(const Cat &other); //copy assignment operator
+    Brain* getBrain() const;
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 11:49:03 by root              #+#    #+#             */
-/*   Updated: 2026/05/25 23:22:34 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 17:01:59 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Cat : public Animal
 
     public:
         void makeSound() const;
-        Cat(std::string type);
         Cat();
         virtual ~Cat();
     Cat(const Cat &other); //copy constructor

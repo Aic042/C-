@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 00:24:53 by root              #+#    #+#             */
-/*   Updated: 2026/05/24 12:37:54 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 13:11:36 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-
-Cat::Cat(std::string type) : Animal(type)
-{
-	this->type = type;
-	brain = new Brain();
-	std::cout << "Cat constructor called" << std::endl;
-}
 
 Cat::Cat() : Animal("Cat")
 {
@@ -54,4 +47,9 @@ Cat &Cat::operator=(const Cat &other)
 void Cat::makeSound() const
 {
     std::cout << "Meow meow" << std::endl;
+}
+
+Brain* Cat::getBrain() const
+{
+	return this->brain;
 }

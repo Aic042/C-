@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 11:48:24 by root              #+#    #+#             */
-/*   Updated: 2026/05/25 21:53:59 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 12:12:54 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 class Dog : public Animal
 {
     private:
-        std::string getType() const;
-        void setType(std::string type);
+
     public:
         void makeSound() const;
         Dog();

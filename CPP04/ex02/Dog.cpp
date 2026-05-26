@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 19:31:10 by root              #+#    #+#             */
-/*   Updated: 2026/05/25 23:57:05 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 17:02:29 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
-
-Dog::Dog(std::string type) : Animal(type)
-{
-	std::cout << "Dog constructor called" << std::endl;
-}
 
 Dog::Dog() : Animal("Dog")
 {
