@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 18:54:41 by aingunza          #+#    #+#             */
-/*   Updated: 2026/05/25 23:55:00 by root             ###   ########.fr       */
+/*   Updated: 2026/05/26 00:31:06 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main()
 {
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    
     std::cout << std::endl;
     std::cout << j->getType() << ": ";
     j->makeSound();
