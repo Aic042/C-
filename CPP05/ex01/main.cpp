@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/07/01 13:00:09 by root             ###   ########.fr       */
+/*   Updated: 2026/07/02 12:15:30 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,45 @@
 int main()
 {
 	try {
-		Bureaucrat Bou("random", 152);
-		Form form("random", 1, 155);
-		// form.checkerSign();
+		std::cout << "--------Inicializacion-----------" << std::endl;
+		Bureaucrat Bou("random Bureaucrat", 50);
+		Form form("random file", 125, 120);
+		std::cout << "--------------------------------" << std::endl;
 		std::cout << "Bou's grade: " << Bou.getgrade() << std::endl;
-		Bou.signForm(&form);
+		Bou.signForm(form);
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
 }
+
+// int main()
+// {
+// 	--------------------Test 1: Invalid Grade------------------------
+// 	std::cout << "Test 1: Grade 151" << std::endl;
+// 	try {
+// 		Bureaucrat Bou("bou", 151);
+// 		std::cout << Bou.getgrade() << std::endl;
+// 	}
+// 	catch (const std::exception& e) {
+// 		std::cerr << e.what() << std::endl;
+// 	}
+// 	--------------------Test 2: Invalid Grade------------------------
+// 	std::cout << "Test 2: Grade 0" << std::endl;
+// 	try {
+// 		Bureaucrat Bou("bou", 0);
+// 		std::cout << Bou.getgrade() << std::endl;
+// 	}
+// 	catch (const std::exception& e) {
+// 		std::cerr << e.what() << std::endl;
+// 	}
+// 	--------------------Test 3: Valid Grade------------------------
+// 	std::cout << "Test 3: Grade 1" << std::endl;
+// 	try {
+// 		Bureaucrat Bou("bou", 1);
+// 		std::cout << Bou.getgrade() << std::endl;
+// 	}
+// 	catch (const std::exception& e) {
+// 		std::cerr << e.what() << std::endl;
+// 	}
+// }

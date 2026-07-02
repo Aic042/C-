@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/07/01 13:01:45 by root             ###   ########.fr       */
+/*   Updated: 2026/07/02 11:11:38 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 // usamos el : name(name) en vez de this->name = name; para inicializar los const aunque no me agrada >:(
 
@@ -52,7 +53,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 }
 
 
-void Bureaucrat::signForm(Form &form)
+Bureaucrat Bureaucrat::signForm(Form &form)
 {
 	if (this->grade <= form.getGradeToSign())
 	{
