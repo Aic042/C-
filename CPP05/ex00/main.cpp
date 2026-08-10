@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/07/02 12:08:54 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/08/10 11:48:06 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,16 @@ int main()
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
+	//--------------------Test 4: Usege of operator = ------------------------
+	std::cout << "Test 4: Operator =" << std::endl;
+	try {
+		Bureaucrat Bou("Bou", 14);
+		Bureaucrat Dou("Dou", 42);
+		Bou = Dou;
+		std::cout << "Bou grade is " << Bou.getgrade() << std::endl;
+	}
+	catch (const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+
 }

@@ -1,41 +1,7 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp" 
 
-// void Bureaucrat::GradeTooLowException()
-// {
-// 	try
-// 	{
-// 		if(this->grade >= 1)
-// 			std::cout << "Grade is more than 0." << std::endl;
-// 		else
-// 			throw(this->grade);
-// 	}
-// 	catch(int myGrade)
-// 	{
-// 		std::cout << "Access denied - You must be in the right grade range.\n";
-// 		std::cout << "Grade is: " << myGrade << std::endl;
-// 		std::cout << "Grade is too low." << std::endl;
-// 	}
-// }
 
-// void Bureaucrat::HighGradeChecker()
-// {
-// 	try
-// 	{
-// 		if(this->grade > 150)
-// 			std::cout << "Grade is less than 150." << std::endl;
-// 		else
-// 			throw(GradeTooHighException());
-// 	}
-// 	catch(int myGrade)
-// 	{
-// 		std::cout << "Access denied - You must be in the right grade range.\n";
-// 		std::cout << "Grade is: " << myGrade << std::endl;
-// 		std::cout << "Grade is too high." << std::endl;
-// 	}
-// }
-
-// usamos el : name(name) en vez de this->name = name; para inicializar los const aunque no me agrada >:(
+// usamos el : name(name) en vez de this->name = name; para inicialzar los const aunque no me agrada >:(
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
 {
@@ -47,7 +13,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(gr
 	{
 		throw GradeTooLowException();
 	}
-	std::cout << "Bureaucrat created with grade: " << this->grade << std::endl;
+	std::cout << "Bureaucrat " << this->name << " created with grade: " << this->grade << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.grade)
@@ -57,7 +23,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat destroyed." << std::endl;
+	std::cout << "Bureaucrat " << this->name << " destroyed." << std::endl;
 }
 
 int Bureaucrat::getgrade()
