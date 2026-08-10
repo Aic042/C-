@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/07/02 11:11:38 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/08/10 12:12:19 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(gr
 	{
 		throw GradeTooLowException();
 	}
-	std::cout << "Bureaucrat created with grade: " << this->grade << std::endl;
+	std::cout << "Bureaucrat " << this->name << " created with grade: " << this->grade << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.grade)
@@ -35,8 +35,9 @@ Bureaucrat::Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat destroyed." << std::endl;
+	std::cout << "Bureaucrat " << this->name << " destroyed." << std::endl;
 }
+
 
 int Bureaucrat::getgrade()
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:32:25 by root              #+#    #+#             */
-/*   Updated: 2026/07/01 12:50:17 by root             ###   ########.fr       */
+/*   Updated: 2026/08/10 12:11:22 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,9 @@ int Form::getGradeToSign() {
 
 int Form::getGradeToExecute() {
 	return this->grade_to_execute;
+}
+
+Form::Form(Form const &other) : name(other.name) , grade_to_sign(other.grade_to_execute), grade_to_execute(other.grade_to_execute)
+{
+	std::cout << "Form copy constructor called, copied from " << other.name << " form" << std::endl;
 }

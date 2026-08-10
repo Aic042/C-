@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:40:12 by root              #+#    #+#             */
-/*   Updated: 2026/07/02 12:06:14 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/08/10 12:05:05 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ class Form{
 		int getGradeToExecute();
 		const std::string getName();
 		Form(std::string name, int grade_to_sign, int	 grade_to_execute);
+		Form(Form const &other);
 		~Form();
+		Form &operator=(const Form &other);
+
 		class GradeTooHighException : public std::exception
 		{
 			public:
