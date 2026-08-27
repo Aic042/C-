@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 13:19:52 by root              #+#    #+#             */
-/*   Updated: 2026/07/21 13:25:15 by root             ###   ########.fr       */
+/*   Updated: 2026/08/23 14:34:12 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 # include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
-class RobotomyRequestForm : public Form
+class RobotomyRequestForm : public AForm
 {
 	private:
 		std::string target;

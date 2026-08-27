@@ -6,17 +6,17 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 11:02:47 by root              #+#    #+#             */
-/*   Updated: 2026/08/07 19:31:13 by root             ###   ########.fr       */
+/*   Updated: 2026/08/23 14:34:20 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERY_CREATION_FORM_HPP
 #define SHRUBBERY_CREATION_FORM_HPP
 
-# include "Form.hpp"
+# include "AForm.hpp"
 # include "Bureaucrat.hpp"
 
-class ShrubberryCreationForm : public Form
+class ShrubberryCreationForm : public AForm
 {
 	private:
 		std::string target;
@@ -27,7 +27,7 @@ class ShrubberryCreationForm : public Form
 		virtual ~ShrubberryCreationForm(); 
 		
 		
-		void execute(Bureaucrat const &executor) const;
+		virtual void execute(Bureaucrat const &executor) const;
 };
 
 #endif

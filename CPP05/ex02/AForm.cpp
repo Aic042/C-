@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-const std::string Form::getName() {
+const std::string AForm::getName() const{
 	return(this->name);
 }
 
-Form::Form(std::string name, int grade_to_sign, int grade_to_execute) 
-: name(name), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute)
+AForm::AForm(std::string name, int grade_to_sign, int grade_to_execute) 
+: name(name), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute), was_signed(false)
 {
 	if(!grade_to_sign || !grade_to_execute)
 	{
@@ -25,28 +25,32 @@ Form::Form(std::string name, int grade_to_sign, int grade_to_execute)
 	}
 	if(grade_to_sign < 1 || grade_to_execute < 1)
 	{
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 		std::cout << "grade is currently invalid: Too High" << std::endl; 
 	}
 	if(grade_to_sign > 150 || grade_to_execute > 150)
 	{
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 		std::cout << "grade is currently invalid: Too low" << std::endl; 
 	}
-	std::cout << "Form constructor called for: " << this->name << std::endl;
+	std::cout << "AForm constructor called for: " << this->name << std::endl;
 	std::cout << "Grade to sign: " << this->grade_to_sign << std::endl;
 	std::cout << "Grade to execute: " << this->grade_to_execute << std::endl;
 }
 
-Form::~Form() {
+AForm::~AForm() {
 	// Destructor implementation (if needed)
-	std::cout << "Form destructor called for: " << this->name << std::endl;
+	std::cout << "AForm destructor called for: " << this->name << std::endl;
 }
 
-int Form::getGradeToSign() {
+int AForm::getGradeToSign() const {
 	return this->grade_to_sign;
 }
 
-int Form::getGradeToExecute() {
+int AForm::getGradeToExecute() const {
 	return this->grade_to_execute;
+}
+
+bool AForm::getWasSigned() const {
+	return this->was_signed;
 }

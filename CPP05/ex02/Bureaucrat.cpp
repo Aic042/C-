@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/08/10 11:49:58 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/08/27 17:36:51 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // usamos el : name(name) en vez de this->name = name; para inicializar los const aunque no me agrada >:(
 
@@ -35,12 +35,17 @@ Bureaucrat::Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat " << this->name << " created with grade: " << this->grade << std::endl;
+	std::cout << "Bureaucrat " << this->name << " destroyed " << std::endl;
 }
 
-int Bureaucrat::getgrade()
+int Bureaucrat::getgrade() const
 {
 	return (this->grade);
+}
+
+void Bureaucrat::setgrade(int grade)
+{
+	this->grade = grade;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
@@ -53,15 +58,15 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 }
 
 
-Bureaucrat Bureaucrat::signForm(Form &form)
+Bureaucrat Bureaucrat::signAForm(AForm &AForm)
 {
-	if (this->grade <= form.getGradeToSign())
+	if (this->grade <= AForm.getGradeToSign())
 	{
-		std::cout << this->name << " signed " << form.getName() << std::endl;
+		std::cout << this->name << " signed " << AForm.getName() << std::endl;
 	}
 	else
 	{
-		std::cout << this->name << " couldn't sign " << form.getName() << " because their grade is too low." << std::endl;
+		std::cout << this->name << " couldn't sign " << AForm.getName() << " because their grade is too low." << std::endl;
 		throw GradeTooLowException();
 	}
 	return *this;
@@ -85,14 +90,16 @@ class GradeTooLowException : public std::exception
 		}
 };
 
-void Bureaucrat::executeForm(Form &form)
+void Bureaucrat::executeAForm(AForm &AForm)
 {
 	try
 	{
-		this->execute(form);
+		AForm.execute(*this);
+		std::cout << this->name << " has been executed succesfully " << AForm.getName() << std::endl;
+		
 	}
 	catch (std::exception &e)
 	{
-		std::cout << this->name << " couldn't execute " << form.getName() << " because: " << e.what() << std::endl;
+		std::cout << this->name << " couldn't execute " << AForm.getName() << " because: " << e.what() << std::endl;
 	}
 }

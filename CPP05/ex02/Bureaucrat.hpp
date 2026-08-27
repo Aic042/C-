@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/08/08 13:36:14 by root             ###   ########.fr       */
+/*   Updated: 2026/08/27 09:27:09 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 
 # include <iostream>
 # include <cctype>
-# include "Form.hpp"
+# include "AForm.hpp"
+# include "Shrubberry_Creation_Form.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "PresidentialPardonForm.hpp"
+# include <fstream>
 
 class Bureaucrat
 {
@@ -23,15 +27,15 @@ class Bureaucrat
 	int grade;
 	
 	private:
-		void setgrade();
+		void setgrade(int grade);
 	public:
-		int getgrade();
+		int getgrade() const;
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &other);
 		void HighGradeChecker();
-		Bureaucrat signForm(Form &form);
+		Bureaucrat signAForm(AForm &AForm);
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -49,7 +53,7 @@ class Bureaucrat
 					return "Grade is too low.";
 				}
 		};
-		void executeForm(Form &form);
+		void executeAForm(AForm &AForm);
 };
 
 #endif
