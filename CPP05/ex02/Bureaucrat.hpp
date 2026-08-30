@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/08/27 09:27:09 by root             ###   ########.fr       */
+/*   Updated: 2026/08/30 22:57:44 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ class Bureaucrat
 	private:
 		void setgrade(int grade);
 	public:
+	
 		int getgrade() const;
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &other);
 		void HighGradeChecker();
-		Bureaucrat signAForm(AForm &AForm);
+		void signAForm(AForm &AForm);
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -53,7 +54,10 @@ class Bureaucrat
 					return "Grade is too low.";
 				}
 		};
-		void executeAForm(AForm &AForm);
+		void executeAForm(AForm &AForm) const;
+		void incrementGrade(); // grado - 1
+		void decrementGrade(); // grado + 1 
+
 };
 
 #endif

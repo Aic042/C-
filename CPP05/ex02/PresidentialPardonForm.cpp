@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/30 23:54:15 by root              #+#    #+#             */
+/*   Updated: 2026/08/30 23:58:15 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), target(target)
@@ -23,4 +35,11 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 PresidentialPardonForm::~PresidentialPardonForm()
 {
 	std::cout << "PresidentialPardonForm destructor called" << std::endl;
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
+{
+	(void)bureaucrat;
+	std::cout << "PresidentialPardonForm execute called" << std::endl;
+	std::cout <<  getName() << " Has been pardoned by the President" << std::endl;
 }

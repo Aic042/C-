@@ -14,6 +14,8 @@
 #define AForm_HPP
 
 # include <iostream> 
+# include <ctime>
+# include <cstdlib>
 
 
 class Bureaucrat;
@@ -27,6 +29,7 @@ class AForm{
 	public:
 		// virtual void checkerSign() const	;
 		// virtual void checkerExecute() const	;
+		void 		beSigned(Bureaucrat const &bureaucrat);
 		bool		getWasSigned() const;
 		virtual int getGradeToSign() const	;
 		virtual int getGradeToExecute() const	;

@@ -38,7 +38,19 @@ void ShrubberryCreationForm::execute(Bureaucrat const &executor) const
 		std::cerr << "Error: Could not open file " << target.c_str() << "_shrubbery" << std::endl;
 		return;
 	}
-	
+	else if (outfile)
+	{
+		outfile << "    /\\    \n";
+		outfile << "   /  \\   \n";
+		outfile << "  /    \\  \n";
+		outfile << " /      \\ \n";
+		outfile << "/________\\\n";
+		outfile << "    ||    \n";
+		outfile << "    ||    \n";
+		outfile << "    ||    \n";
+
+		outfile.close();
+	}
 }
 
 //	std::ofstream outfile(target.c_str() + "_shrubbery");

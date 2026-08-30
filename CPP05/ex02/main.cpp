@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/08/27 17:44:33 by root             ###   ########.fr       */
+/*   Updated: 2026/08/30 23:56:35 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,33 @@ int main()
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
+	}
+	// --------------------Test 4: Execution------------------------
+	// --------------------Test 4: Execution------------------------
+	std::cout << "--------------------------------" << std::endl;
+	try
+	{
+			Bureaucrat highGrade("Jim", 1);
+			ShrubberryCreationForm shrub("garden");
+
+			highGrade.signAForm(shrub);
+			highGrade.executeAForm(shrub);
+	}
+	catch (const std::exception &e)
+	{
+			std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+			Bureaucrat lowGrade("Bob", 150);
+			RobotomyRequestForm robot("Bender");
+
+			lowGrade.signAForm(robot);   // esto debería fallar: 150 no alcanza el 72 requerido
+			lowGrade.executeAForm(robot);
+	}
+	catch (const std::exception &e)
+	{
+			std::cerr << e.what() << std::endl;
 	}
 }

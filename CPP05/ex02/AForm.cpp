@@ -11,6 +11,15 @@
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+# include "Bureaucrat.hpp"
+
+void AForm::beSigned(Bureaucrat const &bureaucrat)
+{
+	if (bureaucrat.getgrade() <= this->grade_to_sign)
+		this->was_signed = true;
+	else
+		throw AForm::GradeTooLowException();
+}
 
 const std::string AForm::getName() const{
 	return(this->name);
@@ -37,6 +46,9 @@ AForm::AForm(std::string name, int grade_to_sign, int grade_to_execute)
 	std::cout << "Grade to sign: " << this->grade_to_sign << std::endl;
 	std::cout << "Grade to execute: " << this->grade_to_execute << std::endl;
 }
+
+
+
 
 AForm::~AForm() {
 	// Destructor implementation (if needed)

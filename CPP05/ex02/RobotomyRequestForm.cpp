@@ -24,3 +24,16 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
 	std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
+
+void RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
+{
+	if (bureaucrat.getgrade() > this->getGradeToExecute())
+		throw AForm::GradeTooLowException();
+	if (!this->getWasSigned())
+		throw AForm::IsntSignedException();
+	std::cout << " Drilling noises " << std::endl;
+	if (rand() % 2 == 0)
+		std::cout << this->target << " has been robotomized successfully" << std::endl;
+	else 
+		std::cout << this->target << " has not been robotomized!!" << std::endl;
+}

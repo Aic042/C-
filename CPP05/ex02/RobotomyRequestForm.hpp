@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 13:19:52 by root              #+#    #+#             */
-/*   Updated: 2026/08/23 14:34:12 by root             ###   ########.fr       */
+/*   Updated: 2026/08/30 23:24:39 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(RobotomyRequestForm const &other);
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
 		virtual ~RobotomyRequestForm();
+		void execute(Bureaucrat const &bureaucrat) const;
 };
 	
 #endif

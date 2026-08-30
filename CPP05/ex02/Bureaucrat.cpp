@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/08/27 17:36:51 by root             ###   ########.fr       */
+/*   Updated: 2026/08/30 23:20:05 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,18 +58,18 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 }
 
 
-Bureaucrat Bureaucrat::signAForm(AForm &AForm)
+void Bureaucrat::signAForm(AForm &form)
 {
-	if (this->grade <= AForm.getGradeToSign())
+	try
 	{
-		std::cout << this->name << " signed " << AForm.getName() << std::endl;
+		form.beSigned(*this);
+		std::cout << "Form " << this->name << " has been signed" << std::endl;
 	}
-	else
+	catch(const std::exception& e)
 	{
-		std::cout << this->name << " couldn't sign " << AForm.getName() << " because their grade is too low." << std::endl;
-		throw GradeTooLowException();
+		std::cout << this->name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
-	return *this;
+	
 }
 
 class GradeTooHighException : public std::exception
@@ -90,7 +90,7 @@ class GradeTooLowException : public std::exception
 		}
 };
 
-void Bureaucrat::executeAForm(AForm &AForm)
+void Bureaucrat::executeAForm(AForm &AForm) const
 {
 	try
 	{
