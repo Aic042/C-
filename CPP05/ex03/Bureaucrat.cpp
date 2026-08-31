@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/08/30 23:20:05 by root             ###   ########.fr       */
+/*   Updated: 2026/08/31 20:58:27 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include "AForm.hpp"
 
 // usamos el : name(name) en vez de this->name = name; para inicializar los const aunque no me agrada >:(
+
+std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureaucrat)
+{
+	output << bureaucrat.getgrade() << std::endl;
+	return (output);
+}
+
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
 {

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/08/30 23:56:35 by root             ###   ########.fr       */
+/*   Updated: 2026/08/31 22:59:57 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@
 
 int main()
 {
+	srand(time(NULL));
+	//para el random del roboto 
 	// --------------------Test 1: Invalid Grade------------------------
 	std::cout << "Test 1: Grade 151" << std::endl;
 	try {

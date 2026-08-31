@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/08/30 23:20:05 by root             ###   ########.fr       */
+/*   Updated: 2026/08/31 22:40:03 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,22 @@ void Bureaucrat::executeAForm(AForm &AForm) const
 	{
 		std::cout << this->name << " couldn't execute " << AForm.getName() << " because: " << e.what() << std::endl;
 	}
+}
+
+void Bureaucrat::incrementGrade()
+{
+	if (this->grade <= 1)
+	{
+		throw GradeTooHighException();
+	}
+	this->grade--;
+}
+
+void Bureaucrat::decrementGrade()
+{
+	if (this->grade >= 150)
+	{
+		throw GradeTooLowException();
+	}
+	this->grade++;
 }

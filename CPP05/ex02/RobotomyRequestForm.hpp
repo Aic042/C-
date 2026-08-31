@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 13:19:52 by root              #+#    #+#             */
-/*   Updated: 2026/08/30 23:24:39 by root             ###   ########.fr       */
+/*   Updated: 2026/08/31 22:57:57 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include <ctime>
 
 
 class RobotomyRequestForm : public AForm

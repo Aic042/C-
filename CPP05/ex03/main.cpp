@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/08/31 16:13:20 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/08/31 22:59:34 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 
 int main()
 {
+	srand(time(NULL));
+	//para el random del roboto 
 	// --------------------Test 1: Invalid Grade------------------------
 	std::cout << "Test 1: Grade 151" << std::endl;
 	try {
@@ -93,7 +95,13 @@ int main()
 	std::cout << "--------------------------------" << std::endl;
 	std::cout << "--------Test 5: Execution--------" << std::endl;
 	Intern RandomIntern;
-	AForm* rawr;
+	AForm* GoodForm;
 
-	rawr = RandomIntern.makeForm("robotomy request", "Bender");
+	GoodForm = RandomIntern.makeForm("robotomy request", "Bender");
+	delete GoodForm	;
+	
+	AForm *bad;
+	bad = RandomIntern.makeForm("Incorrect form", "target");
+	delete bad;
+
 }
