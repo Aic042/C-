@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/06/26 00:50:51 by root             ###   ########.fr       */
+/*   Updated: 2026/08/31 23:59:29 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &other);
-		void HighGradeChecker();
 		// GradeTooHighException GradeTooHighException();
 		// GradeTooLowException GradeTooLowException();
 		// void GradeTooHighException();

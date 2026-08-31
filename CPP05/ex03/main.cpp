@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/08/31 22:59:34 by root             ###   ########.fr       */
+/*   Updated: 2026/09/01 00:00:36 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,7 @@
 #include "AForm.hpp"
 #include "Intern.hpp"
 
-// int main()
-// {
-// 	try {
-// 		std::cout << "--------Inicializacion-----------" << std::endl;
-// 		Bureaucrat Bou("random Bureaucrat", 50);
-// 		AForm Form("random file", 125, 10);
-// 		std::cout << "--------------------------------" << std::endl;
-// 		std::cout << "Bou's grade: " << Bou.getgrade() << std::endl;
-// 		Bou.signAForm(AForm);
-// 	}
-// 	catch (const std::exception& e) {
-// 		std::cerr << e.what() << std::endl;
-// 	}
-// }
+
 
 int main()
 {

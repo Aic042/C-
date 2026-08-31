@@ -27,8 +27,6 @@ class AForm{
 		int	const	grade_to_execute;
 		bool 		was_signed;
 	public:
-		// virtual void checkerSign() const	;
-		// virtual void checkerExecute() const	;
 		void 		beSigned(Bureaucrat const &bureaucrat);
 		bool		getWasSigned() const;
 		virtual int getGradeToSign() const	;

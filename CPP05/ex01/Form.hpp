@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:40:12 by root              #+#    #+#             */
-/*   Updated: 2026/08/10 12:05:05 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/01 00:00:05 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ class Form{
 		int	const	grade_to_sign;
 		int	const	grade_to_execute;
 	public:
-		void checkerSign();
-		void checkerExecute();
 		int getGradeToSign();
 		int getGradeToExecute();
 		const std::string getName();

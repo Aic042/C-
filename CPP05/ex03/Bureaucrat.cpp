@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/08/31 20:58:27 by root             ###   ########.fr       */
+/*   Updated: 2026/08/31 23:47:07 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,24 +78,6 @@ void Bureaucrat::signAForm(AForm &form)
 	}
 	
 }
-
-class GradeTooHighException : public std::exception
-{
-	public:
-		virtual const char* what () const throw()
-		{
-			return "Grade is too high.";
-		}
-};
-
-class GradeTooLowException : public std::exception
-{
-	public:
-		virtual const char* what () const throw()
-		{
-			return "Grade is too low.";
-		}
-};
 
 void Bureaucrat::executeAForm(AForm &AForm) const
 {

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/08/31 20:58:54 by root             ###   ########.fr       */
+/*   Updated: 2026/08/31 23:58:58 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define Bureaucrat_HPP
 
 # include <iostream>
-# include <cctype>
+# include <string>
+# include <exception>
 # include "AForm.hpp"
 # include "Shrubberry_Creation_Form.hpp"
 # include "RobotomyRequestForm.hpp"
@@ -35,7 +36,6 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &other);
-		void HighGradeChecker();
 		void signAForm(AForm &AForm);
 		class GradeTooHighException : public std::exception
 		{

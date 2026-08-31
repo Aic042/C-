@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/08/30 22:57:44 by root             ###   ########.fr       */
+/*   Updated: 2026/08/31 23:59:16 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &other);
-		void HighGradeChecker();
 		void signAForm(AForm &AForm);
 		class GradeTooHighException : public std::exception
 		{
