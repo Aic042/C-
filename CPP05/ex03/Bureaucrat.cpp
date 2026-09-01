@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/08/31 23:47:07 by root             ###   ########.fr       */
+/*   Updated: 2026/09/01 08:05:42 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureaucrat)
 {
-	output << bureaucrat.getgrade() << std::endl;
+	output << bureaucrat.getName() << "Bureaucrat, grade " << bureaucrat.getgrade() << std::endl;
 	return (output);
 }
 
+std::string Bureaucrat::getName() const
+{
+	return (this->name);
+}
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
 {

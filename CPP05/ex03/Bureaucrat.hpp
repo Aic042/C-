@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 07:25:02 by root             ###   ########.fr       */
+/*   Updated: 2026/09/01 08:06:00 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Bureaucrat
 	private:
 		void setgrade(int grade);
 	public:
-	
+		std::string getName() const;
 		int getgrade() const;
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(Bureaucrat const &other);
