@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/08/31 23:59:19 by root             ###   ########.fr       */
+/*   Updated: 2026/09/01 12:23:56 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ class Bureaucrat
 	private:
 		void setgrade();
 	public:
-		int getgrade();
+		std::string getName() const;
+		int getgrade() const;
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
@@ -48,6 +49,11 @@ class Bureaucrat
 					return "Grade is too low.";
 				}
 		};
+		void incrementGrade(); // grado - 1
+		void decrementGrade(); // grado + 1 
 };
+
+std::ostream &operator<<(std::ostream &output, Bureaucrat const &b);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/08/10 12:12:19 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/01 12:41:57 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,25 @@
 #include "Form.hpp"
 
 // usamos el : name(name) en vez de this->name = name; para inicializar los const aunque no me agrada >:(
+
+std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureaucrat)
+{
+	output << bureaucrat.getName() << " Bureaucrat, grade " << bureaucrat.getgrade() << std::endl;
+	return (output);
+}
+
+// usamos el : name(name) en vez de this->name = name; para inicialzar los const aunque no me agrada >:(
+
+std::string Bureaucrat::getName() const
+{
+	return (this->name);
+}
+
+int Bureaucrat::getgrade() const
+{
+	return (this->grade);
+}
+
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
 {
@@ -36,12 +55,6 @@ Bureaucrat::Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Bureaucrat " << this->name << " destroyed." << std::endl;
-}
-
-
-int Bureaucrat::getgrade()
-{
-	return (this->grade);
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
@@ -67,22 +80,4 @@ Bureaucrat Bureaucrat::signForm(Form &form)
 	}
 	return *this;
 }
-
-class GradeTooHighException : public std::exception
-{
-	public:
-		virtual const char* what () const throw()
-		{
-			return "Grade is too high.";
-		}
-};
-
-class GradeTooLowException : public std::exception
-{
-	public:
-		virtual const char* what () const throw()
-		{
-			return "Grade is too low.";
-		}
-};
 

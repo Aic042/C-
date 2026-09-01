@@ -34,13 +34,13 @@ AForm::AForm(std::string name, int grade_to_sign, int grade_to_execute)
 	}
 	if(grade_to_sign < 1 || grade_to_execute < 1)
 	{
-		throw AForm::GradeTooHighException();
 		std::cout << "grade is currently invalid: Too High" << std::endl; 
+		throw AForm::GradeTooHighException();
 	}
 	if(grade_to_sign > 150 || grade_to_execute > 150)
 	{
-		throw AForm::GradeTooLowException();
 		std::cout << "grade is currently invalid: Too low" << std::endl; 
+		throw AForm::GradeTooLowException();
 	}
 	std::cout << "AForm constructor called for: " << this->name << std::endl;
 	std::cout << "Grade to sign: " << this->grade_to_sign << std::endl;

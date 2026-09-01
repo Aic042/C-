@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 08:05:42 by root             ###   ########.fr       */
+/*   Updated: 2026/09/01 12:35:41 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureaucrat)
 {
-	output << bureaucrat.getName() << "Bureaucrat, grade " << bureaucrat.getgrade() << std::endl;
+	output << bureaucrat.getName() << " Bureaucrat, grade " << bureaucrat.getgrade() << std::endl;
 	return (output);
 }
 
@@ -95,4 +95,22 @@ void Bureaucrat::executeAForm(AForm &AForm) const
 	{
 		std::cout << this->name << " couldn't execute " << AForm.getName() << " because: " << e.what() << std::endl;
 	}
+}
+
+void Bureaucrat::incrementGrade()
+{
+	if (this->grade <= 1)
+	{
+		throw GradeTooHighException();
+	}
+	this->grade--;
+}
+
+void Bureaucrat::decrementGrade()
+{
+	if (this->grade >= 150)
+	{
+		throw GradeTooLowException();
+	}
+	this->grade++;
 }

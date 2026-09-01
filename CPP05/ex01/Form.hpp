@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:40:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 00:00:05 by root             ###   ########.fr       */
+/*   Updated: 2026/09/01 14:02:40 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class Form{
 		int	const	grade_to_sign;
 		int	const	grade_to_execute;
 	public:
-		int getGradeToSign();
-		int getGradeToExecute();
-		const std::string getName();
+		int getGradeToSign() const;
+		int getGradeToExecute() const;
+		std::string getName() const;
 		Form(std::string name, int grade_to_sign, int	 grade_to_execute);
 		Form(Form const &other);
 		~Form();
@@ -49,4 +49,5 @@ class Form{
 		};
 };
 
+std::ostream &operator<<(std::ostream &output, Form const &form);
 #endif
