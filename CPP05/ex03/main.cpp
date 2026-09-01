@@ -14,8 +14,6 @@
 #include "AForm.hpp"
 #include "Intern.hpp"
 
-
-
 int main()
 {
 	srand(time(NULL));

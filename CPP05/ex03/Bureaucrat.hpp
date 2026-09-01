@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/08/31 23:58:58 by root             ###   ########.fr       */
+/*   Updated: 2026/09/01 07:25:02 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ class Bureaucrat
 		void incrementGrade(); // grado - 1
 		void decrementGrade(); // grado + 1 
 
-	std::ostream &operator<<(std::ostream &output, Bureaucrat const &b);
-
+		
 };
+
+std::ostream &operator<<(std::ostream &output, Bureaucrat const &b);
 
 #endif
