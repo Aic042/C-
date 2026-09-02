@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 13:47:24 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/02 14:04:08 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,11 @@ int main()
 		Bureaucrat MrSigner("Signer", 32);
 		Form SuperImportantDocument("Form", 14, 12);
 		MrSigner.signForm(SuperImportantDocument);
-		MrSigner.
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
-
 }
 
 // int main()
