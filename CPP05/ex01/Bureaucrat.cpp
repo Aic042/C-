@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 07:01:25 by root             ###   ########.fr       */
+/*   Updated: 2026/09/02 10:26:22 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void Bureaucrat::signForm(Form &form)
 	if (this->grade <= form.getGradeToSign())
 	{
 		std::cout << this->name << " signed " << form.getName() << std::endl;
+		form.beSigned(*this);
 	}
 	else
 	{

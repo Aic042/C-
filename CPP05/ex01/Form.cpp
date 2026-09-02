@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:32:25 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 20:34:34 by root             ###   ########.fr       */
+/*   Updated: 2026/09/02 10:26:53 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ std::string Form::getName() const{
 	return(this->name);
 }
 
-
-
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
 	if (bureaucrat.getgrade() <= this->grade_to_sign)
@@ -35,7 +33,7 @@ void Form::beSigned(Bureaucrat const &bureaucrat)
 
 
 Form::Form(std::string name, int grade_to_sign, int grade_to_execute) 
-: name(name), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute)
+: name(name),  was_signed(false), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute)
 {
 	if(!grade_to_sign || !grade_to_execute)
 	{

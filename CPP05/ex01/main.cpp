@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/08/10 12:04:00 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/02 10:22:19 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,15 @@ int main()
 		Bureaucrat Dou("Dou", 42);
 		Bou = Dou;
 		std::cout << "Bou grade is " << Bou.getgrade() << std::endl;
+	}
+	catch (const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << "Test 3: Operator <<" << std::endl;
+	try {
+		Bureaucrat Bou("Bou", 14);
+		std::cout << Bou << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
