@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:32:25 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 14:04:45 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/01 20:34:34 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
-
+#include "Bureaucrat.hpp"
 
 std::ostream &operator<<(std::ostream &output, Form const &form)
 {
@@ -22,6 +22,17 @@ std::ostream &operator<<(std::ostream &output, Form const &form)
 std::string Form::getName() const{
 	return(this->name);
 }
+
+
+
+void Form::beSigned(Bureaucrat const &bureaucrat)
+{
+	if (bureaucrat.getgrade() <= this->grade_to_sign)
+		this->was_signed = true;
+	else
+		throw Form::GradeTooLowException();
+}
+
 
 Form::Form(std::string name, int grade_to_sign, int grade_to_execute) 
 : name(name), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute)
@@ -58,7 +69,7 @@ int Form::getGradeToExecute() const{
 	return this->grade_to_execute;
 }
 
-Form::Form(Form const &other) : name(other.name) , grade_to_sign(other.grade_to_execute), grade_to_execute(other.grade_to_execute)
+Form::Form(Form const &other) : name(other.name) , grade_to_sign(other.grade_to_sign	), grade_to_execute(other.grade_to_execute)
 {
 	std::cout << "Form copy constructor called, copied from " << other.name << " form" << std::endl;
 }

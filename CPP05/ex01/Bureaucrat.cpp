@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 12:41:57 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/02 07:01:25 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 }
 
 
-Bureaucrat Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(Form &form)
 {
 	if (this->grade <= form.getGradeToSign())
 	{
@@ -78,6 +78,5 @@ Bureaucrat Bureaucrat::signForm(Form &form)
 		std::cout << this->name << " couldn't sign " << form.getName() << " because their grade is too low." << std::endl;
 		throw GradeTooLowException();
 	}
-	return *this;
 }
 

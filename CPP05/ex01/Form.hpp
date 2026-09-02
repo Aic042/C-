@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:40:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 14:02:40 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/01 20:32:53 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream> 
 
+class Bureaucrat;
+
 class Form{
 	private:
 		std::string const name;
@@ -22,6 +24,7 @@ class Form{
 		int	const	grade_to_sign;
 		int	const	grade_to_execute;
 	public:
+		void beSigned(Bureaucrat const &bureaucrat);
 		int getGradeToSign() const;
 		int getGradeToExecute() const;
 		std::string getName() const;
