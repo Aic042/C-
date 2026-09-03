@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 10:26:22 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/03 14:06:15 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int Bureaucrat::getgrade() const
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
 {
 	if (this->grade < 1)
-	{
+		{
 		throw GradeTooHighException();
 	}
 	else if (this->grade > 150)
