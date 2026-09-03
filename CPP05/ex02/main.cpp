@@ -6,27 +6,12 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/08/31 22:59:57 by root             ###   ########.fr       */
+/*   Updated: 2026/09/02 20:12:46 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-
-// int main()
-// {
-// 	try {
-// 		std::cout << "--------Inicializacion-----------" << std::endl;
-// 		Bureaucrat Bou("random Bureaucrat", 50);
-// 		AForm Form("random file", 125, 10);
-// 		std::cout << "--------------------------------" << std::endl;
-// 		std::cout << "Bou's grade: " << Bou.getgrade() << std::endl;
-// 		Bou.signAForm(AForm);
-// 	}
-// 	catch (const std::exception& e) {
-// 		std::cerr << e.what() << std::endl;
-// 	}
-// }
 
 int main()
 {
@@ -77,11 +62,24 @@ int main()
 
 	try
 	{
-			Bureaucrat lowGrade("Bob", 150);
-			RobotomyRequestForm robot("Bender");
+		Bureaucrat lowGrade("Bob", 150);
+		RobotomyRequestForm robot("Bender");
 
-			lowGrade.signAForm(robot);   // esto debería fallar: 150 no alcanza el 72 requerido
-			lowGrade.executeAForm(robot);
+		lowGrade.signAForm(robot);   // esto debería fallar: 150 no alcanza el 72 requerido
+		lowGrade.executeAForm(robot);
+	}
+	catch (const std::exception &e)
+	{
+			std::cerr << e.what() << std::endl;
+	}
+	
+	try
+	{
+		Bureaucrat lowGrade("Bob", 3);
+		PresidentialPardonForm president("Bender");
+
+		lowGrade.signAForm(president);
+		lowGrade.executeAForm(president);
 	}
 	catch (const std::exception &e)
 	{

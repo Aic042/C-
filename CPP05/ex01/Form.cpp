@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:32:25 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 10:26:53 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/02 18:25:10 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,17 @@ int Form::getGradeToExecute() const{
 	return this->grade_to_execute;
 }
 
-Form::Form(Form const &other) : name(other.name) , grade_to_sign(other.grade_to_sign	), grade_to_execute(other.grade_to_execute)
+Form::Form(Form const &other) : name(other.name) , was_signed(other.was_signed), grade_to_sign(other.grade_to_sign	), grade_to_execute(other.grade_to_execute)
 {
 	std::cout << "Form copy constructor called, copied from " << other.name << " form" << std::endl;
+}
+
+Form &Form::operator=(const Form &other)
+{
+	if (this != &other)
+	{
+		this->was_signed = other.was_signed;
+		// only cause grade_to_sign, and grade_to_execute are const 
+	}
+	return (*this);
 }

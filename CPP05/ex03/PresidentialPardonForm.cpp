@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:54:15 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 12:01:15 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/02 19:40:13 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 	if (!this->getWasSigned())
 		throw AForm::IsntSignedException();
 	std::cout << "PresidentialPardonForm execute called" << std::endl;
-	std::cout <<  getName() << " Has been pardoned by the President" << std::endl;
+	std::cout <<  bureaucrat.getName() << " Has been pardoned by the President" << std::endl;
 }

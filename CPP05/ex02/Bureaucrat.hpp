@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 12:26:07 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/02 20:12:19 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,12 @@ class Bureaucrat
 					return "Grade is too low.";
 				}
 		};
-		void executeAForm(AForm &AForm) const;
+		void executeAForm(AForm const &AForm) const;
 		void incrementGrade(); // grado - 1
 		void decrementGrade(); // grado + 1 
 
 };
+
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &b);
 
 #endif

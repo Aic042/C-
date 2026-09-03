@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 12:35:41 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/02 20:07:35 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,6 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat " << this->name << " destroyed " << std::endl;
 }
 
-int Bureaucrat::getgrade() const
-{
-	return (this->grade);
-}
-
 void Bureaucrat::setgrade(int grade)
 {
 	this->grade = grade;
@@ -91,7 +86,7 @@ void Bureaucrat::signAForm(AForm &form)
 }
 
 
-void Bureaucrat::executeAForm(AForm &AForm) const
+void Bureaucrat::executeAForm(AForm const &AForm) const
 {
 	try
 	{
