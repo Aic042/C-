@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 12:15:35 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/03 13:52:13 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <cctype>
 # include "exceptions.hpp"
-#include <exception>
+# include <exception>
 
 
 class Bureaucrat
