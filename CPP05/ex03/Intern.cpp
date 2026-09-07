@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 11:06:51 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/07 10:52:35 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 11:09:10 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,14 @@ AForm *Intern::makeForm(std::string Form_Name , std::string target_form)
             &makeShrubbery
         };
     while (i != 3 && Form_Name != available_options[i])
-    {
-        if (Form_Name == available_options[i]) {
-            std::cout << "Intern creates " << Form_Name << std::endl;
-            return formCreators[i](target_form);
-        }
         i++;
+    if (i == 3)
+    {
+        std::cout << "Intern cannot create " << Form_Name << std::endl;
+        return NULL;
     }
-    std::cout << "Intern cannot create " << Form_Name << std::endl;
-    return NULL;
+    std::cout << "Intern creates " << Form_Name << std::endl;
+    return formCreators[i](target_form);
 }
 
 // AForm *Intern::makeForm(std::string Form_Name , std::string target_form) 
