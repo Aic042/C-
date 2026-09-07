@@ -40,14 +40,14 @@ void ShrubberryCreationForm::execute(Bureaucrat const &executor) const
 	}
 	else if (outfile)
 	{
-		outfile << "    /\\    \n";
-		outfile << "   /  \\   \n";
-		outfile << "  /    \\  \n";
-		outfile << " /      \\ \n";
-		outfile << "/________\\\n";
-		outfile << "    ||    \n";
-		outfile << "    ||    \n";
-		outfile << "    ||    \n";
+		outfile << "    /\\        /\\    \n";
+		outfile << "   /  \\      /  \\   \n";
+		outfile << "  /    \\    /    \\  \n";
+		outfile << " /      \\  /      \\ \n";
+		outfile << "/________\\/________\\\n";
+		outfile << "    ||         ||    \n";
+		outfile << "    ||         ||    \n";
+		outfile << "    ||         ||    \n";
 
 		outfile.close();
 	}
