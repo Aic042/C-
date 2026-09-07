@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 00:00:36 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 09:18:11 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 {
 	srand(time(NULL));
 	//para el random del roboto 
-	// --------------------Test 1: Invalid Grade------------------------
+	std::cout << "-----Test 1: Invalid Grade Too Low-----" << std::endl; 
 	std::cout << "Test 1: Grade 151" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 151);
@@ -28,6 +28,8 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	// --------------------Test 2: Invalid Grade------------------------
+	std::cout << "-----Test 2: Invalid Grade Too High-----" << std::endl; 
+
 	std::cout << "Test 2: Grade 0" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 0);

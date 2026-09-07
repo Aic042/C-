@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/01 12:35:41 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/07 09:37:00 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void Bureaucrat::signAForm(AForm &form)
 	
 }
 
-void Bureaucrat::executeAForm(AForm &AForm) const
+void Bureaucrat::executeAForm(AForm const &AForm) const
 {
 	try
 	{
