@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/03 14:06:15 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/07 18:29:19 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,26 @@
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureaucrat)
 {
-	output << bureaucrat.getName() << " Bureaucrat, grade " << bureaucrat.getgrade() << std::endl;
+	output << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "." << std::endl;
 	return (output);
+}
+
+void Bureaucrat::incrementGrade()
+{
+	if (this->grade <= 1)
+	{
+		throw GradeTooHighException();
+	}
+	this->grade--;
+}
+
+void Bureaucrat::decrementGrade()
+{
+	if (this->grade >= 150)
+	{
+		throw GradeTooLowException();
+	}
+	this->grade++;
 }
 
 // usamos el : name(name) en vez de this->name = name; para inicialzar los const aunque no me agrada >:(
@@ -28,11 +46,10 @@ std::string Bureaucrat::getName() const
 	return (this->name);
 }
 
-int Bureaucrat::getgrade() const
+int Bureaucrat::getGrade() const
 {
 	return (this->grade);
 }
-
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
 {
@@ -69,15 +86,15 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 
 void Bureaucrat::signForm(Form &form)
 {
-	if (this->grade <= form.getGradeToSign())
+	try
 	{
-		std::cout << this->name << " signed " << form.getName() << std::endl;
 		form.beSigned(*this);
+		std::cout << this->name << " signed " << form.getName() << std::endl;
 	}
-	else
+	catch(const std::exception& e)
 	{
-		std::cout << this->name << " couldn't sign " << form.getName() << " because their grade is too low." << std::endl;
-		throw GradeTooLowException();
+		std::cout << this->name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
+	
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:32:25 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 18:25:10 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 17:42:20 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ std::string Form::getName() const{
 
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
-	if (bureaucrat.getgrade() <= this->grade_to_sign)
+	if (bureaucrat.getGrade() <= this->grade_to_sign)
 		this->was_signed = true;
 	else
 		throw Form::GradeTooLowException();

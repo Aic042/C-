@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/07 18:33:29 by aingunza          #+#    #+#             */
+/*   Updated: 2026/09/07 18:33:30 by aingunza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target)
 {
@@ -27,7 +40,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 {
-	if (bureaucrat.getgrade() > this->getGradeToExecute())
+	if (bureaucrat.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 	if (!this->getWasSigned())
 		throw AForm::IsntSignedException();

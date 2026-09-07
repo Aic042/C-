@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 11:02:47 by root              #+#    #+#             */
-/*   Updated: 2026/08/30 23:33:34 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 18:31:28 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PresidentialPardonForm_HPP
 #define PresidentialPardonForm_HPP
 
-# include "Bureaucrat.hpp"
 # include "AForm.hpp"
+
+class Bureaucrat;
 
 class PresidentialPardonForm : public AForm
 {

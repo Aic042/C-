@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 09:37:00 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 18:49:25 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,20 @@
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureaucrat)
 {
-	output << bureaucrat.getName() << " Bureaucrat, grade " << bureaucrat.getgrade() << std::endl;
+	output << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "." << std::endl;
 	return (output);
 }
+
 
 std::string Bureaucrat::getName() const
 {
 	return (this->name);
+}
+
+
+Bureaucrat::Bureaucrat() : name("Default"), grade(150)
+{
+	std::cout << "Bureaucrat " << this->name << " created with grade: " << this->grade << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
@@ -49,7 +56,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat " << this->name << " destroyed " << std::endl;
 }
 
-int Bureaucrat::getgrade() const
+int Bureaucrat::getGrade() const
 {
 	return (this->grade);
 }
@@ -83,7 +90,7 @@ void Bureaucrat::signAForm(AForm &form)
 	
 }
 
-void Bureaucrat::executeAForm(AForm const &AForm) const
+void Bureaucrat::executeForm(AForm const & Form) const
 {
 	try
 	{

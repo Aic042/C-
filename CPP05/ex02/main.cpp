@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 20:12:46 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 18:35:39 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	std::cout << "Test 1: Grade 151" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 151);
-		std::cout << Bou.getgrade() << std::endl;
+		std::cout << Bou.getGrade() << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
@@ -30,7 +30,7 @@ int main()
 	std::cout << "Test 2: Grade 0" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 0);
-		std::cout << Bou.getgrade() << std::endl;
+		std::cout << Bou.getGrade() << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
@@ -39,7 +39,7 @@ int main()
 	std::cout << "Test 3: Grade 1" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 1);
-		std::cout << Bou.getgrade() << std::endl;
+		std::cout << Bou.getGrade() << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
@@ -53,12 +53,14 @@ int main()
 			ShrubberryCreationForm shrub("garden");
 
 			highGrade.signAForm(shrub);
-			highGrade.executeAForm(shrub);
+			highGrade.executeForm(shrub);
 	}
 	catch (const std::exception &e)
 	{
 			std::cerr << e.what() << std::endl;
 	}
+	std::cout << "--------------------------------" << std::endl;
+	std::cout << "--------------------------------" << std::endl;
 
 	try
 	{
@@ -66,20 +68,23 @@ int main()
 		RobotomyRequestForm robot("Bender");
 
 		lowGrade.signAForm(robot);   // esto debería fallar: 150 no alcanza el 72 requerido
-		lowGrade.executeAForm(robot);
+		lowGrade.executeForm(robot);
 	}
 	catch (const std::exception &e)
 	{
 			std::cerr << e.what() << std::endl;
 	}
-	
+	std::cout << "--------------------------------" << std::endl;
+	std::cout << "--------------------------------" << std::endl;
+
 	try
 	{
 		Bureaucrat lowGrade("Bob", 3);
-		PresidentialPardonForm president("Bender");
+		PresidentialPardonForm target("Target");
 
-		lowGrade.signAForm(president);
-		lowGrade.executeAForm(president);
+		lowGrade.signAForm(target);
+		lowGrade.executeForm(target);
+		
 	}
 	catch (const std::exception &e)
 	{

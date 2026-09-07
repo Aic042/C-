@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Shrubberry_Creation_Form.hpp                       :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,8 @@
 #define SHRUBBERY_CREATION_FORM_HPP
 
 # include "AForm.hpp"
-# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class ShrubberryCreationForm : public AForm
 {

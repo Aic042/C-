@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 13:19:52 by root              #+#    #+#             */
-/*   Updated: 2026/08/31 22:57:57 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 18:31:37 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
 
-# include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include <ctime>
 
+class Bureaucrat;
 
 class RobotomyRequestForm : public AForm
 {

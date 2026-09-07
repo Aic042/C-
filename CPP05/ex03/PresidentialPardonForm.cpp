@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:54:15 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 19:40:13 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 18:33:18 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+#include "Bureaucrat.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), target(target)
 {
@@ -39,7 +40,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 void PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 {
-	if (bureaucrat.getgrade() > this->getGradeToExecute())
+	if (bureaucrat.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 	if (!this->getWasSigned())
 		throw AForm::IsntSignedException();

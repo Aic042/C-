@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 07:01:51 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 18:57:10 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Bureaucrat
 		void setgrade();
 	public:
 		std::string getName() const;
-		int getgrade() const;
-		Bureaucrat(std::string const name, int grade);
-		Bureaucrat(Bureaucrat const &other);
+		int getGrade() const;
+		Bureaucrat();
+		Bureaucrat(std::string const name, int grade);		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &other);
 		void signForm(Form &form);

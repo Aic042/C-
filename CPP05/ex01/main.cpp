@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 18:45:30 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 17:42:20 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
 		Bureaucrat Bou("random Bureaucrat", 50);
 		Form form("random file", 125, 120);
 		std::cout << "--------------------------------" << std::endl;
-		std::cout << "Bou's grade: " << Bou.getgrade() << std::endl;
+		std::cout << "Bou's grade: " << Bou.getGrade() << std::endl;
 		Bou.signForm(form);
 	}
 	catch (const std::exception& e) {
@@ -32,7 +32,7 @@ int main()
 		Bureaucrat Bou("Bou", 14);
 		Bureaucrat Dou("Dou", 42);
 		Bou = Dou;
-		std::cout << "Bou grade is " << Bou.getgrade() << std::endl;
+		std::cout << "Bou grade is " << Bou.getGrade() << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;

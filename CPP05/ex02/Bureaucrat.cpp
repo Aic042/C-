@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 20:07:35 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 18:49:25 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,24 @@
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureaucrat)
 {
-	output << bureaucrat.getName() << " Bureaucrat, grade " << bureaucrat.getgrade() << std::endl;
+	output << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "." << std::endl;
 	return (output);
 }
-
-// usamos el : name(name) en vez de this->name = name; para inicialzar los const aunque no me agrada >:(
 
 std::string Bureaucrat::getName() const
 {
 	return (this->name);
 }
 
-int Bureaucrat::getgrade() const
+int Bureaucrat::getGrade() const
 {
 	return (this->grade);
+}
+
+
+Bureaucrat::Bureaucrat() : name("Default"), grade(150)
+{
+	std::cout << "Bureaucrat " << this->name << " created with grade: " << this->grade << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
@@ -76,7 +80,7 @@ void Bureaucrat::signAForm(AForm &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << "Form " << this->name << " has been signed" << std::endl;
+		std::cout << this->name << " signed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -86,17 +90,17 @@ void Bureaucrat::signAForm(AForm &form)
 }
 
 
-void Bureaucrat::executeAForm(AForm const &AForm) const
+void Bureaucrat::executeForm(AForm const &Form) const
 {
 	try
 	{
-		AForm.execute(*this);
-		std::cout << this->name << " has been executed succesfully " << AForm.getName() << std::endl;
+		Form.execute(*this);
+		std::cout << this->name << " executed " << Form.getName() << std::endl;
 		
 	}
 	catch (std::exception &e)
 	{
-		std::cout << this->name << " couldn't execute " << AForm.getName() << " because: " << e.what() << std::endl;
+		std::cout << this->name << " couldn't execute " << Form.getName() << " because: " << e.what() << std::endl;
 	}
 }
 

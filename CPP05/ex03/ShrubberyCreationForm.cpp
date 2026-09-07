@@ -1,4 +1,17 @@
-#include "Shrubberry_Creation_Form.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/07 18:33:32 by aingunza          #+#    #+#             */
+/*   Updated: 2026/09/07 18:33:33 by aingunza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
 
 ShrubberryCreationForm::ShrubberryCreationForm(std::string target) : AForm("ShrubberryCreationForm", 145, 137), target(target)
 {
@@ -28,7 +41,7 @@ ShrubberryCreationForm::~ShrubberryCreationForm()
 
 void ShrubberryCreationForm::execute(Bureaucrat const &executor) const
 {
-	if (executor.getgrade() > this->getGradeToExecute())
+	if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 	if (!this->getWasSigned())
 		throw AForm::IsntSignedException();
@@ -40,14 +53,14 @@ void ShrubberryCreationForm::execute(Bureaucrat const &executor) const
 	}
 	else if (outfile)
 	{
-		outfile << "    /\\        /\\    \n";
-		outfile << "   /  \\      /  \\   \n";
-		outfile << "  /    \\    /    \\  \n";
-		outfile << " /      \\  /      \\ \n";
-		outfile << "/________\\/________\\\n";
-		outfile << "    ||         ||    \n";
-		outfile << "    ||         ||    \n";
-		outfile << "    ||         ||    \n";
+		outfile << "    /\\    \n";
+		outfile << "   /  \\   \n";
+		outfile << "  /    \\  \n";
+		outfile << " /      \\ \n";
+		outfile << "/________\\\n";
+		outfile << "    ||    \n";
+		outfile << "    ||    \n";
+		outfile << "    ||    \n";
 
 		outfile.close();
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/02 20:12:19 by root             ###   ########.fr       */
+/*   Updated: 2026/09/07 18:57:10 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <cctype>
 # include "AForm.hpp"
-# include "Shrubberry_Creation_Form.hpp"
+# include "ShrubberyCreationForm.hpp"
 # include "RobotomyRequestForm.hpp"
 # include "PresidentialPardonForm.hpp"
 # include <fstream>
@@ -31,9 +31,9 @@ class Bureaucrat
 	public:
 	
 		std::string getName() const;
-		int getgrade() const;
-		Bureaucrat(std::string const name, int grade);
-		Bureaucrat(Bureaucrat const &other);
+		int getGrade() const;
+		Bureaucrat();
+		Bureaucrat(std::string const name, int grade);		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &other);
 		void signAForm(AForm &AForm);
@@ -54,7 +54,7 @@ class Bureaucrat
 					return "Grade is too low.";
 				}
 		};
-		void executeAForm(AForm const &AForm) const;
+		void executeForm(AForm const &AForm) const;
 		void incrementGrade(); // grado - 1
 		void decrementGrade(); // grado + 1 
 
