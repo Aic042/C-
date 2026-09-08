@@ -6,15 +6,15 @@
 #    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/07 12:49:55 by root              #+#    #+#              #
-#    Updated: 2026/09/08 17:16:00 by aingunza         ###   ########.fr        #
+#    Updated: 2026/09/08 18:06:24 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Compilamos
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
+CXXFLAGS = -Wall -Wextra -Werror 
+# -std=c++98
 # Los files
 NAME= Scalar
 SRC = main.cpp Scalar.cpp

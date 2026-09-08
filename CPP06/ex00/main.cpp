@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:47 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/08 17:53:09 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/08 18:07:12 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,36 @@ int is_arg_a_float(char *str)
             return (1);
         }
     } 
+    return (0);
 }
 
+int is_arg_a_double(char *str)
+{
+    int i = 0;
+    int is_a_dot_there = 0;
 
+    if (str[i] == '-' || str[i] == '+')
+        i++;
+    while (str[i])
+    {
+        // if wee find a  . and not an f then it's a double 
+        if(str[i] == '.')
+        {
+            is_a_dot_there = 1;
+        }
+        if(str[i - 1] == 'f')
+        {
+            // std::cout << "this is a float" << std::endl;
+            return (0);
+        }
+        else
+        {
+            std::cout << "this is a double" << std::endl;
+            return (1);
+        }
+    } 
+    return (0);
+}
 int main(int argc, char *argv[])
 {
     if(argc != 2)
