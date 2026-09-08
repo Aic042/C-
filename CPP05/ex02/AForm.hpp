@@ -35,6 +35,10 @@ class AForm{
 		AForm(std::string name, int grade_to_sign, int	 grade_to_execute);
 		virtual void execute(Bureaucrat const &bureaucrat) const = 0; 
 		virtual ~AForm();
+		AForm(AForm const &other);
+		AForm &operator=(AForm const &other);
+		
+
 		class GradeTooHighException : public std::exception
 		{
 			public:

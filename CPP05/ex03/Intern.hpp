@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 10:44:38 by aingunza          #+#    #+#             */
-/*   Updated: 2026/08/31 15:42:58 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/08 08:41:37 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Intern
     public:
         Intern();
         ~Intern();
+        Intern(const Intern &other);
+        Intern &operator=(const Intern &other);
         AForm *makeForm(std::string Form_Name , std::string target_form) ;
 
 

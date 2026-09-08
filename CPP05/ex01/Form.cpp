@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:32:25 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 17:42:20 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/07 22:45:51 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ std::ostream &operator<<(std::ostream &output, Form const &form)
 {
 	output << form.getName() << " form, grade to sign " << form.getGradeToSign() << " and grade to execute is " << form.getGradeToExecute() << std::endl;
 	return (output);
+}
+
+Form::Form() : name("Default"), was_signed(false), grade_to_sign(1), grade_to_execute(1)
+{
+    std::cout << "Form default constructor called" << std::endl;
 }
 
 std::string Form::getName() const{

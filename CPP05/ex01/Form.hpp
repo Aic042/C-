@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:40:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 17:42:20 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/07 22:46:01 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define FORM_HPP
 
 # include <iostream> 
+# include <exception>
+# include <string>
 
 class Bureaucrat;
 
@@ -28,6 +30,7 @@ class Form{
 		int getGradeToSign() const;
 		int getGradeToExecute() const;
 		std::string getName() const;
+		Form();
 		Form(std::string name, int grade_to_sign, int	 grade_to_execute);
 		Form(Form const &other);
 		~Form();

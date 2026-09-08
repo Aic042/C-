@@ -32,6 +32,8 @@ class AForm{
 		virtual int getGradeToSign() const	;
 		virtual int getGradeToExecute() const	;
 		virtual const std::string getName() const;
+		AForm(AForm const &other);
+		AForm &operator=(AForm const &other);
 		AForm(std::string name, int grade_to_sign, int	 grade_to_execute);
 		virtual void execute(Bureaucrat const &bureaucrat) const = 0; 
 		virtual ~AForm();

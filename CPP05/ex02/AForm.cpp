@@ -47,8 +47,20 @@ AForm::AForm(std::string name, int grade_to_sign, int grade_to_execute)
 	std::cout << "Grade to execute: " << this->grade_to_execute << std::endl;
 }
 
+AForm::AForm(AForm const &other)
+: name(other.name), grade_to_sign(other.grade_to_sign),
+  grade_to_execute(other.grade_to_execute), was_signed(other.was_signed)
+{
+    std::cout << "AForm copy constructor called for: " << this->name << std::endl;
+}
 
-
+AForm &AForm::operator=(AForm const &other)
+{
+    if (this != &other)
+        this->was_signed = other.was_signed; // solo lo no-const es reasignable
+    std::cout << "AForm copy assignment operator called" << std::endl;
+    return (*this);
+}
 
 AForm::~AForm() {
 	// Destructor implementation (if needed)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 18:35:39 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/07 22:50:14 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int main()
 	try
 	{
 			Bureaucrat highGrade("Jim", 1);
-			ShrubberryCreationForm shrub("garden");
+			ShrubberyCreationForm shrub("garden");
 
 			highGrade.signAForm(shrub);
 			highGrade.executeForm(shrub);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 18:57:10 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/07 22:34:14 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 # include <iostream>
 # include <cctype>
 # include "Form.hpp"
-
+# include <exception>
+# include <string>
 class Bureaucrat
 {
 	std::string const name;
 	int grade;
 	
 	private:
-		void setgrade();
+	
 	public:
 		std::string getName() const;
 		int getGrade() const;

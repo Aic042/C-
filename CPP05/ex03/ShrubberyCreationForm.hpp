@@ -16,15 +16,15 @@
 # include "AForm.hpp"
 # include "Bureaucrat.hpp"
 
-class ShrubberryCreationForm : public AForm
+class ShrubberyCreationForm : public AForm
 {
 	private:
 		std::string target;
 	public:
-		ShrubberryCreationForm(std::string target);
-		ShrubberryCreationForm(ShrubberryCreationForm const &other);
-		ShrubberryCreationForm &operator=(const ShrubberryCreationForm &other);
-		virtual ~ShrubberryCreationForm(); 
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(ShrubberyCreationForm const &other);
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+		virtual ~ShrubberyCreationForm(); 
 		
 		
 		virtual void execute(Bureaucrat const &executor) const;

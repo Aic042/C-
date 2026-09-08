@@ -3,43 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 18:33:32 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/07 18:33:33 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/08 00:14:18 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
-ShrubberryCreationForm::ShrubberryCreationForm(std::string target) : AForm("ShrubberryCreationForm", 145, 137), target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), target(target)
 {
-	std::cout << "ShrubberryCreationForm constructor called" << std::endl;
+	std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
 
-ShrubberryCreationForm::ShrubberryCreationForm(ShrubberryCreationForm const &other) : AForm(other), target(other.target)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other) : AForm(other), target(other.target)
 {
 
-	std::cout << "ShrubberryCreationForm copy constructor called" << std::endl;
+	std::cout << "ShrubberyCreationForm copy constructor called" << std::endl;
 }
 
-ShrubberryCreationForm &ShrubberryCreationForm::operator=(const ShrubberryCreationForm &other)
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
 {
 	if (this != &other)
 	{
-		this->target = other.target;
+        AForm::operator=(other);
+		this->target = other.target;	
 	}
-	std::cout << "ShrubberryCreationForm copy assignment operator called" << std::endl;
+
+	std::cout << "ShrubberyCreationForm copy assignment operator called" << std::endl;
 	return *this;
 }
 
-ShrubberryCreationForm::~ShrubberryCreationForm()
+ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "ShrubberryCreationForm destructor called" << std::endl;
+	std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
-void ShrubberryCreationForm::execute(Bureaucrat const &executor) const
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();

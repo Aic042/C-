@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 17:42:20 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/07 22:36:39 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ int main()
 	std::cout << std::endl;
 	std::cout << "Test 3: Operator <<" << std::endl;
 	try {
+		Form form("random file", 125, 120);
 		Bureaucrat Bou("Bou", 14);
 		std::cout << Bou << std::endl;
+		std::cout << form << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;

@@ -1,5 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/07 23:41:32 by root              #+#    #+#             */
+/*   Updated: 2026/09/08 00:14:05 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
+
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("default")
+{
+	std::cout << "RobotomyRequestForm default constructor called" << std::endl;
+}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target)
 {
@@ -15,7 +32,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 {
 	if (this != &other)
 	{
-		this->target = other.target;
+        AForm::operator=(other);
+		this->target = other.target;	
 	}
 	std::cout << "RobotomyRequestForm copy assignment operator called" << std::endl;
 	return *this;

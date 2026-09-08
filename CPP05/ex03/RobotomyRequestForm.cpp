@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 18:33:29 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/07 18:33:30 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/08 00:14:18 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 {
 	if (this != &other)
 	{
-		this->target = other.target;
+        AForm::operator=(other);
+		this->target = other.target;	
 	}
+
 	std::cout << "RobotomyRequestForm copy assignment operator called" << std::endl;
 	return *this;
 }
