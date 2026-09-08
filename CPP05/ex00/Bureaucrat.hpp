@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 18:57:10 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/08 15:12:59 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Bureaucrat
 
 	public:
 		int getGrade() const;
-		Bureaucrat();
 		Bureaucrat();
 		Bureaucrat(std::string const name, int grade);		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
