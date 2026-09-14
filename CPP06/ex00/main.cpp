@@ -3,80 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:47 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/08 18:07:12 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/13 10:13:32 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Scalar.hpp"   
 
 
-void arg_type_check(char *str)
-{
-    int i = 0;
-    if (str[i] == '-' || str[i] == '+')
-        i++;
-    if(str[i] == '\0')
-    {
-        std::cout << "Argument is not a number" << std::endl;
-        exit(-1);
-    }
-    if (isdigit(str[i]))
-    {
-        std::cout << "argument isn't digit" << std::endl;
-    }
-}
 
-int is_arg_a_float(char *str)
-{
-    int i = 0;
-    if (str[i] == '-' || str[i] == '+')
-        i++;
-    while (str[i])
-    {
-        if(str[i - 1] != 'f')
-        {
-            std::cout << "this isn't a float" << std::endl;
-            return (0);
-        }
-        else
-        {
-            std::cout << "this is a float" << std::endl;
-            return (1);
-        }
-    } 
-    return (0);
-}
-
-int is_arg_a_double(char *str)
-{
-    int i = 0;
-    int is_a_dot_there = 0;
-
-    if (str[i] == '-' || str[i] == '+')
-        i++;
-    while (str[i])
-    {
-        // if wee find a  . and not an f then it's a double 
-        if(str[i] == '.')
-        {
-            is_a_dot_there = 1;
-        }
-        if(str[i - 1] == 'f')
-        {
-            // std::cout << "this is a float" << std::endl;
-            return (0);
-        }
-        else
-        {
-            std::cout << "this is a double" << std::endl;
-            return (1);
-        }
-    } 
-    return (0);
-}
 int main(int argc, char *argv[])
 {
     if(argc != 2)
@@ -86,7 +23,6 @@ int main(int argc, char *argv[])
     }   
     char* str = argv[1];
     // double = str;
-
     // char    converted_char;
     int     converted_int;
     double  converted_double;
@@ -101,10 +37,23 @@ int main(int argc, char *argv[])
     converted_int = string_to_integer(str);
     converted_double = string_to_double(str);
     converted_float = string_to_float(str);
+    
+    if(type_of_arg(str) == 2)
+    {
+        //double type
+    }
+    else if(type_of_arg(str) == 1)
+    {
+        //is a float type
+    }
+    else if(type_of_arg(str) == 0)
+    {
+        //is an int type
+    }
 
     std::cout << "Raw argument is :" << argv[1] << std::endl;
     // std::cout << "Char is :" << converted_char << std::endl;
-    std::cout << "Int is :" << converted_int << std::endl;
+    std::cout << "bool is :" << converted_int << std::endl;
     std::cout << "Double is :" << converted_double << std::endl;
     std::cout << "Float is :" << converted_float << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Scalar.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:59 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/08 17:18:06 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/13 12:36:46 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,31 @@
 // {
 //     std::cout << static_cast<int>(str);
 // }
+
+// Orthodox Canonical Form
+
+ScalarConverter::ScalarConverter()
+{
+	std::cout << "ScalarConverter default constructor called" << std::endl;
+}
+ScalarConverter::ScalarConverter(const ScalarConverter &other)
+{
+	*this = other;
+	std::cout << "ScalarConverter copy constructor called" << std::endl;
+}
+ScalarConverter::~ScalarConverter()
+{
+	std::cout << "ScalarConverter destructor called" << std::endl;
+}
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
+{
+	(void)other;	
+	// if (this != &other)
+	// {
+	// 	this = other;
+	// }
+	return (*this);
+}
 
 double set_double(std::string &str)
 {
@@ -57,7 +82,8 @@ float string_to_float(std::string str)
 std::string float_to_string(float float_paaramater)
 {
 	std::string string;
-	string = std::to_string(float_paaramater);
+	std::stringstream ss;
+	// string = std::to_string(float_paaramater);
 	return (string);
 }
 
