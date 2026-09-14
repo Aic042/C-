@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 12:58:02 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/14 13:47:43 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/14 14:51:26 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,9 @@ T3 iter(T3 &array, T3 length, T3(*func)(T3))
     int i = 0;
     while(i != length)
     {
-        (*func)(&a);
+        (*func)();
         i++;        
     }
 }
-
-
 
 #endif
