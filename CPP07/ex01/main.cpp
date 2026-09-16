@@ -6,25 +6,23 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 13:13:51 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/14 13:31:00 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/09/16 14:21:47 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "swap.hpp"
+#include "array.hpp"
 
+int up_by_2(int value)
+{
+    return(value * 2);
+}
 
-int main( void ) {
-    int a = 2;
-    int b = 3;
-    swap(a, b);
-    std::cout << "a = " << a << ", b = " << b << std::endl;
-    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-    std::string c = "chaine1";
-    std::string d = "chaine2";
-    swap(c, d);
-    std::cout << "c = " << c << ", d = " << d << std::endl;
-    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+int main( void )
+{
+    char *str;
+    int val[] = {2, 3, 4};
+    
+    iter(str, 4, up_by_2);
+    
     return 0;
 }

@@ -6,7 +6,7 @@
 #    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/10 23:19:19 by root              #+#    #+#              #
-#    Updated: 2026/09/14 13:43:01 by aingunza         ###   ########.fr        #
+#    Updated: 2026/09/16 13:59:53 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= fixed02
+NAME= swap
 SRC = main.cpp ex00
 OBJ = $(SRC:.cpp=.o)
 
