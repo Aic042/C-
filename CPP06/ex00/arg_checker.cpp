@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 13:38:20 by root              #+#    #+#             */
-/*   Updated: 2026/09/12 13:38:26 by root             ###   ########.fr       */
+/*   Updated: 2026/09/16 08:40:44 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,55 +28,54 @@ void arg_type_check(char *str)
     }
 }
 
+// bool is_arg_a_float(char *str)
+// {
+//     int i = 0;
+//     if (str[i] == '-' || str[i] == '+')
+//         i++;
+//     while (str[i])
+//     {
+//         if(str[i - 1] != 'f')
+//         {
+//             std::cout << "this isn't a float" << std::endl;
+//             return (0);
+//         }
+//         else
+//         {
+//             std::cout << "this is a float" << std::endl;
+//             return (1);
+//         }
+//     } 
+//     return (0);
+// }
+
 bool is_arg_a_float(char *str)
 {
-    int i = 0;
-    if (str[i] == '-' || str[i] == '+')
-        i++;
-    while (str[i])
-    {
-        if(str[i - 1] != 'f')
-        {
-            std::cout << "this isn't a float" << std::endl;
-            return (0);
-        }
-        else
-        {
-            std::cout << "this is a float" << std::endl;
-            return (1);
-        }
-    } 
-    return (0);
+    std::string s(str);                    // convertir a std::string es más cómodo
+    if (s.empty())
+        return false;
+    bool hasDot = (s.find('.') != std::string::npos);
+    bool endsWithF = (s[s.size() - 1] == 'f');
+    return (hasDot && endsWithF);
 }
 
 bool is_arg_a_double(char *str)
 {
-    int i = 0;
-    bool is_a_dot_there = 0;
-
-    if (str[i] == '-' || str[i] == '+')
-        i++;
-    while (str[i])
-    {
-        // if wee find a  . and not an f then it's a double 
-        if(str[i] == '.')
-        {
-            is_a_dot_there = 1;
-        }
-        if(str[i - 1] == 'f')
-        {
-            // std::cout << "this is a float" << std::endl;
-            return (0);
-        }
-        else if (is_a_dot_there == 1)
-        {
-            std::cout << "this is a double" << std::endl;
-            return (1);
-        }
-    }
-    return (0);
+    std::string s(str);
+    if (s.empty())
+        return false;
+    bool hasDot = (s.find('.') != std::string::npos);
+    bool endsWithF = (s[s.size() - 1] == 'f');
+    return (hasDot && !endsWithF);
 }
 
+bool is_special_char(char *str)
+{
+    std::string s(str);
+    if (s.empty())
+        return false;
+    return (s == "inff" || s == "-inff" || s == "nanf" || s == "nan");
+}
 int type_of_arg(char *str)
 {
     if (is_arg_a_float(str))
