@@ -74,7 +74,8 @@ Bureaucrat::Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.
 	std::cout << "Bureaucrat copy created with grade: " << this->grade << std::endl;
 }
 
-Bureaucrat::~Bureaucrat()
+Bureaucrat::~Bureaucrat()private : 
+
 {
 	std::cout << "Bureaucrat " << this->name << " destroyed." << std::endl;
 }
