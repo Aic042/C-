@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 13:38:20 by root              #+#    #+#             */
-/*   Updated: 2026/09/16 08:40:44 by root             ###   ########.fr       */
+/*   Updated: 2026/09/22 21:04:33 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ void arg_type_check(char *str)
 //     } 
 //     return (0);
 // }
+bool is_arg_a_char(char *str)
+{
+    std::string s(str);
+    return (s.size() == 1 && !std::isdigit(static_cast<unsigned char>(s[0])));
+}
 
 bool is_arg_a_float(char *str)
 {
@@ -74,14 +79,35 @@ bool is_special_char(char *str)
     std::string s(str);
     if (s.empty())
         return false;
-    return (s == "inff" || s == "-inff" || s == "nanf" || s == "nan");
+    return (s == "inff" || s == "-inff" || s == "nanf" || s == "nan" || s == "inf" || s == "-inf" );
 }
+
+bool is_arg_a_int(char *str)
+{
+    std::string s(str);
+    if (s.empty())
+        return false;
+    for (size_t i = 0; i < s.size(); ++i)
+    {
+        if (i == 0 && (s[i] == '-' || s[i] == '+'))
+            continue;
+        if (!std::isdigit(static_cast<unsigned char>(s[i])))
+            return false;
+    }
+    return true;
+}
+
 int type_of_arg(char *str)
 {
-    if (is_arg_a_float(str))
-        return (1);
-    else if (is_arg_a_double(str))
-        return (2);
-    else 
-        return (0);
+    if (is_special_char(str))   
+        return 3;
+    if (is_arg_a_char(str))     
+        return 4;
+    if (is_arg_a_float(str))    
+        return 1;
+    if (is_arg_a_double(str))   
+        return 2;
+    if (is_arg_a_int(str))      
+        return 5;
+    return 0;                               // int
 }

@@ -6,13 +6,11 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:47 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/13 10:13:32 by root             ###   ########.fr       */
+/*   Updated: 2026/09/22 21:05:20 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Scalar.hpp"   
-
-
+#include "Scalar.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -44,7 +42,7 @@ int main(int argc, char *argv[])
     }
     else if(type_of_arg(str) == 1)
     {
-        //is a float type
+         //is a float type
     }
     else if(type_of_arg(str) == 0)
     {
@@ -55,7 +53,8 @@ int main(int argc, char *argv[])
     // std::cout << "Char is :" << converted_char << std::endl;
     std::cout << "bool is :" << converted_int << std::endl;
     std::cout << "Double is :" << converted_double << std::endl;
-    std::cout << "Float is :" << converted_float << std::endl;
+    std::cout << "Float is :" << converted_float << "f" << std::endl;
+    return (0);
 }
 
 //Static_cast 

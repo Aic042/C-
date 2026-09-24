@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:59 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/15 19:48:49 by root             ###   ########.fr       */
+/*   Updated: 2026/09/23 12:14:06 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ ScalarConverter::~ScalarConverter()
 }
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
 {
-	(void)other;	
+	(void)other;
 	// if (this != &other)
 	// {
 	// 	this = other;
@@ -64,11 +64,11 @@ int string_to_integer(std::string str)
 
 double string_to_double(std::string str)
 {
-	int integer;
+	double double_value;
 	std::stringstream ss(str);
-	ss >> integer;
+	ss >> double_value;
 
-	return(integer);
+	return(double_value);
 	// double double_value;
 
 	// double_value = std::stod(str);
@@ -108,11 +108,39 @@ int float_to_int(float float_paaramater)
 	return (result);
 }
 
-double float_to_double(float float_paaramater) 
+double float_to_double(float float_paaramater)
 {
 	double double_parameter;
 	double_parameter = static_cast<double>(float_paaramater);
 	return (double_parameter);
 }
 
+// ------- Integer To ... -------
 
+std::string integer_to_string(int integer)
+{
+    std::string str;
+    std::stringstream ss;
+    ss << integer;
+    ss>>str;
+	return (str);
+}
+
+float integer_to_float(int integer)
+{
+	float float_value;
+	float_value = (float)integer;
+	return (float_value);
+}
+
+double integer_to_double(int integer)
+{
+	double double_value;
+	double_value = integer;
+	return(double_value);
+}
+
+void static convert(char *str)
+{
+	
+}
