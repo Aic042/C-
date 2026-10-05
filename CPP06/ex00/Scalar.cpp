@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Scalar.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:59 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/23 12:14:06 by root             ###   ########.fr       */
+/*   Updated: 2026/09/24 11:51:41 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,12 @@ double integer_to_double(int integer)
 	return(double_value);
 }
 
-void static convert(char *str)
+void convert(char *str)
 {
-	
+	if (!str)
+		return ;
+	if(type_of_arg(str) = 5)
+	{
+		std::cout << char:integer_to_string 
+	}
 }

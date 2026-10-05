@@ -6,7 +6,7 @@
 #    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/07 12:49:55 by root              #+#    #+#              #
-#    Updated: 2026/09/24 11:33:04 by aingunza         ###   ########.fr        #
+#    Updated: 2026/10/05 14:03:36 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 # Los files
-NAME= Scalar
-SRC = main.cpp Scalar.cpp arg_checker.cpp
+NAME= Serializer 
+SRC = main.cpp Serializer.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
