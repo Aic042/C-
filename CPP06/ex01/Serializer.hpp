@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:49 by aingunza          #+#    #+#             */
-/*   Updated: 2026/10/05 14:05:26 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/05 14:07:40 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,20 @@ class Data
     int data_value = 0; //????
     int data_id = 1;
 
-    
+	Data();
+	~Data();
+	Data(const Data &other);
+	Data operator new =()
 };
 
 class Serializer
 {
-  public:
-    uintptr_t serialize(Data* ptr);
-    Data* deserialize(uintptr_t raw);
-  //No Orthodox Canon Form in public
-  private:
-  //add Orthodox canoform 
+	public:
+		uintptr_t serialize(Data* ptr);
+		Data* deserialize(uintptr_t raw);
+	//No Orthodox Canon Form in public
+	private:
+	//add Orthodox canoform 
 };
 
 
