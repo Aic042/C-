@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:49 by aingunza          #+#    #+#             */
-/*   Updated: 2026/10/05 14:07:40 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/05 14:08:17 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Data
 	Data();
 	~Data();
 	Data(const Data &other);
-	Data operator new =()
+	Data & operator =(const Data &other);
 };
 
 class Serializer
