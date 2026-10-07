@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:59 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/23 12:14:06 by root             ###   ########.fr       */
+/*   Updated: 2026/10/01 18:24:24 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,80 @@ double integer_to_double(int integer)
 	return(double_value);
 }
 
-void static convert(char *str)
+void ScalarConverter::convert(char *str)
 {
+	int type = type_of_arg(str);
 	
+    if (type == 3)          // ---------- PSEUDO-LITERAL ----------
+    {
+        std::string s(str);
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        if (s == "nan")
+            std::cout << "float: nanf" << std::endl << "double: nan" << std::endl;
+        else if (s == "nanf")
+            std::cout << "float: nanf" << std::endl << "double: nan" << std::endl;
+        else if (s == "inf" || s == "+inf")
+            std::cout << "float: inff" << std::endl << "double: inf" << std::endl;
+        else if (s == "-inf")
+            std::cout << "float: -inff" << std::endl << "double: -inf" << std::endl;
+        else if (s == "inff" || s == "+inff")
+            std::cout << "float: inff" << std::endl << "double: inf" << std::endl;
+        else // "-inff"
+            std::cout << "float: -inff" << std::endl << "double: -inf" << std::endl;
+    }
+    else if (type == 4)     // ---------- CHAR ----------
+    {
+        char c = str[0];
+        std::cout << "char: '" << c << "'" << std::endl;
+        std::cout << "int: " << static_cast<int>(c) << std::endl;
+        std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+        std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+    }
+    else if (type == 1)     // ---------- FLOAT ----------
+    {
+        std::string s(str);
+        s = s.substr(0, s.size() - 1);       // quitamos la 'f' final: "42.0f" -> "42.0"
+        float f = string_to_float(s);
+
+        if (f < 0 || f > 255)
+            std::cout << "char: impossible" << std::endl;
+        else if (!std::isprint(static_cast<int>(f)))
+            std::cout << "char: Non displayable" << std::endl;
+        else
+            std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
+
+        std::cout << "int: " << float_to_int(f) << std::endl;
+        std::cout << "float: " << f << "f" << std::endl;
+        std::cout << "double: " << float_to_double(f) << std::endl;
+    }
+    else if (type == 2)     // ---------- DOUBLE ----------
+    {
+        double d = string_to_double(str);
+
+        if (d < 0 || d > 255)
+            std::cout << "char: impossible" << std::endl;
+        else if (!std::isprint(static_cast<int>(d)))
+            std::cout << "char: Non displayable" << std::endl;
+        else
+            std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
+
+        std::cout << "int: " << static_cast<int>(d) << std::endl;
+        std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+        std::cout << "double: " << integer_to_double(d) << ".0" << std::endl;    }
+    else                     // ---------- INT ----------
+    {
+        int i = string_to_integer(str);
+
+        if (i < 0 || i > 255)
+            std::cout << "char: impossible" << std::endl;
+        else if (!std::isprint(i))
+            std::cout << "char: Non displayable" << std::endl;
+        else
+            std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
+
+        std::cout << "int: " << i << std::endl;
+        std::cout << "float: " << integer_to_float(i) << ".0f" << std::endl;
+        std::cout << "double: " << integer_to_double(i) << ".0" << std::endl;
+    }
 }

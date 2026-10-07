@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 13:38:20 by root              #+#    #+#             */
-/*   Updated: 2026/09/22 21:04:33 by root             ###   ########.fr       */
+/*   Updated: 2026/09/25 11:23:40 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ bool is_special_char(char *str)
     std::string s(str);
     if (s.empty())
         return false;
-    return (s == "inff" || s == "-inff" || s == "nanf" || s == "nan" || s == "inf" || s == "-inf" );
+    return (s == "inff" || s == "+inf" || s == "-inff" || s == "nanf" || s == "nan" || s == "inf" || s == "-inf" || s == "+inf" );
 }
 
 bool is_arg_a_int(char *str)
