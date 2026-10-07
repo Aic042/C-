@@ -6,7 +6,7 @@
 #    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/10 23:19:19 by root              #+#    #+#              #
-#    Updated: 2026/10/07 12:00:32 by aingunza         ###   ########.fr        #
+#    Updated: 2026/09/16 13:59:58 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= iter
+NAME= array
 SRC = main.cpp 
 OBJ = $(SRC:.cpp=.o)
 

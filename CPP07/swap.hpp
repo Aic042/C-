@@ -1,56 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.hpp                                          :+:      :+:    :+:   */
+/*   swap.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 12:58:02 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/16 14:09:16 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/07 12:19:19 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#ifndef SWAP_HPP
+# define SWAP_HPP
 
 # include <iostream>
 # include <string> 
+# include <exception>
 
 template <typename T>
-void swap(T &a, T &b)
-{
-    T swapper;
-    swapper = a;
-    a = b;
-    b = swapper;
-}
-template <typename T1>
-T1 max(T1 a, T1 b)
-{
-    if(a > b)
-        return a;
-    else
-        return b;
-}
+class Array
+{   
+    public:
+        Array(); //creates an empty array
+        Array(unsigned int n); //debe crear un array con n elements inicializo por default
+        Array(Array &other);
+        Array operator =(const Array &copy);
+        
+};
 
-template <typename T2>
-T2 min(T2 a, T2 b)
+class OutOfBounds : public exception 
 {
-    if(a < b)
-        return a;
-    else
-        return b;
-}
-
-template <typename T3>
-T3 iter(T3 *array, int const length, T3(*func)(T3))
-{
-    int i = 0;
-    while(i != length)
-    {
-        (*func)(array[i]);
-        i++;        
+    OutOfBounds(int index) {};
+    const char* what() const noexcept override{
+        return "Index is out of bounds! \n";
     }
-}
+};
 
 #endif
+
+
