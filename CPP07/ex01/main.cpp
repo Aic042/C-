@@ -6,23 +6,25 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 13:13:51 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/16 14:21:47 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/07 12:00:45 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "array.hpp"
+#include "iter.hpp"
 
-int up_by_2(int value)
+void up_by_2(int &value) //referencia para manipular el valor de manera externa
 {
-    return(value * 2);
+    value = value * 2;
 }
 
 int main( void )
 {
-    char *str;
-    int val[] = {2, 3, 4};
-    
-    iter(str, 4, up_by_2);
-    
+    // char str[3] = "as";
+	std::cout << "Test int array" << std::endl;
+	int int_arr[] = {1, 5, 3};
+
+	iter(int_arr, 3, up_by_2);
+	for (int i = 0; i < 3; i++)
+		std::cout << int_arr[i] << std::endl;
     return 0;
 }

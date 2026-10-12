@@ -6,9 +6,10 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:45:59 by aingunza          #+#    #+#             */
-/*   Updated: 2026/10/01 18:24:24 by root             ###   ########.fr       */
+/*   Updated: 2026/10/13 00:04:51 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "Scalar.hpp"
 
@@ -140,6 +141,7 @@ double integer_to_double(int integer)
 	return(double_value);
 }
 
+<<<<<<< HEAD
 void ScalarConverter::convert(char *str)
 {
 	int type = type_of_arg(str);
@@ -216,4 +218,14 @@ void ScalarConverter::convert(char *str)
         std::cout << "float: " << integer_to_float(i) << ".0f" << std::endl;
         std::cout << "double: " << integer_to_double(i) << ".0" << std::endl;
     }
+=======
+void convert(char *str)
+{
+	if (!str)
+		return ;
+	if(type_of_arg(str) = 5)
+	{
+		std::cout << char:integer_to_string 
+	}
+>>>>>>> 686ceba5ec2cece883b74573eb2dd8b0d8b633cd
 }
