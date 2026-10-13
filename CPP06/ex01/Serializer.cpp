@@ -6,11 +6,21 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 14:02:09 by aingunza          #+#    #+#             */
-/*   Updated: 2026/10/05 14:02:10 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/13 13:17:28 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
+
+Serializer::Serializer()
+{
+    std::cout << "Serializer constructor called";
+}
+
+Serializer::~Serializer()
+{
+    std::cout << "Serializer Deconstructor called";
+}
 
 uintptr_t Serializer::serialize(Data* ptr)
 {

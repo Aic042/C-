@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/07 11:36:54 by aingunza          #+#    #+#             */
-/*   Updated: 2026/10/07 11:38:59 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/13 14:03:14 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 Base::~Base()
 {
-    std::cout << "Base deconstructor called" << std::endl;
+    std::cout << "Base virtual deconstructor called" << std::endl;
 }
