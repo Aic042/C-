@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 18:57:10 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/14 00:32:34 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,13 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				const char *what() const throw()
-				{
-					return "Grade is too high.";
-				}
+				virtual const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				const char *what() const throw()
-				{
-					return "Grade is too low.";
-				}
+				virtual const char *what() const throw();
 		};
 		void executeForm(AForm const &AForm) const;
 		void incrementGrade(); // grado - 1
