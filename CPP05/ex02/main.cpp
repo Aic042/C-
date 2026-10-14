@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 22:50:14 by root             ###   ########.fr       */
+/*   Updated: 2026/10/14 11:30:13 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,18 @@ int main()
 		lowGrade.signAForm(target);
 		lowGrade.executeForm(target);
 		
+	}
+	catch (const std::exception &e)
+	{
+			std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	// Test del operador de AForm
+	try
+	{
+		AForm *defaultForm = new ShrubberyCreationForm("default");
+		std::cout << *defaultForm << std::endl;
+		delete defaultForm;
 	}
 	catch (const std::exception &e)
 	{

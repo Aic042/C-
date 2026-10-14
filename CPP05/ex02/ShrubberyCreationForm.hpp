@@ -30,6 +30,14 @@ class ShrubberyCreationForm : public AForm
 		
 		
 		virtual void execute(Bureaucrat const &executor) const;
+		void action() const;
+
+		// ShrubberyCreationForm.hpp
+		class FileOpenException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 #endif

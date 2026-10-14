@@ -62,6 +62,12 @@ AForm &AForm::operator=(AForm const &other)
     return (*this);
 }
 
+// default constructor with was_signed parameter
+AForm::AForm () : name("default") , grade_to_sign(125), grade_to_execute(100), was_signed(false)
+{
+    std::cout << "AForm default constructor called for: " << this->name << std::endl;
+}
+
 AForm::~AForm() {
 	// Destructor implementation (if needed)
 	std::cout << "AForm destructor called for: " << this->name << std::endl;
@@ -91,4 +97,13 @@ const char *AForm::GradeTooLowException::what() const throw()
 const char *AForm::IsntSignedException::what() const throw()
 {
 	return "Exception: AForm isn't signed.";
+}
+
+std::ostream &operator<<(std::ostream &output, AForm const &form)
+{
+	output << "AForm Name: " << form.getName() << std::endl;
+	output << "Grade to Sign: " << form.getGradeToSign() << std::endl;
+	output << "Grade to Execute: " << form.getGradeToExecute() << std::endl;
+	output << "Was Signed: " << (form.getWasSigned()) << std::endl;
+	return output;
 }

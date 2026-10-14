@@ -6,16 +6,20 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:32:25 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 22:45:51 by root             ###   ########.fr       */
+/*   Updated: 2026/10/13 20:45:07 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
+bool Form::getIsSigned() const{
+	return this->was_signed;
+}
+
 std::ostream &operator<<(std::ostream &output, Form const &form)
 {
-	output << form.getName() << " form, grade to sign " << form.getGradeToSign() << " and grade to execute is " << form.getGradeToExecute() << std::endl;
+	output << form.getName() << " form, grade to sign " << form.getGradeToSign() << " ,grade to execute is " << form.getGradeToExecute() << " ,is signed: " << form.getIsSigned() << std::endl;
 	return (output);
 }
 
@@ -85,4 +89,15 @@ Form &Form::operator=(const Form &other)
 		// only cause grade_to_sign, and grade_to_execute are const 
 	}
 	return (*this);
+}
+
+
+// exceptions
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return "Exception: Form's Grade is too high.";
+}
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return "Exception: Form's Grade is too low.";
 }

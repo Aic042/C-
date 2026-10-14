@@ -6,7 +6,7 @@
 #    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/07 12:49:55 by root              #+#    #+#              #
-#    Updated: 2026/06/22 12:53:40 by root             ###   ########.fr        #
+#    Updated: 2026/10/13 20:24:36 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME= Bureaucrat
 SRC = main.cpp Bureaucrat.cpp Form.cpp
 OBJ = $(SRC:.cpp=.o)
+
 
 all: $(NAME)
 

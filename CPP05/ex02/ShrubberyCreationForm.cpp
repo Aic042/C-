@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:42:06 by root              #+#    #+#             */
-/*   Updated: 2026/09/08 00:14:18 by root             ###   ########.fr       */
+/*   Updated: 2026/10/14 12:15:31 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 }
 
 //	std::ofstream outfile(target.c_str() + "_shrubbery");
+
+// exception
+const char *ShrubberyCreationForm::FileOpenException::what() const throw()
+{
+    return ("Could not open the shrubbery file.");
+}

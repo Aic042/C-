@@ -36,8 +36,8 @@ class AForm{
 		virtual void execute(Bureaucrat const &bureaucrat) const = 0; 
 		virtual ~AForm();
 		AForm(AForm const &other);
+		AForm ();
 		AForm &operator=(AForm const &other);
-		
 
 		class GradeTooHighException : public std::exception
 		{
@@ -58,6 +58,7 @@ class AForm{
 		};
 };
 
+std::ostream &operator<<(std::ostream &output, AForm const &form);
 
 
 #endif

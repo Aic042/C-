@@ -6,12 +6,23 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 22:32:47 by root             ###   ########.fr       */
+/*   Updated: 2026/10/13 20:20:02 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+
+// exceptions:
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return ("Grade is too high.");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("Grade is too low.");
+}
 
 // usamos el : name(name) en vez de this->name = name; para inicializar los const aunque no me agrada >:(
 
@@ -74,8 +85,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.
 	std::cout << "Bureaucrat copy created with grade: " << this->grade << std::endl;
 }
 
-Bureaucrat::~Bureaucrat()private : 
-
+Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Bureaucrat " << this->name << " destroyed." << std::endl;
 }

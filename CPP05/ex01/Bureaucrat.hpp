@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 22:34:14 by root             ###   ########.fr       */
+/*   Updated: 2026/10/13 20:20:37 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,13 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				const char *what() const throw()
-				{
-					return "Grade is too high.";
-				}
+				virtual	const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				const char *what() const throw()
-				{
-					return "Grade is too low.";
-				}
+				virtual	const char *what() const throw();
 		};
 		void incrementGrade(); // grado - 1
 		void decrementGrade(); // grado + 1 
