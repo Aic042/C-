@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/01 12:14:42 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/07 18:49:35 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/14 14:51:05 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,14 @@ void Bureaucrat::decrementGrade()
 		throw GradeTooLowException();
 	}
 	this->grade++;
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low");
 }
