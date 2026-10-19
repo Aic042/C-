@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 00:32:25 by root              #+#    #+#             */
-/*   Updated: 2026/10/13 20:45:07 by root             ###   ########.fr       */
+/*   Updated: 2026/10/14 14:55:27 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ Form &Form::operator=(const Form &other)
 	}
 	return (*this);
 }
-
 
 // exceptions
 const char *Form::GradeTooHighException::what() const throw()
