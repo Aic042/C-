@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 12:58:02 by aingunza          #+#    #+#             */
-/*   Updated: 2026/10/07 12:09:21 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/19 11:36:01 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_HPP
-# define SWAP_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
+# include <cstddef>
 # include <iostream>
 # include <string> 
 
 template <typename T>
 void swap(T &a, T &b)
 {
-    T swapper;
-    swapper = a;
+    T swapper = a;
     a = b;
     b = swapper;
 }

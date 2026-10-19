@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/07 11:11:53 by aingunza          #+#    #+#             */
-/*   Updated: 2026/10/13 13:51:33 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/18 13:24:33 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ class Base
 		virtual ~Base();
 };
 
-class Base_A : Base
+class Base_A : public Base
 {
 	
 };
 
-class Base_B : Base
+class Base_B : public Base
 {
 	
 };
 
-class Base_C : Base
+class Base_C : public Base
 {
 	
 };
@@ -51,4 +51,5 @@ class Base_C : Base
 	// void identify(Base& p);  
 	// //It prints the actual type of the object referenced by p: "A", "B", or "C". Using a pointer
 
+	
 #endif

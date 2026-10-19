@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
+#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/10 23:19:19 by root              #+#    #+#              #
-#    Updated: 2026/09/16 13:59:53 by aingunza         ###   ########.fr        #
+#    Updated: 2026/10/19 10:35:32 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Los files
-NAME= swap
-SRC = main.cpp ex00
+NAME= whatever
+SRC = main.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

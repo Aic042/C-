@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/07 11:36:54 by aingunza          #+#    #+#             */
-/*   Updated: 2026/10/13 14:03:14 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/18 18:09:03 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,5 @@ Base::~Base()
 {
     std::cout << "Base virtual deconstructor called" << std::endl;
 }
+
+

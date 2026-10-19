@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.hpp                                          :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 12:58:02 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/24 11:26:04 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/19 11:35:49 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
 
 # include <iostream>
 # include <string> 
+#include <cstddef>
 
 template <typename T>
 void swap(T &a, T &b)
@@ -43,7 +44,7 @@ T2 min(T2 a, T2 b)
 }
 
 template <typename T3, typename Function>
-void iter(T3 *array, size_t  length, Function F)
+void iter(T3 *array, const size_t  length, Function F)
 {
     size_t i = 0;
     if(!array)

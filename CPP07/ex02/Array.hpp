@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 12:58:02 by aingunza          #+#    #+#             */
-/*   Updated: 2026/10/07 12:19:19 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/19 19:02:34 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_HPP
-# define SWAP_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 # include <iostream>
 # include <string> 
@@ -28,7 +28,7 @@ class Array
         
 };
 
-class OutOfBounds : public exception 
+class OutOfBounds : public std::exception 
 {
     OutOfBounds(int index) {};
     const char* what() const noexcept override{
