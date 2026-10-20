@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 22:50:14 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 09:33:06 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,17 @@ int main()
 	AForm *bad;
 	bad = RandomIntern.makeForm("Incorrect form", "target");
 	delete bad;
+	try
+	{
+			Bureaucrat boss("Boss", 1);
+			ShrubberyCreationForm bad("no_such_dir/x");
 
+			boss.signAForm(bad);
+			boss.executeForm(bad);
+	}
+	catch (const std::exception &e)
+	{
+			std::cerr << e.what() << std::endl;
+	}
+	return 0;
 }
