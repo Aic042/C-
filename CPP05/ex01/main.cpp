@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 22:36:39 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 15:32:21 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int main()
 	std::cout << "Test 4: SignForm" << std::endl;
 	try
 	{
-		Bureaucrat MrSigner("Signer", 32);
+		Bureaucrat MrSigner("Signer", 2);
 		Form SuperImportantDocument("Form", 14, 12);
 		MrSigner.signForm(SuperImportantDocument);
 	}

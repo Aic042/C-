@@ -6,7 +6,7 @@
 #    By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/07 12:49:55 by root              #+#    #+#              #
-#    Updated: 2026/09/07 18:29:31 by aingunza         ###   ########.fr        #
+#    Updated: 2026/10/20 16:09:21 by aingunza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,10 @@ $(NAME): $(OBJ)
 
 clean:
 	rm -f $(OBJ)
-
+	rm -f garden_shrubbery
 fclean: clean
 	rm -f $(NAME)
+	rm -f garden_shrubbery
 
 re: fclean all
 .PHONY: all clean fclean re

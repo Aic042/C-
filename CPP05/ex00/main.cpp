@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/10/20 00:04:31 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 15:23:21 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 
-		//--------------------Test 4: Usege of operator = ------------------------
+		//--------------------Test 5: Usege of operator << ------------------------
 	std::cout << "Test 5: Operator <<" << std::endl;
 	try {
 		Bureaucrat Bou("Bou", 14);

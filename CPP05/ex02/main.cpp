@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/10/20 08:52:38 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 15:47:14 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main()
 	srand(time(NULL));
 	//para el random del roboto 
 	// --------------------Test 1: Invalid Grade------------------------
+	std::cout << "--------------------------------" << std::endl;
 	std::cout << "Test 1: Grade 151" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 151);
@@ -27,6 +28,7 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	// --------------------Test 2: Invalid Grade------------------------
+	std::cout << "--------------------------------" << std::endl;
 	std::cout << "Test 2: Grade 0" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 0);
@@ -36,6 +38,7 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	// --------------------Test 3: Valid Grade------------------------
+	std::cout << "--------------------------------" << std::endl;
 	std::cout << "Test 3: Grade 1" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 1);
@@ -45,8 +48,8 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	// --------------------Test 4: Execution------------------------
-	// --------------------Test 4: Execution------------------------
 	std::cout << "--------------------------------" << std::endl;
+	std::cout << "Test 4: Execute and sign a form" << std::endl;
 	try
 	{
 			Bureaucrat highGrade("Jim", 1);
@@ -60,7 +63,7 @@ int main()
 			std::cerr << e.what() << std::endl;
 	}
 	std::cout << "--------------------------------" << std::endl;
-	std::cout << "--------------------------------" << std::endl;
+	std::cout << "Test 5: Fallo de form Robotomy" << std::endl;
 
 	try
 	{
@@ -75,7 +78,7 @@ int main()
 			std::cerr << e.what() << std::endl;
 	}
 	std::cout << "--------------------------------" << std::endl;
-	std::cout << "--------------------------------" << std::endl;
+	std::cout << "Test 6: Presidential Pardon" << std::endl;
 
 	try
 	{
@@ -91,8 +94,8 @@ int main()
 			std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	// Test del operador de AForm
-	try
+	std::cout << "--------------------------------" << std::endl;
+	std::cout << "Test 6: Shrubbery Creation" << std::endl;	try
 	{
 		AForm *defaultForm = new ShrubberyCreationForm("default");
 		std::cout << *defaultForm << std::endl;

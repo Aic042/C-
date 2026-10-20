@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:42:06 by root              #+#    #+#             */
-/*   Updated: 2026/10/20 08:59:40 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 15:53:17 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void ShrubberyCreationForm::action() const
         std::ofstream outfile((this->target + "_shrubbery").c_str());
 
         if (!outfile)
-                throw FileOpenException(); // executeForm lo captura y NO dice "executed"
+                throw FileOpenException(); 
         outfile << "    /\\        /\\    \n";
         outfile << "   /  \\      /  \\   \n";
         outfile << "  /    \\    /    \\  \n";
@@ -60,6 +60,7 @@ void ShrubberyCreationForm::action() const
         outfile << "    ||         ||    \n";
         outfile << "    ||         ||    \n";
         outfile << "    ||         ||    \n";
+        outfile.close();
 }
 
 //	std::ofstream outfile(target.c_str() + "_shrubbery");

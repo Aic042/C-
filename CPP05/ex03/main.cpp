@@ -6,7 +6,7 @@
 /*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/10/20 14:39:18 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/20 16:02:23 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	// --------------------Test 4: Execution------------------------
-	// --------------------Test 4: Execution------------------------
 	std::cout << "--------------------------------" << std::endl;
+	std::cout << "Test 4: Execute and sign a form" << std::endl;
 	try
 	{
 			Bureaucrat highGrade("Jim", 1);
@@ -61,7 +61,7 @@ int main()
 			std::cerr << e.what() << std::endl;
 	}
 	std::cout << "--------------------------------" << std::endl;
-	std::cout << "--------------------------------" << std::endl;
+	std::cout << "Test 5: Fail to execute and sign a form" << std::endl;
 
 	try
 	{
@@ -76,7 +76,7 @@ int main()
 			std::cerr << e.what() << std::endl;
 	}
 	std::cout << "--------------------------------" << std::endl;
-	std::cout << "--------------------------------" << std::endl;
+	std::cout << "Test 6: Presidential Pardon" << std::endl;
 
 	try
 	{
