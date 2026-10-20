@@ -18,7 +18,7 @@
 # include <cstdlib>
 
 
-class Bureaucrat;
+class Bureaucrat; //declaracion adelantada 	
 
 class AForm{
 	private:
@@ -26,44 +26,41 @@ class AForm{
 		int	const	grade_to_sign;
 		int	const	grade_to_execute;
 		bool 		was_signed;
+	protected:
+        virtual void action() const = 0; // cada hija implementa su propia action
 	public:
 		void 		beSigned(Bureaucrat const &bureaucrat);
 		bool		getWasSigned() const;
 		virtual int getGradeToSign() const	;
 		virtual int getGradeToExecute() const	;
 		virtual const std::string getName() const;
-		AForm(AForm const &other);
-		AForm &operator=(AForm const &other);
 		AForm(std::string name, int grade_to_sign, int	 grade_to_execute);
-		virtual void execute(Bureaucrat const &bureaucrat) const = 0; 
+		void execute(Bureaucrat const &executor) const;
 		virtual ~AForm();
+		AForm(AForm const &other);
+		AForm ();
+		AForm &operator=(AForm const &other);
+
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				const char *what() const throw()
-				{
-					return "Exception: AForm's Grade is too high.";
-				}
+				virtual const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				const char *what() const throw()
-				{
-					return "Exception: AForm's Grade is too low.";
-				}
+				virtual const char *what() const throw();
 		};
 		class IsntSignedException : public std::exception
 		{
 			public:
-				const char *what() const throw()
-				{
-					return "Exception: AForm isn't signed.";
-				}
+				virtual const char *what() const throw();
+
 		};
 };
 
+std::ostream &operator<<(std::ostream &output, AForm const &form);
 
 
 #endif

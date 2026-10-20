@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:07:05 by root              #+#    #+#             */
-/*   Updated: 2026/09/08 08:48:49 by root             ###   ########.fr       */
+/*   Updated: 2026/10/14 00:44:34 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@ std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureaucrat)
 	return (output);
 }
 
-
 std::string Bureaucrat::getName() const
 {
 	return (this->name);
+}
+
+int Bureaucrat::getGrade() const
+{
+	return (this->grade);
 }
 
 
@@ -56,11 +60,6 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat " << this->name << " destroyed " << std::endl;
 }
 
-int Bureaucrat::getGrade() const
-{
-	return (this->grade);
-}
-
 void Bureaucrat::setgrade(int grade)
 {
 	this->grade = grade;
@@ -81,7 +80,7 @@ void Bureaucrat::signAForm(AForm &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << "Form " << this->name << " has been signed" << std::endl;
+		std::cout << this->name << " signed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -90,12 +89,13 @@ void Bureaucrat::signAForm(AForm &form)
 	
 }
 
-void Bureaucrat::executeForm(AForm const & Form) const
+
+void Bureaucrat::executeForm(AForm const &Form) const
 {
 	try
 	{
 		Form.execute(*this);
-		std::cout << this->name << " has been executed succesfully " << Form.getName() << std::endl;
+		std::cout << this->name << " executed " << Form.getName() << std::endl;
 		
 	}
 	catch (std::exception &e)
@@ -120,4 +120,16 @@ void Bureaucrat::decrementGrade()
 		throw GradeTooLowException();
 	}
 	this->grade++;
+}
+
+// exceptions
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low");
 }

@@ -25,6 +25,16 @@ const std::string AForm::getName() const{
 	return(this->name);
 }
 
+// Template de execute
+void AForm::execute(Bureaucrat const &executor) const
+{
+        if (!this->was_signed)
+                throw IsntSignedException();
+        if (executor.getGrade() > this->grade_to_execute)
+                throw GradeTooLowException();
+        this->action();
+}
+
 AForm::AForm(std::string name, int grade_to_sign, int grade_to_execute) 
 : name(name), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute), was_signed(false)
 {
@@ -47,7 +57,8 @@ AForm::AForm(std::string name, int grade_to_sign, int grade_to_execute)
 	std::cout << "Grade to execute: " << this->grade_to_execute << std::endl;
 }
 
-AForm::AForm(AForm const &other) : name(other.name), grade_to_sign(other.grade_to_sign),
+AForm::AForm(AForm const &other)
+: name(other.name), grade_to_sign(other.grade_to_sign),
   grade_to_execute(other.grade_to_execute), was_signed(other.was_signed)
 {
     std::cout << "AForm copy constructor called for: " << this->name << std::endl;
@@ -59,6 +70,12 @@ AForm &AForm::operator=(AForm const &other)
         this->was_signed = other.was_signed; // solo lo no-const es reasignable
     std::cout << "AForm copy assignment operator called" << std::endl;
     return (*this);
+}
+
+// default constructor with was_signed parameter
+AForm::AForm () : name("default") , grade_to_sign(125), grade_to_execute(100), was_signed(false)
+{
+    std::cout << "AForm default constructor called for: " << this->name << std::endl;
 }
 
 AForm::~AForm() {
@@ -76,4 +93,27 @@ int AForm::getGradeToExecute() const {
 
 bool AForm::getWasSigned() const {
 	return this->was_signed;
+}
+
+// exceptions
+const char *AForm::GradeTooHighException::what() const throw()
+{
+	return "Exception: Form's Grade is too high.";
+}
+const char *AForm::GradeTooLowException::what() const throw()
+{
+	return "Exception: Form's Grade is too low.";
+}
+const char *AForm::IsntSignedException::what() const throw()
+{
+	return "Exception: AForm isn't signed.";
+}
+
+std::ostream &operator<<(std::ostream &output, AForm const &form)
+{
+	output << "AForm Name: " << form.getName() << std::endl;
+	output << "Grade to Sign: " << form.getGradeToSign() << std::endl;
+	output << "Grade to Execute: " << form.getGradeToExecute() << std::endl;
+	output << "Was Signed: " << (form.getWasSigned()) << std::endl;
+	return output;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/10/20 09:47:27 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 14:39:18 by aingunza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 {
 	srand(time(NULL));
 	//para el random del roboto 
-	std::cout << "-----Test 1: Invalid Grade Too Low-----" << std::endl; 
+	// --------------------Test 1: Invalid Grade------------------------
 	std::cout << "Test 1: Grade 151" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 151);
@@ -28,8 +28,6 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	// --------------------Test 2: Invalid Grade------------------------
-	std::cout << "-----Test 2: Invalid Grade Too High-----" << std::endl; 
-
 	std::cout << "Test 2: Grade 0" << std::endl;
 	try {
 		Bureaucrat Bou("bou", 0);
@@ -49,9 +47,7 @@ int main()
 	}
 	// --------------------Test 4: Execution------------------------
 	// --------------------Test 4: Execution------------------------
-	std::cout << std::endl;
 	std::cout << "--------------------------------" << std::endl;
-	std::cout << "--------Test 4: Execution--------" << std::endl;
 	try
 	{
 			Bureaucrat highGrade("Jim", 1);
@@ -64,20 +60,49 @@ int main()
 	{
 			std::cerr << e.what() << std::endl;
 	}
+	std::cout << "--------------------------------" << std::endl;
+	std::cout << "--------------------------------" << std::endl;
 
 	try
 	{
-			Bureaucrat lowGrade("Bob", 150);
-			RobotomyRequestForm robot("Bender");
+		Bureaucrat lowGrade("Bob", 150);
+		RobotomyRequestForm robot("Bender");
 
-			lowGrade.signAForm(robot);   // esto debería fallar: 150 no alcanza el 72 requerido
-			lowGrade.executeForm(robot);
+		lowGrade.signAForm(robot);   // esto debería fallar: 150 no alcanza el 72 requerido
+		lowGrade.executeForm(robot);
 	}
 	catch (const std::exception &e)
 	{
 			std::cerr << e.what() << std::endl;
 	}
-	// --------------------Test 5: Intern------------------------
+	std::cout << "--------------------------------" << std::endl;
+	std::cout << "--------------------------------" << std::endl;
+
+	try
+	{
+		Bureaucrat lowGrade("Bob", 3);
+		PresidentialPardonForm target("Target");
+
+		lowGrade.signAForm(target);
+		lowGrade.executeForm(target);
+		
+	}
+	catch (const std::exception &e)
+	{
+			std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	// Test del operador de AForm
+	try
+	{
+		AForm *defaultForm = new ShrubberyCreationForm("default");
+		std::cout << *defaultForm << std::endl;
+		delete defaultForm;
+	}
+	catch (const std::exception &e)
+	{
+			std::cerr << e.what() << std::endl;
+	}
 		std::cout <<  std::endl;
 	std::cout << "--------------------------------" << std::endl;
 	std::cout << "--------Test 5: Execution--------" << std::endl;
@@ -104,6 +129,3 @@ int main()
 	}
 	return 0;
 }
-
-
-//test

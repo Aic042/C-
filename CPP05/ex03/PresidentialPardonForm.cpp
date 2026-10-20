@@ -6,12 +6,17 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:54:15 by root              #+#    #+#             */
-/*   Updated: 2026/09/08 00:14:18 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 08:59:55 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
+
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5), target("default")
+{
+	std::cout << "PresidentialPardonForm default constructor called" << std::endl;
+}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), target(target)
 {
@@ -40,12 +45,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << "PresidentialPardonForm destructor called" << std::endl;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
+void PresidentialPardonForm::action() const
 {
-	if (bureaucrat.getGrade() > this->getGradeToExecute())
-		throw AForm::GradeTooLowException();
-	if (!this->getWasSigned())
-		throw AForm::IsntSignedException();
-	std::cout << "PresidentialPardonForm execute called" << std::endl;
-	std::cout <<  bureaucrat.getName() << " Has been pardoned by the President" << std::endl;
+        std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

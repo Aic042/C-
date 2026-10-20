@@ -14,20 +14,30 @@
 #define SHRUBBERY_CREATION_FORM_HPP
 
 # include "AForm.hpp"
-# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class ShrubberyCreationForm : public AForm
 {
 	private:
 		std::string target;
+	protected:
+        virtual void action() const;
 	public:
+		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm const &other);
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
 		virtual ~ShrubberyCreationForm(); 
 		
 		
-		virtual void execute(Bureaucrat const &executor) const;
+
+		// ShrubberyCreationForm.hpp
+		class FileOpenException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 #endif

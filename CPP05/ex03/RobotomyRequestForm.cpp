@@ -5,13 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/07 18:33:29 by aingunza          #+#    #+#             */
-/*   Updated: 2026/09/08 00:14:18 by root             ###   ########.fr       */
+/*   Created: 2026/09/07 23:41:32 by root              #+#    #+#             */
+/*   Updated: 2026/10/20 08:59:48 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
+
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("default")
+{
+	std::cout << "RobotomyRequestForm default constructor called" << std::endl;
+}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target)
 {
@@ -30,7 +35,6 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
         AForm::operator=(other);
 		this->target = other.target;	
 	}
-
 	std::cout << "RobotomyRequestForm copy assignment operator called" << std::endl;
 	return *this;
 }
@@ -40,15 +44,11 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
+void RobotomyRequestForm::action() const
 {
-	if (bureaucrat.getGrade() > this->getGradeToExecute())
-		throw AForm::GradeTooLowException();
-	if (!this->getWasSigned())
-		throw AForm::IsntSignedException();
-	std::cout << " Drilling noises " << std::endl;
-	if (rand() % 2 == 0)
-		std::cout << this->target << " has been robotomized successfully" << std::endl;
-	else 
-		std::cout << this->target << " has not been robotomized!!" << std::endl;
+        std::cout << " Drilling noises " << std::endl;
+        if (rand() % 2 == 0)
+                std::cout << this->target << " has been robotomized successfully" << std::endl;
+        else
+                std::cout << this->target << " has not been robotomized!!" << std::endl;
 }

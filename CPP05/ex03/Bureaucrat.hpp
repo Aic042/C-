@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 18:57:10 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/20 08:57:45 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 #define Bureaucrat_HPP
 
 # include <iostream>
-# include <string>
-# include <exception>
+# include <cctype>
 # include "AForm.hpp"
 # include "ShrubberyCreationForm.hpp"
 # include "RobotomyRequestForm.hpp"
 # include "PresidentialPardonForm.hpp"
 # include <fstream>
+
+class AForm; //declaracion adelantada
 
 class Bureaucrat
 {
@@ -29,34 +30,31 @@ class Bureaucrat
 	
 	private:
 		void setgrade(int grade);
-	public:
+	public:	
+	
 		std::string getName() const;
 		int getGrade() const;
 		Bureaucrat();
-		Bureaucrat(std::string const name, int grade);		Bureaucrat(Bureaucrat const &other);
+		Bureaucrat(std::string const name, int grade);		
+		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &other);
 		void signAForm(AForm &AForm);
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				const char *what() const throw()
-				{
-					return "Grade is too high.";
-				}
+				virtual const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				const char *what() const throw()
-				{
-					return "Grade is too low.";
-				}
+				virtual const char *what() const throw();
 		};
 		void executeForm(AForm const &AForm) const;
 		void incrementGrade(); // grado - 1
-		void decrementGrade(); // grado + 1		
+		void decrementGrade(); // grado + 1 
+
 };
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &b);
