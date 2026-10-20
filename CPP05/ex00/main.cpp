@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aingunza <aingunza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:51:12 by root              #+#    #+#             */
-/*   Updated: 2026/09/07 17:42:20 by aingunza         ###   ########.fr       */
+/*   Updated: 2026/10/20 00:04:31 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,18 @@ int main()
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
-
+	// test del increment y limite de Bureaucrat
+	try
+	{
+		Bureaucrat Bou("Bou", 2);
+		std::cout << Bou.getName() << " has grade: " << Bou.getGrade() << std::endl;
+		Bou.incrementGrade(); // should succeed
+		std::cout << Bou.getName() << " has grade: " << Bou.getGrade() << std::endl;
+		Bou.incrementGrade(); // should throw exception
+	}
+	catch (const std::exception &e)
+	{
+			std::cerr << e.what() << std::endl;
+	}
 
 }
