@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:54:28 by root              #+#    #+#             */
-/*   Updated: 2026/10/14 10:12:03 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 08:57:45 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include "PresidentialPardonForm.hpp"
 # include <fstream>
 
+class AForm; //declaracion adelantada
+
 class Bureaucrat
 {
 	std::string const name;
@@ -33,7 +35,8 @@ class Bureaucrat
 		std::string getName() const;
 		int getGrade() const;
 		Bureaucrat();
-		Bureaucrat(std::string const name, int grade);		Bureaucrat(Bureaucrat const &other);
+		Bureaucrat(std::string const name, int grade);		
+		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &other);
 		void signAForm(AForm &AForm);

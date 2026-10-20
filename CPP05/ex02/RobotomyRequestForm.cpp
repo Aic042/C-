@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:41:32 by root              #+#    #+#             */
-/*   Updated: 2026/09/08 00:14:05 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 08:59:48 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,11 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
+void RobotomyRequestForm::action() const
 {
-	if (bureaucrat.getGrade() > this->getGradeToExecute())
-		throw AForm::GradeTooLowException();
-	if (!this->getWasSigned())
-		throw AForm::IsntSignedException();
-	std::cout << " Drilling noises " << std::endl;
-	if (rand() % 2 == 0)
-		std::cout << this->target << " has been robotomized successfully" << std::endl;
-	else 
-		std::cout << this->target << " has not been robotomized!!" << std::endl;
+        std::cout << " Drilling noises " << std::endl;
+        if (rand() % 2 == 0)
+                std::cout << this->target << " has been robotomized successfully" << std::endl;
+        else
+                std::cout << this->target << " has not been robotomized!!" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:42:06 by root              #+#    #+#             */
-/*   Updated: 2026/10/14 12:15:31 by root             ###   ########.fr       */
+/*   Updated: 2026/10/20 08:59:40 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,31 +46,20 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+void ShrubberyCreationForm::action() const
 {
-	if (executor.getGrade() > this->getGradeToExecute())
-		throw AForm::GradeTooLowException();
-	if (!this->getWasSigned())
-		throw AForm::IsntSignedException();
-	std::ofstream outfile((this->target + "_shrubbery").c_str());
-	if (!outfile)
-	{
-		std::cerr << "Error: Could not open file " << target.c_str() << "_shrubbery" << std::endl;
-		return;
-	}
-	else if (outfile)
-	{
-		outfile << "    /\\        /\\    \n";
-		outfile << "   /  \\      /  \\   \n";
-		outfile << "  /    \\    /    \\  \n";
-		outfile << " /      \\  /      \\ \n";
-		outfile << "/________\\/________\\\n";
-		outfile << "    ||         ||    \n";
-		outfile << "    ||         ||    \n";
-		outfile << "    ||         ||    \n";
+        std::ofstream outfile((this->target + "_shrubbery").c_str());
 
-		outfile.close();
-	}
+        if (!outfile)
+                throw FileOpenException(); // executeForm lo captura y NO dice "executed"
+        outfile << "    /\\        /\\    \n";
+        outfile << "   /  \\      /  \\   \n";
+        outfile << "  /    \\    /    \\  \n";
+        outfile << " /      \\  /      \\ \n";
+        outfile << "/________\\/________\\\n";
+        outfile << "    ||         ||    \n";
+        outfile << "    ||         ||    \n";
+        outfile << "    ||         ||    \n";
 }
 
 //	std::ofstream outfile(target.c_str() + "_shrubbery");

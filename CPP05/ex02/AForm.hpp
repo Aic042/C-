@@ -18,7 +18,7 @@
 # include <cstdlib>
 
 
-class Bureaucrat;
+class Bureaucrat; //declaracion adelantada 	
 
 class AForm{
 	private:
@@ -26,6 +26,8 @@ class AForm{
 		int	const	grade_to_sign;
 		int	const	grade_to_execute;
 		bool 		was_signed;
+	protected:
+        virtual void action() const = 0; // cada hija implementa su propia action
 	public:
 		void 		beSigned(Bureaucrat const &bureaucrat);
 		bool		getWasSigned() const;
@@ -33,7 +35,7 @@ class AForm{
 		virtual int getGradeToExecute() const	;
 		virtual const std::string getName() const;
 		AForm(std::string name, int grade_to_sign, int	 grade_to_execute);
-		virtual void execute(Bureaucrat const &bureaucrat) const = 0; 
+		void execute(Bureaucrat const &executor) const;
 		virtual ~AForm();
 		AForm(AForm const &other);
 		AForm ();

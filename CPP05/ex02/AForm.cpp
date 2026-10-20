@@ -25,6 +25,16 @@ const std::string AForm::getName() const{
 	return(this->name);
 }
 
+// Template de execute
+void AForm::execute(Bureaucrat const &executor) const
+{
+        if (!this->was_signed)
+                throw IsntSignedException();
+        if (executor.getGrade() > this->grade_to_execute)
+                throw GradeTooLowException();
+        this->action();
+}
+
 AForm::AForm(std::string name, int grade_to_sign, int grade_to_execute) 
 : name(name), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute), was_signed(false)
 {

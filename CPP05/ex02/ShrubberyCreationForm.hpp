@@ -21,6 +21,8 @@ class ShrubberyCreationForm : public AForm
 {
 	private:
 		std::string target;
+	protected:
+        virtual void action() const;
 	public:
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
@@ -29,8 +31,6 @@ class ShrubberyCreationForm : public AForm
 		virtual ~ShrubberyCreationForm(); 
 		
 		
-		virtual void execute(Bureaucrat const &executor) const;
-		void action() const;
 
 		// ShrubberyCreationForm.hpp
 		class FileOpenException : public std::exception
